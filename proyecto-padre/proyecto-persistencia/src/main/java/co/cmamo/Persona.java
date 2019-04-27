@@ -1,14 +1,12 @@
 package co.cmamo;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * Informacion basica de cada una de las personas asociadas a la entidad
@@ -18,63 +16,96 @@ import javax.persistence.TemporalType;
  * @version 1.0 23/03/2019
  */
 @Entity
-@NamedQueries({ @NamedQuery(name = Persona.LISTAR_TODOS, query = "select p from Persona p") })
 public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * referencia para listar los clientes
-	 */
-	public static final String LISTAR_TODOS = "ListarLosClientes";
-
-	/**
-	 * cedula de la persona
+	 * id de la persona
 	 */
 	@Id
-	private String cedula;
+	@Column(nullable= false,unique= true)
+
+	private String id;
 	/**
-	 * nombre de la persona
+	 * Nombre de la persona
 	 */
+	@Column(length=50)
 	private String nombre;
 	/**
-	 * apellido de la persona
+	 * Apellido de la persona
 	 */
+	@Column(length= 50)
 	private String apellido;
 	/**
-	 * email de la persona
+	 * Correo de la persona
 	 */
-	private String email;
+	@Column(unique= true)
+	private String correo;
 	/**
-	 * clave de acceso a la plataforma
+	 * Clave de acceso al herbario
 	 */
+	@Column(length=18)
 	private String clave;
 	/**
-	 * estado activo o inactivo
+	 * Estado (activo o inactivo)
 	 */
-	private String estado;
-	/**
-	 * fecha de nacimiento de la persona
-	 */
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaNacimiento;
+	private EstadoActividad estado;
 
+	/**
+	 * Constructor de Persona
+	 */
 	public Persona() {
 		super();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 	/**
 	 * @return the cedula
 	 */
 	public String getCedula() {
-		return cedula;
+		return id;
 	}
 
 	/**
 	 * @param cedula the cedula to set
 	 */
 	public void setCedula(String cedula) {
-		this.cedula = cedula;
+		this.id = cedula;
 	}
 
 	/**
@@ -106,17 +137,17 @@ public class Persona implements Serializable {
 	}
 
 	/**
-	 * @return the email
+	 * @return the correo
 	 */
-	public String getEmail() {
-		return email;
+	public String getCorreo() {
+		return correo;
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param correo the correo to set
 	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
 	/**
@@ -134,66 +165,18 @@ public class Persona implements Serializable {
 	}
 
 	/**
-	 * @return the fechaNacimiento
-	 */
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-
-	/**
-	 * @param fechaNacimiento the fechaNacimiento to set
-	 */
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-
-	/**
 	 * @return the estado
 	 */
-	public String getEstado() {
+	@Enumerated(EnumType.STRING)
+	public EstadoActividad getEstado() {
 		return estado;
 	}
 
 	/**
 	 * @param estado the estado to set
 	 */
-	public void setEstado(String estado) {
+	public void setEstado(EstadoActividad estado) {
 		this.estado = estado;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((cedula == null) ? 0 : cedula.hashCode());
-		return result;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Persona other = (Persona) obj;
-		if (cedula == null) {
-			if (other.cedula != null)
-				return false;
-		} else if (!cedula.equals(other.cedula))
-			return false;
-		return true;
 	}
 
 }
