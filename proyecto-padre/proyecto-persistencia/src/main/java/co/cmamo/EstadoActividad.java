@@ -1,5 +1,5 @@
 package co.cmamo;
 
 public enum EstadoActividad {
-	ACTIVO, INACTIVO
+	INACTIVO, ACTIVO
 }

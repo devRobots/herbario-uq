@@ -25,7 +25,6 @@ public class Persona implements Serializable {
 	 */
 	@Id
 	@Column(nullable= false,unique= true)
-
 	private String id;
 	/**
 	 * Nombre de la persona
@@ -50,6 +49,7 @@ public class Persona implements Serializable {
 	/**
 	 * Estado (activo o inactivo)
 	 */
+	@Enumerated(EnumType.STRING)
 	private EstadoActividad estado;
 
 	/**
@@ -95,17 +95,17 @@ public class Persona implements Serializable {
 	}
 
 	/**
-	 * @return the cedula
+	 * @return the id
 	 */
-	public String getCedula() {
+	public String getId() {
 		return id;
 	}
 
 	/**
-	 * @param cedula the cedula to set
+	 * @param id the id to set
 	 */
-	public void setCedula(String cedula) {
-		this.id = cedula;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
@@ -167,7 +167,6 @@ public class Persona implements Serializable {
 	/**
 	 * @return the estado
 	 */
-	@Enumerated(EnumType.STRING)
 	public EstadoActividad getEstado() {
 		return estado;
 	}
@@ -178,5 +177,4 @@ public class Persona implements Serializable {
 	public void setEstado(EstadoActividad estado) {
 		this.estado = estado;
 	}
-
 }
