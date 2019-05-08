@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Informacion basica de cada una de las personas asociadas a la entidad
@@ -16,6 +19,8 @@ import javax.persistence.Id;
  * @version 1.0 23/03/2019
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -24,27 +29,27 @@ public class Persona implements Serializable {
 	 * id de la persona
 	 */
 	@Id
-	@Column(nullable= false,unique= true)
+	@Column(nullable = false, unique = true)
 	private String id;
 	/**
 	 * Nombre de la persona
 	 */
-	@Column(length=50)
+	@Column(length = 50)
 	private String nombre;
 	/**
 	 * Apellido de la persona
 	 */
-	@Column(length= 50)
+	@Column(length = 50)
 	private String apellido;
 	/**
 	 * Correo de la persona
 	 */
-	@Column(unique= true)
+	@Column(unique = true)
 	private String correo;
 	/**
 	 * Clave de acceso al herbario
 	 */
-	@Column(length=18)
+	@Column(length = 18)
 	private String clave;
 	/**
 	 * Estado (activo o inactivo)
