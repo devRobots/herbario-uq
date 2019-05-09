@@ -59,7 +59,7 @@ public class TestRead {
 		Assert.assertEquals("Roselin", g.getNombre());
 	}
 	/**
-	 * 
+	 *  CORREGIR
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
@@ -78,14 +78,5 @@ public class TestRead {
 		Planta p = entityManager.find(Planta.class, "4321");
 		Assert.assertEquals("cosa1", p.getEspecie());
 	}
-	/**
-	 * 
-	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"registro.json"})
-	public void findRegistroTest() {
-		Registro p = entityManager.find(Registro.class, "4321");
-		Assert.assertEquals("cosa1", p.getEspecie());
-	}
-	*/
+	
 }
