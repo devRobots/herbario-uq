@@ -90,13 +90,14 @@ public class TestCreate {
 		Planta genero = entityManager.find(Planta.class, e.getId());
 		Assert.assertEquals(e, genero);
 	}
+	
 	/**
 	 * 
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
-	public void persistTest() {
+	public void persistPersonaTest() {
 		Empleado e = new Empleado();
 		e.setApellido("Cardenas");
 		e.setNombre("Juliana");

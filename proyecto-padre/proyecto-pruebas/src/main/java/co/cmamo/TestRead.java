@@ -79,4 +79,14 @@ public class TestRead {
 		Assert.assertEquals("cosa1", p.getEspecie());
 	}
 	
+	/**
+	 *  Prueba peticion
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"peticion.json"})
+	public void findPeticionTest() {
+		Peticion p = entityManager.find(Peticion.class, "1235");
+		Assert.assertEquals("ACEPTADO", p.getEstado());
+	}
 }

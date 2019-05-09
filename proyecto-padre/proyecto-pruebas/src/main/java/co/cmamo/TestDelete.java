@@ -1,12 +1,16 @@
 package co.cmamo;
 
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.persistence.UsingDataSet;
+import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
+import org.jboss.arquillian.transaction.api.annotation.Transactional;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
@@ -36,8 +40,13 @@ public class TestDelete {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"familia.json"})
+	public void eliminarFamiliaTest() {
+		Familia e = entityManager.find(Familia.class, "1534");
+		entityManager.remove(e);
+		
+		assertEquals("No se elimino",null,entityManager.find(Familia.class, "1534"));
 	}
 
 }
