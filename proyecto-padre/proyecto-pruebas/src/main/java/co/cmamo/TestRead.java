@@ -78,5 +78,4 @@ public class TestRead {
 		Planta p = entityManager.find(Planta.class, "4321");
 		Assert.assertEquals("cosa1", p.getEspecie());
 	}
-	
 }

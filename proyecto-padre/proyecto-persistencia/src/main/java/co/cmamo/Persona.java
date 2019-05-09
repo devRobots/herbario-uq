@@ -25,7 +25,8 @@ import javax.persistence.NamedQuery;
 @MappedSuperclass
 @NamedQueries({
 	@NamedQuery(name = Persona.BUSCAR_POR_ID, query = "select persona from Persona persona where persona.id = :id"),
-	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona")
+	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona"),
+	@NamedQuery(name = Persona.INICIAR_SESION, query = "select person from Persona persona where persona.correo = :correo and persona.clave = :clave")
 })
 public class Persona implements Serializable {
 
@@ -33,6 +34,7 @@ public class Persona implements Serializable {
 
 	public static final String BUSCAR_POR_ID = "Persona_findById";
 	public static final String LISTAR_TODOS = "Persona_getAll";
+	public static final String INICIAR_SESION = "Persona_iniciarSesion";
 
 	/**
 	 * id de la persona

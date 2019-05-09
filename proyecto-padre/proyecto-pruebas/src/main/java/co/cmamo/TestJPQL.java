@@ -92,4 +92,19 @@ public class TestJPQL {
 		Assert.assertEquals(3, peticiones.size());
 	}
 
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"persona.json"})
+	public void logInTest() {
+		try {
+			TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.INICIAR_SESION, Persona.class);
+			query.setParameter("correo", "jc@mail.com");
+			query.setParameter("clave", "12345");
+			
+			Persona p = query.getSingleResult();
+			Assert.assertNotNull(p);
+		} catch (Exception e) {
+			Assert.fail(e.getMessage());
+		}
+	}	
 }
