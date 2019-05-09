@@ -16,60 +16,107 @@ import javax.persistence.*;
 public class Genero implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 * Id del Genero
+	 */
 	@Id
 	private String id;
+	/**
+	 * nombre del Genero
+	 */
 	private String nombre;
+	/**
+	 * Familia del Genero
+	 */
 	@ManyToOne
 	private Familia familia;
+	/**
+	 * Especies de la Planta
+	 */
 	@OneToMany
 	private List<Planta> especies;
 
+	/**
+	 * COnstuctor de la Planta
+	 */
 	public Genero() {
 		super();
 		especies = new ArrayList<>();
 	}
-
+	/**
+	 * Get id
+	 * @return id
+	 */
 	public String getId() {
 		return this.id;
 	}
-
+	/**
+	 * Set Id
+	 * @param id
+	 */
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	/**
+	 * get del Nombre
+	 * @return nombre
+	 */
 	public String getNombre() {
 		return this.nombre;
 	}
-
+	/**
+	 * set del Nombre
+	 * @param nombre
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	/**
+	 * get familia
+	 * @return familia
+	 */
 	public Familia getFamilia() {
 		return familia;
 	}
-
+	/**
+	 * Set familia
+	 * @param familia
+	 */
 	public void setFamilia(Familia familia) {
 		this.familia = familia;
 	}
-
+	/**
+	 * Get especies
+	 * @return especies
+	 */
 	public List<Planta> getEspecies() {
 		return especies;
 	}
-
+	/**
+	 * set Especies
+	 * @param especies
+	 */
 	public void setEspecies(List<Planta> especies) {
 		this.especies = especies;
 	}
-
+	/**
+	 * Agregar especie
+	 * @param planta g
+	 */
 	public void agregarEspecie(Planta g) {
 		especies.add(g);
 	}
-
+	/**
+	 * Eliminar Especie
+	 * @param g
+	 */
 	public void eliminarEspecie(Planta g) {
 		especies.remove(g);
 	}
-
+	/**
+	 * Obtener especie
+	 * @param i
+	 */
 	public void obtenerEspecie(int i) {
 		especies.get(i);
 	}

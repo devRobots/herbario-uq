@@ -12,9 +12,13 @@ import javax.persistence.*;
 public class Empleado extends Persona implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * Salario del Empleado
+	 */
 	private double salario;
-	
+	/**
+	 * constructor del Empleado
+	 */
 	public Empleado() {
 		super();
 	}
