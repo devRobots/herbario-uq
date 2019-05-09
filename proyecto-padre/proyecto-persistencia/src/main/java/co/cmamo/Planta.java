@@ -9,24 +9,34 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name = Planta.BUSCAR_POR_ID, query = "select planta from Planta planta where planta.id = :id"),
+	@NamedQuery(name = Planta.LISTAR_TODOS, query = "select planta from Planta planta")
+})
 public class Planta implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	public static final String BUSCAR_POR_ID = "Planta_findById";
+	public static final String LISTAR_TODOS = "Planta_getAll";
+	
 	/**
 	 * Id de la Planta
 	 */
 	@Id
+	@Column(unique = true, nullable = false)
 	private String id;
 	/**
 	 * especie de la Planta
 	 */
+	@Column(unique = true, nullable = false, length = 50)
 	private String especie;
 	/**
 	 * Genero de la Planta
 	 */
 	@ManyToOne
 	private Genero genero;
+	
 	/**
 	 * Constructor de la planta
 	 */
@@ -56,7 +66,7 @@ public class Planta implements Serializable {
 		return this.especie;
 	}
 	/**
-	 * Set de Esoecie
+	 * Set de Especie
 	 * @param especie
 	 */
 	public void setEspecie(String especie) {
