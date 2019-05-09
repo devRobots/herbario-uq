@@ -7,7 +7,7 @@
 			"apellido": "Cardenas",
 			"clave": "12345",
 			"correo": "jc@mail.com",
-			"estado": "activo"
+			"estado": "1"
 		},
 		{
 			"id": "4567",
@@ -16,7 +16,7 @@
 			"apellido": "Suarez",
 			"clave": "12346",
 			"correo": "jz@mail.com",
-			"estado": "activo"
+			"estado": "1"
 		},
 		{
 			"id": "9765",
@@ -25,7 +25,7 @@
 			"apellido": "Montoya",
 			"clave": "12345",
 			"correo": "fm@mail.com",
-			"estado": "activo"
+			"estado": "1"
 		}
 	],
 	"RECOLECTOR": [
