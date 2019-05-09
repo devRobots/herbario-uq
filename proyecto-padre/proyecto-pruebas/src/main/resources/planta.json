@@ -1,14 +1,14 @@
 {
 	"planta":[
 		{
-		"especie:":"cosa1",
-		"familia":"John",
-		"genero":"Smith"
+		"id":"4321",
+		"especie":"cosa1",
+		"genero_ID":"Smith"
 		},
 		{
-		"especie:":"cosa2",
-		"familia":"Clark",
-		"genero":"Kent"
+		"id":"4421",
+		"especie":"cosa2",
+		"genero_ID":"Kent"
 		}
 	]
 }

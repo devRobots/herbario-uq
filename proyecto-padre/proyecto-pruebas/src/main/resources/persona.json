@@ -14,7 +14,7 @@
 			"dtype": "Recolector",
 			"nombre": "Jorge",
 			"apellido": "Suarez",
-			"clave": "12345",
+			"clave": "12346",
 			"correo": "jz@mail.com",
 			"estado": "activo"
 		},
@@ -39,13 +39,13 @@
 			"salario": 20007000
 		},
 		{
-			"id": "1234",
+			"id": "1235",
 			"salario": 50007000
 		}
 	],
 	"ADMINISTRADOR": [
 		{
-			"id": "1234"
+			"id": "12345"
 		}
 	]
 }

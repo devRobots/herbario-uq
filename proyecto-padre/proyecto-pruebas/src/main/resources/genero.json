@@ -2,21 +2,23 @@
 	"GENERO": [
 		{
 			"id": "1234",
-			"nombre": "d",
-			"especies": "",
-			"familia": ""			
+			"nombre": "Roselin",
+			"familia_ID":"fs"			
 		},
 		{
-			"id": "1234",
-			"nombre": "d",
-			"especies": "",
-			"familia":""	
+			"id": "1230",
+			"nombre": "Destiny",
+			"familia_ID":"fell"			
 		},
 		{
-			"id": "1234",
-			"nombre": "d",
-			"especies": "",
-			"familia":""	
+			"id": "1233",
+			"nombre": "Ronoco",
+			"familia_ID":"ood"			
+		},
+		{
+			"id": "1223",
+			"nombre": "Captusini",
+			"familia_ID":"felin"			
 		}
 	]
 }

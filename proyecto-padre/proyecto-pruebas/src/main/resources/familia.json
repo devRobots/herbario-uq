@@ -2,21 +2,19 @@
 	"FAMILIA": [
 		{
 			"id": "1234",
-			"nombre": "d",
-			"generos": "",
-			"familia": ""			
+			"nombre": "Rose"		
 		},
 		{
-			"id": "1234",
-			"nombre": "d",
-			"generos": "",
-			"familia": ""			
+			"id": "1334",
+			"nombre": "Quarz"		
 		},
 		{
-			"id": "1234",
-			"nombre": "d",
-			"generos": "",
-			"familia": ""			
+			"id": "1434",
+			"nombre": "Filendisus"		
+		},
+		{
+			"id": "1534",
+			"nombre": "ganaPar"		
 		}
 	]
 }
