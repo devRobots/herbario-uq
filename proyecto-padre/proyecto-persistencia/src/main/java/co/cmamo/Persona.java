@@ -63,7 +63,6 @@ public class Persona implements Serializable {
 	/**
 	 * Estado (activo o inactivo)
 	 */
-	@Enumerated(EnumType.STRING)
 	private EstadoActividad estado;
 
 	/**
