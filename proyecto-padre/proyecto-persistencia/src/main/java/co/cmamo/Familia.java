@@ -12,17 +12,27 @@ import javax.persistence.*;
  *
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name = Familia.BUSCAR_POR_ID, query = "select familia from Familia familia where familia.id = :id"),
+	@NamedQuery(name = Familia.LISTAR_TODOS, query = "select familia from Familia familia ")
+})
 public class Familia implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	public static final String BUSCAR_POR_ID = "Familia_findById";
+	public static final String LISTAR_TODOS = "Familia_getAll";
+	
 	/**
 	 * ID de la familia
 	 */
 	@Id
+	@Column(unique = true, nullable = false)
 	private String id;
 	/**
 	 * nombre de la familia
 	 */
+	@Column(unique = true, nullable = false, length = 50)
 	private String nombre;
 	/**
 	 * generos de la familia

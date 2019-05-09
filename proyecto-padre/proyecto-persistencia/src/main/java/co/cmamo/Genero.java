@@ -12,18 +12,27 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name = Genero.BUSCAR_POR_ID, query = "select genero from Genero genero where genero.id = :id"),
+	@NamedQuery(name = Genero.LISTAR_TODOS, query = "select genero from Genero genero")
+})
 public class Genero implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	public static final String BUSCAR_POR_ID = "Genero_findById";
+	public static final String LISTAR_TODOS = "Genero_getAll";
+	
 	/**
 	 * Id del Genero
 	 */
 	@Id
+	@Column(unique = true, nullable = false)
 	private String id;
 	/**
 	 * nombre del Genero
 	 */
+	@Column(unique = true, nullable = false, length = 50)
 	private String nombre;
 	/**
 	 * Familia del Genero

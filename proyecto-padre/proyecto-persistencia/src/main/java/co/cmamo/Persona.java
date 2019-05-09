@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  * Informacion basica de cada una de las personas asociadas a la entidad
@@ -21,9 +23,16 @@ import javax.persistence.MappedSuperclass;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @MappedSuperclass
+@NamedQueries({
+	@NamedQuery(name = Persona.BUSCAR_POR_ID, query = "select persona from Persona persona where persona.id = :id"),
+	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona")
+})
 public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	public static final String BUSCAR_POR_ID = "Persona_findById";
+	public static final String LISTAR_TODOS = "Persona_getAll";
 
 	/**
 	 * id de la persona
