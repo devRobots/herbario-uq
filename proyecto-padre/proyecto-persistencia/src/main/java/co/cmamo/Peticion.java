@@ -16,7 +16,7 @@ import javax.persistence.*;
 @NamedQueries({
 		@NamedQuery(name = Peticion.BUSCAR_POR_ID, query = "select peticion from Peticion peticion where peticion.id = :id"),
 		@NamedQuery(name = Peticion.LISTAR_TODOS, query = "select peticion from Peticion peticion"),
-		@NamedQuery(name = Peticion.CONTAR_PERSONAS_ACEPTADAS, query = "select p.solicitante from Peticion p where p.estado=1 group by p.solicitante")
+		@NamedQuery(name = Peticion.CONTAR_PERSONAS_ACEPTADAS, query = "select count(p) from Peticion p where p.estado = :estado group by p.fecha")
 		})
 public class Peticion implements Serializable {
 

@@ -1,6 +1,7 @@
 package co.cmamo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -66,7 +67,11 @@ public class Persona implements Serializable {
 	 * Estado (activo o inactivo)
 	 */
 	private EstadoActividad estado;
-
+	/**
+	 * Registros
+	 */
+	List<Peticion> peticiones;
+	
 	/**
 	 * Constructor de Persona
 	 */
@@ -191,5 +196,13 @@ public class Persona implements Serializable {
 	 */
 	public void setEstado(EstadoActividad estado) {
 		this.estado = estado;
+	}
+
+	public List<Peticion> getPeticiones() {
+		return peticiones;
+	}
+
+	public void setPeticiones(List<Peticion> peticiones) {
+		this.peticiones = peticiones;
 	}
 }
