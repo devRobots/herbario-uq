@@ -44,15 +44,94 @@ public class TestUpdate {
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
-	public void persistTest() {
-		Empleado e = new Empleado();
-		e.setApellido("Cardenas");
-		e.setNombre("Juliana");
-		e.setId("1234");
-		e.setClave("12345");
-		e.setCorreo("jc@mail.com");
-		e.setEstado(EstadoActividad.ACTIVO);
-		e.setSalario(50007000);
+	public void updatePersonaTest() {
+		Empleado p = entityManager.find(Empleado.class, "9765");
+		Assert.assertEquals("Fernanda", p.getNombre());
+
+		Persona e = entityManager.find(Persona.class, "1234");
+		entityManager.remove(e);
+		
+		assertEquals("No se elimino",null,entityManager.find(Persona.class, "1234"));
+		
+		entityManager.persist(e);
+		
+		Empleado registrado = entityManager.find(Empleado.class, e.getId());
+		Assert.assertEquals(e, registrado);
+	}
+	/**
+	 * 
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"planta.json"})
+	public void updatePlantaTest() {
+		Empleado p = entityManager.find(Empleado.class, "9765");
+		Assert.assertEquals("Fernanda", p.getNombre());
+
+		Persona e = entityManager.find(Persona.class, "1234");
+		entityManager.remove(e);
+		
+		assertEquals("No se elimino",null,entityManager.find(Persona.class, "1234"));
+		
+		entityManager.persist(e);
+		
+		Empleado registrado = entityManager.find(Empleado.class, e.getId());
+		Assert.assertEquals(e, registrado);
+	}
+	/**
+	 * 
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"familia.json"})
+	public void updateFamiliaTest() {
+		Empleado p = entityManager.find(Empleado.class, "9765");
+		Assert.assertEquals("Fernanda", p.getNombre());
+
+		Persona e = entityManager.find(Persona.class, "1234");
+		entityManager.remove(e);
+		
+		assertEquals("No se elimino",null,entityManager.find(Persona.class, "1234"));
+		
+		entityManager.persist(e);
+		
+		Empleado registrado = entityManager.find(Empleado.class, e.getId());
+		Assert.assertEquals(e, registrado);
+	}
+	/**
+	 * 
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"genero.json"})
+	public void updateGeneroTest() {
+		Empleado p = entityManager.find(Empleado.class, "9765");
+		Assert.assertEquals("Fernanda", p.getNombre());
+
+		Persona e = entityManager.find(Persona.class, "1234");
+		entityManager.remove(e);
+		
+		assertEquals("No se elimino",null,entityManager.find(Persona.class, "1234"));
+		
+		entityManager.persist(e);
+		
+		Empleado registrado = entityManager.find(Empleado.class, e.getId());
+		Assert.assertEquals(e, registrado);
+	}
+	/**
+	 * 
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"peticion.json"})
+	public void updatePeticionTest() {
+		Peticion p = entityManager.find(Peticion.class, "9765");
+		Assert.assertEquals("Fernanda", p.getId());
+
+		Persona e = entityManager.find(Persona.class, "1234");
+		entityManager.remove(e);
+		
+		assertEquals("No se elimino",null,entityManager.find(Persona.class, "1234"));
 		
 		entityManager.persist(e);
 		

@@ -26,7 +26,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = Persona.BUSCAR_POR_ID, query = "select persona from Persona persona where persona.id = :id"),
 	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona"),
-	@NamedQuery(name = Persona.INICIAR_SESION, query = "select person from Persona persona where persona.correo = :correo and persona.clave = :clave")
+	@NamedQuery(name = Persona.INICIAR_SESION, query = "select persona from Persona persona where persona.correo = :correo and persona.clave = :clave")
 })
 public class Persona implements Serializable {
 
