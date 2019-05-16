@@ -41,7 +41,9 @@ public class TestJPQL {
 				.addAsResource("persistenceForTest.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
-	
+	/**
+	 * listar familias test
+	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"familia.json"})
@@ -51,7 +53,9 @@ public class TestJPQL {
 		
 		Assert.assertEquals(4, familias.size());
 	}
-	
+	/**
+	 * listar Generos test
+	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"genero.json"})
@@ -61,7 +65,9 @@ public class TestJPQL {
 		
 		Assert.assertEquals(4, generos.size());
 	}
-	
+	/**
+	 * listar plantas test
+	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"planta.json"})
@@ -71,7 +77,9 @@ public class TestJPQL {
 		
 		Assert.assertEquals(3, plantas.size());
 	}
-	
+	/**
+	 * listar personas test
+	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
@@ -81,7 +89,9 @@ public class TestJPQL {
 		
 		Assert.assertEquals(3, personas.size());
 	}
-	
+	/**
+	 * lista de peticiones test
+	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"peticion.json"})
@@ -89,9 +99,11 @@ public class TestJPQL {
 		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR_TODOS, Peticion.class);
 		List<Peticion> peticiones = query.getResultList();
 		
-		Assert.assertEquals(3, peticiones.size());
+		Assert.assertEquals(4, peticiones.size());
 	}
-
+	/**
+	 *  LogInTest
+	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
@@ -118,6 +130,21 @@ public class TestJPQL {
 		List<Planta> plantas = query.getResultList();
 		
 		Assert.assertEquals(1, plantas.size());
+	}
+	/**
+	 * PREGUNTAR AL PROFE
+	 * Listar Planta por Familia
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"planta.json"})
+	public void listarPlantasPorFamiliaTest() {
+		Familia f = entityManager.find(Familia.class, "1234");
+		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_FAMILIA, Planta.class);
+		query.setParameter("familia", f);
+		List<Planta> plantas = query.getResultList();
+		
+		Assert.assertEquals(2, plantas.size());
 	}
 	
 }

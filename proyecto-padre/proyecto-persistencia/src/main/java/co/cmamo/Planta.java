@@ -12,15 +12,19 @@ import javax.persistence.*;
 @NamedQueries({
 	@NamedQuery(name = Planta.BUSCAR_POR_ID, query = "select planta from Planta planta where planta.id = :id"),
 	@NamedQuery(name = Planta.LISTAR_TODOS, query = "select planta from Planta planta"),
-	@NamedQuery(name = Planta.LISTAR_POR_GENERO, query = "select planta from Planta planta where planta.genero.id =:genero")
+	@NamedQuery(name = Planta.LISTAR_POR_GENERO, query = "select planta from Planta planta where planta.genero.id =:genero"),
+	@NamedQuery(name = Planta.LISTAR_POR_FAMILIA, query = "select planta from Planta planta where planta.genero.familia =:familia")
 })
 public class Planta implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * LLamado para los querys
+	 */
 	public static final String BUSCAR_POR_ID = "Planta_findById";
 	public static final String LISTAR_TODOS = "Planta_getAll";
 	public static final String LISTAR_POR_GENERO = "Planta_getGenero";
+	public static final String LISTAR_POR_FAMILIA = "Planta_getFamilia";
 	
 	/**
 	 * Id de la Planta
