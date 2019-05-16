@@ -2,6 +2,7 @@ package co.cmamo;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -17,7 +18,6 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -55,10 +55,24 @@ public class TestTaller {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"peticion.json"})
 	public void testContarPersonas() {
-		TypedQuery<Persona> query = entityManager.createNamedQuery(Peticion.CONTAR_PERSONAS_ACEPTADAS, Persona.class);
-		List<Persona> personasAceptadas = query.getResultList();
+		TypedQuery<Long> query = entityManager.createNamedQuery(Peticion.CONTAR_PERSONAS_ACEPTADAS, Long.class);
+		query.setParameter("estado", EstadoPeticion.APROBADO);
 		
-		assertEquals(4, personasAceptadas.size());
+		long cantPersonasAceptadas = query.getSingleResult();
+		
+		assertEquals(2, cantPersonasAceptadas);
+	}
+	
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"persona.json"})
+	public void testPersonasSinRegistros() {
+		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona., Persona.class);
+		query.setParameter("estado", EstadoPeticion.APROBADO);
+		
+		long cantPersonasAceptadas = query.getSingleResult();
+		
+		assertEquals(2, cantPersonasAceptadas);
 	}
 
 }
