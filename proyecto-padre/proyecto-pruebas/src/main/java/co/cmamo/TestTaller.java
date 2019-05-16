@@ -2,7 +2,6 @@ package co.cmamo;
 
 import static org.junit.Assert.*;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -20,6 +19,8 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import co.cmamo.dto.ConsultaDTO;
 
 @RunWith(Arquillian.class)
 public class TestTaller {
@@ -67,12 +68,18 @@ public class TestTaller {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
 	public void testPersonasSinRegistros() {
-		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona., Persona.class);
-		query.setParameter("estado", EstadoPeticion.APROBADO);
+		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.LISTAR_SIN_PETICIONES, Persona.class);
 		
-		long cantPersonasAceptadas = query.getSingleResult();
+		List<Persona> personasSinPeticiones = query.getResultList();
 		
-		assertEquals(2, cantPersonasAceptadas);
+		assertEquals(3, personasSinPeticiones.size());
+	}
+	
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"persona.json"})
+	public void testListarCantRegistrosPorPersona() {
+		System.out.println(ConsultaDTO.class);
 	}
 
 }

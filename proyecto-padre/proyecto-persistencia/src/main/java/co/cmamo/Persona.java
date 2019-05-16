@@ -27,7 +27,9 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = Persona.BUSCAR_POR_ID, query = "select persona from Persona persona where persona.id = :id"),
 	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona"),
-	@NamedQuery(name = Persona.INICIAR_SESION, query = "select persona from Persona persona where persona.correo = :correo and persona.clave = :clave")
+	@NamedQuery(name = Persona.INICIAR_SESION, query = "select persona from Persona persona where persona.correo = :correo and persona.clave = :clave"),
+	@NamedQuery(name = Persona.LISTAR_SIN_PETICIONES, query = "select persona from Persona persona left join persona.peticiones peticiones where persona.peticiones is empty"),
+	@NamedQuery(name = Persona.CONSULTA_DTO, query = "select p from Persona p")
 })
 public class Persona implements Serializable {
 
@@ -36,6 +38,8 @@ public class Persona implements Serializable {
 	public static final String BUSCAR_POR_ID = "Persona_findById";
 	public static final String LISTAR_TODOS = "Persona_getAll";
 	public static final String INICIAR_SESION = "Persona_iniciarSesion";
+	public static final String LISTAR_SIN_PETICIONES = "Persona_getAllsinPeticiones";
+	public static final String CONSULTA_DTO = "Persona_contPersonasByPeticiones";
 
 	/**
 	 * id de la persona
