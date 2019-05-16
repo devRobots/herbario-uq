@@ -2,21 +2,35 @@
 	"PETICION": [
 		{
 			"id": "1234",
-			"estado": "PENDIENTE",
+			"estado": "0",
 			"respuesta": "La solicitud sigue en espera",
-			"especie_ID": "9123"			
+			"especie_ID": "9123",
+			"solicitante_ID": "1234",
+			"fecha": "06/06/1999"
 		},
 		{
 			"id": "1235",
-			"estado": "ACEPTADO",
+			"estado": "1",
 			"respuesta": "la solicitud fue aceptada",
-			"especie_ID": "1239"			
+			"especie_ID": "1239",
+			"solicitante_ID": "1235",
+			"fecha": "06/06/1999"		
+		},
+		{
+			"id": "1",
+			"estado": "1",
+			"respuesta": "la solicitud fue aceptada",
+			"especie_ID": "2",
+			"solicitante_ID": "1",
+			"fecha": "06/06/1999"		
 		},
 		{
 			"id": "1236",
-			"estado": "RECHAZADO",
+			"estado": "0",
 			"respuesta": "no cumple los requisitos",
-			"especie_ID": "3216"			
+			"especie_ID": "3216",
+			"solicitante_ID": "1236",
+			"fecha": "06/06/1999"	
 		}
 	]
 }

@@ -2,6 +2,7 @@ package co.cmamo;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -71,8 +72,10 @@ public class TestDelete {
 	public void eliminarPersonaTest() {
 		Administrador e = entityManager.find(Administrador.class, "1234");
 		entityManager.remove(e);
+
+		Administrador a = entityManager.find(Administrador.class, "1234");
 		
-		assertEquals("No se elimino",null,entityManager.find(Administrador.class, "1234"));
+		assertNull(a);
 	}
 	/**
 	 * Prueba eliminar planta

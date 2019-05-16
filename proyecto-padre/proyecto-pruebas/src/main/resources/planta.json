@@ -6,6 +6,11 @@
 		"genero_ID":"Smith"
 		},
 		{
+		"id":"1",
+		"especie":"a",
+		"genero_ID":"b"
+		},
+		{
 		"id":"4421",
 		"especie":"cosa2",
 		"genero_ID":"Kent"
