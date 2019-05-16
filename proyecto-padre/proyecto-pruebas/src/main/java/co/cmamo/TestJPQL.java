@@ -69,7 +69,7 @@ public class TestJPQL {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_TODOS, Planta.class);
 		List<Planta> plantas = query.getResultList();
 		
-		Assert.assertEquals(2, plantas.size());
+		Assert.assertEquals(3, plantas.size());
 	}
 	
 	@Test
@@ -100,11 +100,24 @@ public class TestJPQL {
 			TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.INICIAR_SESION, Persona.class);
 			query.setParameter("correo", "jc@mail.com");
 			query.setParameter("clave", "12345");
-			
 			Persona p = query.getSingleResult();
 			Assert.assertNotNull(p);
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
 		}
-	}	
+	}
+	/**
+	 * Listar Planta por Genero
+	 */
+	@Test
+	@Transactional(value=TransactionMode.ROLLBACK)
+	@UsingDataSet({"planta.json"})
+	public void listarPlantasPorGeneroTest() {
+		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_GENERO, Planta.class);
+		query.setParameter("genero", "1234");
+		List<Planta> plantas = query.getResultList();
+		
+		Assert.assertEquals(1, plantas.size());
+	}
+	
 }

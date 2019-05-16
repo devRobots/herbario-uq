@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = Planta.BUSCAR_POR_ID, query = "select planta from Planta planta where planta.id = :id"),
-	@NamedQuery(name = Planta.LISTAR_TODOS, query = "select planta from Planta planta")
+	@NamedQuery(name = Planta.LISTAR_TODOS, query = "select planta from Planta planta"),
+	@NamedQuery(name = Planta.LISTAR_POR_GENERO, query = "select planta from Planta planta where planta.genero.id =:genero")
 })
 public class Planta implements Serializable {
 
@@ -19,6 +20,7 @@ public class Planta implements Serializable {
 	
 	public static final String BUSCAR_POR_ID = "Planta_findById";
 	public static final String LISTAR_TODOS = "Planta_getAll";
+	public static final String LISTAR_POR_GENERO = "Planta_getGenero";
 	
 	/**
 	 * Id de la Planta
