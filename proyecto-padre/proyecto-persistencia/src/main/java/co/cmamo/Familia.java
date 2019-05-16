@@ -14,7 +14,8 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = Familia.BUSCAR_POR_ID, query = "select familia from Familia familia where familia.id = :id"),
-	@NamedQuery(name = Familia.LISTAR_TODOS, query = "select familia from Familia familia ")
+	@NamedQuery(name = Familia.LISTAR_TODOS, query = "select familia from Familia familia"),
+	@NamedQuery(name = Familia.CONTAR_TODOS, query = "select count(f) from Familia f")
 })
 public class Familia implements Serializable {
 
@@ -22,6 +23,7 @@ public class Familia implements Serializable {
 	
 	public static final String BUSCAR_POR_ID = "Familia_findById";
 	public static final String LISTAR_TODOS = "Familia_getAll";
+	public static final String CONTAR_TODOS = "Familia_countAll";
 	
 	/**
 	 * ID de la familia
