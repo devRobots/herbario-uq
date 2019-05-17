@@ -17,7 +17,6 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -51,7 +50,7 @@ public class TestJPQL {
 		TypedQuery<Familia> query = entityManager.createNamedQuery(Familia.LISTAR_TODOS, Familia.class);
 		List<Familia> familias = query.getResultList();
 		
-		Assert.assertEquals(4, familias.size());
+		assertEquals(4, familias.size());
 	}
 	/**
 	 * listar Generos test
@@ -63,7 +62,7 @@ public class TestJPQL {
 		TypedQuery<Genero> query = entityManager.createNamedQuery(Genero.LISTAR_TODOS, Genero.class);
 		List<Genero> generos = query.getResultList();
 		
-		Assert.assertEquals(4, generos.size());
+		assertEquals(4, generos.size());
 	}
 	/**
 	 * listar plantas test
@@ -75,7 +74,7 @@ public class TestJPQL {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_TODOS, Planta.class);
 		List<Planta> plantas = query.getResultList();
 		
-		Assert.assertEquals(3, plantas.size());
+		assertEquals(3, plantas.size());
 	}
 	/**
 	 * listar personas test
@@ -87,7 +86,7 @@ public class TestJPQL {
 		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.LISTAR_TODOS, Persona.class);
 		List<Persona> personas = query.getResultList();
 		
-		Assert.assertEquals(3, personas.size());
+		assertEquals(3, personas.size());
 	}
 	/**
 	 * lista de peticiones test
@@ -99,7 +98,7 @@ public class TestJPQL {
 		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR_TODOS, Peticion.class);
 		List<Peticion> peticiones = query.getResultList();
 		
-		Assert.assertEquals(4, peticiones.size());
+		assertEquals(4, peticiones.size());
 	}
 	/**
 	 *  LogInTest
@@ -113,13 +112,13 @@ public class TestJPQL {
 			query.setParameter("correo", "jc@mail.com");
 			query.setParameter("clave", "12345");
 			Persona p = query.getSingleResult();
-			Assert.assertNotNull(p);
+			assertNotNull(p);
 		} catch (Exception e) {
-			Assert.fail(e.getMessage());
+			fail(e.getMessage());
 		}
 	}
 	/**
-	 * Listar Planta por Genero
+	 * Listar Planta por Genero Test
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
@@ -129,11 +128,11 @@ public class TestJPQL {
 		query.setParameter("genero", "1234");
 		List<Planta> plantas = query.getResultList();
 		
-		Assert.assertEquals(1, plantas.size());
+		assertEquals(1, plantas.size());
 	}
 	/**
-	 * PREGUNTAR AL PROFE
-	 * Listar Planta por Familia
+	 * 
+	 * Listar Planta por Familia Test
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
@@ -144,7 +143,7 @@ public class TestJPQL {
 		query.setParameter("familia", f);
 		List<Planta> plantas = query.getResultList();
 		
-		Assert.assertEquals(2, plantas.size());
+		assertEquals(2, plantas.size());
 	}
 	
 }
