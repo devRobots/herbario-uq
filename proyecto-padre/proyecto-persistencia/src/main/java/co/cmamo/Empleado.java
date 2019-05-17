@@ -9,9 +9,15 @@ import javax.persistence.*;
  *
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name = Empleado.EMPLEADO_POR_EMAIL, query = "select e from Empleado e where e.correo = :correo")
+})
 public class Empleado extends Persona implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
+	public static final String EMPLEADO_POR_EMAIL = "EmpleadoPorEmail";
+	
 	/**
 	 * Salario del Empleado
 	 */
