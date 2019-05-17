@@ -41,45 +41,59 @@ public class TestTaller {
 				.addAsResource("persistenceForTest.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
-	
+
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"familia.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "familia.json" })
 	public void testContarFamilias() {
 		TypedQuery<Long> query = entityManager.createNamedQuery(Familia.CONTAR_TODOS, Long.class);
 		long cantFamilias = query.getSingleResult();
-		
+
 		assertEquals(4, cantFamilias);
 	}
-	
+
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"peticion.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "peticion.json" })
 	public void testContarPersonas() {
 		TypedQuery<Long> query = entityManager.createNamedQuery(Peticion.CONTAR_PERSONAS_ACEPTADAS, Long.class);
 		query.setParameter("estado", EstadoPeticion.APROBADO);
-		
+
 		long cantPersonasAceptadas = query.getSingleResult();
-		
+
 		assertEquals(2, cantPersonasAceptadas);
 	}
-	
+
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"persona.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "persona.json" })
 	public void testPersonasSinRegistros() {
 		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.LISTAR_SIN_PETICIONES, Persona.class);
-		
+
 		List<Persona> personasSinPeticiones = query.getResultList();
-		
+
 		assertEquals(3, personasSinPeticiones.size());
 	}
-	
+
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"persona.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "persona.json" })
 	public void testListarCantRegistrosPorPersona() {
-		System.out.println(ConsultaDTO.class);
+		TypedQuery<ConsultaDTO> query = entityManager.createNamedQuery(Persona.CONSULTA_DTO, ConsultaDTO.class);
+
+		List<ConsultaDTO> personasSinPeticiones = query.getResultList();
+
+		assertEquals(3, personasSinPeticiones.size());
 	}
 
+	@Test
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "persona.json", "planta.json", "genero.json", "familia.json" })
+	public void testFamiliaConMasEspecies() {
+		TypedQuery<Familia> query = entityManager.createNamedQuery(Familia.FAMILIA_MAS_ESPECIES, Familia.class);
+
+		List<Familia> plantasPorFamilia = query.getResultList();
+
+		assertEquals(1, plantasPorFamilia.size());
+	}
 }
