@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -34,7 +32,9 @@ import javax.persistence.NamedQuery;
 public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 * LLamado para los queries
+	 */
 	public static final String BUSCAR_POR_ID = "Persona_findById";
 	public static final String LISTAR_TODOS = "Persona_getAll";
 	public static final String INICIAR_SESION = "Persona_iniciarSesion";
@@ -201,11 +201,17 @@ public class Persona implements Serializable {
 	public void setEstado(EstadoActividad estado) {
 		this.estado = estado;
 	}
-
+	/**
+	 * get de Peticiones
+	 * @return Peticiones
+	 */
 	public List<Peticion> getPeticiones() {
 		return peticiones;
 	}
-
+	/**
+	 * set Peticiones
+	 * @param peticiones
+	 */
 	public void setPeticiones(List<Peticion> peticiones) {
 		this.peticiones = peticiones;
 	}

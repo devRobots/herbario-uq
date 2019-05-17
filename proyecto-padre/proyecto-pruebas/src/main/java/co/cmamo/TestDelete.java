@@ -1,8 +1,7 @@
 package co.cmamo;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -49,7 +48,8 @@ public class TestDelete {
 		Familia e = entityManager.find(Familia.class, "1534");
 		entityManager.remove(e);
 		
-		assertEquals("No se elimino",null,entityManager.find(Familia.class, "1534"));
+		Familia a = entityManager.find(Familia.class, "1534");
+		assertNull(a);
 	}
 	/**
 	 * Prueba eliminar Genero
@@ -61,7 +61,8 @@ public class TestDelete {
 		Genero e = entityManager.find(Genero.class, "1234");
 		entityManager.remove(e);
 		
-		assertEquals("No se elimino",null,entityManager.find(Genero.class, "1234"));
+		Genero a = entityManager.find(Genero.class, "1234");
+		assertNull(a);
 	}
 	/**
 	 * Prueba eliminar persona
@@ -87,7 +88,8 @@ public class TestDelete {
 		Planta e = entityManager.find(Planta.class, "4321");
 		entityManager.remove(e);
 		
-		assertEquals("No se elimino",null,entityManager.find(Planta.class, "4321"));
+		Planta a = entityManager.find(Planta.class, "4321");
+		assertNull(a);
 	}
 	/**
 	 * Prueba eliminar Peticion
@@ -99,6 +101,8 @@ public class TestDelete {
 		Peticion e = entityManager.find(Peticion.class, "1234");
 		entityManager.remove(e);
 		
-		assertEquals("No se elimino",null,entityManager.find(Peticion.class, "1234"));
+		Peticion a = entityManager.find(Peticion.class, "1234");
+		
+		assertNull(a);
 	}
 }

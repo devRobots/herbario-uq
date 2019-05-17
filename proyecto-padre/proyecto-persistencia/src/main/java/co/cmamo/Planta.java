@@ -19,7 +19,7 @@ public class Planta implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	/**
-	 * LLamado para los querys
+	 * LLamado para los queries
 	 */
 	public static final String BUSCAR_POR_ID = "Planta_findById";
 	public static final String LISTAR_TODOS = "Planta_getAll";

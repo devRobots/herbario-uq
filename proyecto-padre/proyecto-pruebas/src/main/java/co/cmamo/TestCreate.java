@@ -14,7 +14,6 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -53,7 +52,7 @@ public class TestCreate {
 		entityManager.persist(e);
 		
 		Familia familia = entityManager.find(Familia.class, e.getId());
-		Assert.assertEquals(e, familia);
+		assertEquals(e, familia);
 	}
 	/**
 	 *  Prueba crear Genero
@@ -70,7 +69,7 @@ public class TestCreate {
 		entityManager.persist(e);
 		
 		Genero genero = entityManager.find(Genero.class, e.getId());
-		Assert.assertEquals(e, genero);
+		assertEquals(e, genero);
 	}
 	
 	/**
@@ -88,11 +87,11 @@ public class TestCreate {
 		entityManager.persist(e);
 		
 		Planta genero = entityManager.find(Planta.class, e.getId());
-		Assert.assertEquals(e, genero);
+		assertEquals(e, genero);
 	}
 	
 	/**
-	 * 
+	 *  Test Crear Persona
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
@@ -110,7 +109,7 @@ public class TestCreate {
 		entityManager.persist(e);
 		
 		Empleado registrado = entityManager.find(Empleado.class, e.getId());
-		Assert.assertEquals(e, registrado);
+		assertEquals(e, registrado);
 	}
 
 }

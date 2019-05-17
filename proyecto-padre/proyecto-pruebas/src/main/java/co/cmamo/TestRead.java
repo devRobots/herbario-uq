@@ -14,7 +14,6 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -39,44 +38,44 @@ public class TestRead {
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 	/**
-	 * 
+	 * Test buscar Familia
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"familia.json"})
 	public void findFamiliaTest() {
 		Familia f = entityManager.find(Familia.class, "1234");
-		Assert.assertEquals("Rose", f.getNombre());
+		assertEquals("Rose", f.getNombre());
 	}
 	/**
-	 * 
+	 * Test buscar genero
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"genero.json"})
 	public void findGeneroTest() {
 		Genero g = entityManager.find(Genero.class, "1234");
-		Assert.assertEquals("Roselin", g.getNombre());
+		assertEquals("Roselin", g.getNombre());
 	}
 	/**
-	 *  CORREGIR
+	 *  Test Buscar persona
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
 	public void findPersonaTest() {
 		Empleado p = entityManager.find(Empleado.class, "9765");
-		Assert.assertEquals("Fernanda", p.getNombre());
+		assertEquals("Fernanda", p.getNombre());
 	}
 	/**
-	 * 
+	 * test buscar planta
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"planta.json"})
 	public void findPlantaTest() {
 		Planta p = entityManager.find(Planta.class, "4321");
-		Assert.assertEquals("cosa1", p.getEspecie());
+		assertEquals("cosa1", p.getEspecie());
 	}
 	
 }
