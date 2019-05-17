@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>proyecto-persistencia</artifactId>
 	<name>proyecto-persistencia</name>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
