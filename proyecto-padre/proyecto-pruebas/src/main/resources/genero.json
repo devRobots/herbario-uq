@@ -1,0 +1,24 @@
+{
+	"GENERO": [
+		{
+			"id": "1234",
+			"nombre": "Roselin",
+			"familia_ID":"1234"			
+		},
+		{
+			"id": "1230",
+			"nombre": "Destiny",
+			"familia_ID":"1334"			
+		},
+		{
+			"id": "1233",
+			"nombre": "Ronoco",
+			"familia_ID":"1234"			
+		},
+		{
+			"id": "1223",
+			"nombre": "Captusini",
+			"familia_ID":"1534"			
+		}
+	]
+}

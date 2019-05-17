@@ -12,11 +12,12 @@ import javax.persistence.*;
 
 public class Recolector extends Persona implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
-
+	
+	/**
+	 * Constructor recolector
+	 */
 	public Recolector() {
 		super();
 	}
-   
 }

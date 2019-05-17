@@ -1,5 +1,11 @@
 package co.cmamo;
-
+/**
+ * Enumeradores INACTICO,ACTIVO
+ * @author yesid y Cristian
+ *
+ */
 public enum EstadoActividad {
-	ACTIVO, INACTIVO
+	INACTIVO, ACTIVO
 }
+
+

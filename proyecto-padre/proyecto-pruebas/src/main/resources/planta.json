@@ -1,0 +1,19 @@
+{
+	"planta":[
+		{
+		"id":"4321",
+		"especie":"cosa1",
+		"genero_ID":"1234"
+		},
+		{
+		"id":"1",
+		"especie":"a",
+		"genero_ID":"1230"
+		},
+		{
+		"id":"4421",
+		"especie":"cosa2",
+		"genero_ID":"1233"
+		}
+	]
+}
