@@ -137,7 +137,7 @@ public class TestJPQL {
 	 */
 	@Test
 	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"planta.json"})
+	@UsingDataSet({"planta.json","genero.json","familia.json"})
 	public void listarPlantasPorFamiliaTest() {
 		Familia f = entityManager.find(Familia.class, "1234");
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_FAMILIA, Planta.class);
