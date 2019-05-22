@@ -3,7 +3,7 @@
 		{
 		"id":"4321",
 		"especie":"cosa1",
-		"genero_ID":"1234"
+		"genero_ID":"1235"
 		},
 		{
 		"id":"1",
@@ -14,6 +14,11 @@
 		"id":"4421",
 		"especie":"cosa2",
 		"genero_ID":"1233"
+		},
+		{
+		"id":"1321",
+		"especie":"Le Especie",
+		"genero_ID":"1461"
 		}
 	]
 }

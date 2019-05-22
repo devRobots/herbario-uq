@@ -88,12 +88,16 @@ public class TestTaller {
 
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "persona.json", "planta.json", "genero.json", "familia.json" })
+	@UsingDataSet({ "familia.json", "genero.json", "planta.json" })
 	public void testFamiliaConMasEspecies() {
-		TypedQuery<Familia> query = entityManager.createNamedQuery(Familia.FAMILIA_MAS_ESPECIES, Familia.class);
+		TypedQuery<Object[]> query = entityManager.createNamedQuery(Familia.FAMILIA_MAS_ESPECIES, Object[].class);
 
-		List<Familia> plantasPorFamilia = query.getResultList();
+		List<Object[]> plantasPorFamilia = query.getResultList();
+		
+		Familia f = (Familia) plantasPorFamilia.get(0)[0];
+		
+		System.out.println((Long) plantasPorFamilia.get(0)[1]);
 
-		assertEquals(1, plantasPorFamilia.size());
+		assertEquals("Rose", f.getNombre());
 	}
 }
