@@ -3,6 +3,7 @@ package co.cmamo;
 import static org.junit.Assert.*;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -91,15 +92,13 @@ public class TestTaller {
 
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "familia.json", "genero.json", "planta.json" })
+	@UsingDataSet({ "persona.json", "planta.json", "genero.json", "familia.json" })
 	public void testFamiliaConMasEspecies() {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Familia.FAMILIA_MAS_ESPECIES, Object[].class);
 
 		List<Object[]> plantasPorFamilia = query.getResultList();
 		
 		Familia f = (Familia) plantasPorFamilia.get(0)[0];
-		
-		System.out.println((Long) plantasPorFamilia.get(0)[1]);
 
 		assertEquals("Rose", f.getNombre());
 	}
@@ -128,7 +127,7 @@ public class TestTaller {
 	/**
 	 * 5
 	 * Test named query que dado el id de un genero permita obtener todas sus especies
-	 *  mï¿½todo Test que permita probar la consulta.
+	 *  método Test que permita probar la consulta.
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -136,7 +135,7 @@ public class TestTaller {
 	public void testEspeciesPorIdGenero() {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Genero.OBTENER_TODAS_LAS_PLANTAS, Planta.class);
 		
-		query.setParameter("id", "1234");
+		query.setParameter("id", "1235");
 		List<Planta> plantaResultados = query.getResultList();
 		
 		assertEquals(1, plantaResultados.size());
@@ -145,7 +144,7 @@ public class TestTaller {
 	/**
 	 * 6
 	 * named query que dada la cedula de una persona se obtenga el listado de 
-	 * registros (envï¿½os) que ha realizado
+	 * registros (envíos) que ha realizado
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -195,35 +194,40 @@ public class TestTaller {
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "peticion.json","persona.json"})
 	public void testObtenerListRecolectoresConPeticion() {
-		TypedQuery<Recolector> query = entityManager.createNamedQuery(Peticion.OBTENER_LISTADO_RECOLECTORES, Recolector.class);
+		TypedQuery<Persona> query = entityManager.createNamedQuery(Peticion.OBTENER_LISTADO_RECOLECTORES, Persona.class);
 		
-		List<Recolector> listaResultados = query.getResultList();
+		List<Persona> listaResultados = query.getResultList();
 		//REPARAR TODO DESPUES, REEPLANTAR
-		assertEquals(1, listaResultados.size());
+		assertEquals(3, listaResultados.size());
 	}
 	
 	/**
 	 * 9
 	 * named query que dada una fecha de un registro se permita obtener un listado con el Id
-	 * del registro, el nombre de los gï¿½neros y plantas asociados, la cï¿½dula y el email de la
-	 *  persona que hizo la solicitud. De igual forma debe crear un mï¿½todo Test que le permita
+	 * del registro, el nombre de los géneros y plantas asociados, la cédula y el email de la
+	 *  persona que hizo la solicitud. De igual forma debe crear un método Test que le permita
 	 *  probar el correcto funcionamiento de la consulta. 
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "peticion.json","planta.json","genero.json","persona.json"})
-	public void testObtenergetAllPeticionPorFecha() {
+	public void testObtenerAllPeticionPorFecha() {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA, Object[].class);
 		
 		String entrada = "1999-06-06 10:55:00";
-		DateFormat format = new SimpleDateFormat("YYYY/MM/DD HH:mm:ss");
-		Date fecha = format.parse(entrada);
+		DateFormat format = new SimpleDateFormat("YYYY/MM/dd HH:mm:ss");
+		Date fecha;
+		try {
+			fecha = format.parse(entrada);
+			query.setParameter("fecha", fecha);
+
+			
+			List<Object[]> listaResultados = query.getResultList();
+			assertEquals(1, listaResultados.size());
+		} catch (ParseException e) {
+			assertSame(e.getMessage(), null, e);
+		}
 		
-		query.setParameter("fecha", fecha);
-		
-		List<Object[]> listaResultados = query.getResultList();
-		//REPARAR TODO DESPUES, REEPLANTAR
-		assertEquals(1, listaResultados.size());
 	}
 	/**
 	 * 10

@@ -17,7 +17,7 @@ import javax.persistence.*;
 		@NamedQuery(name = Peticion.BUSCAR_POR_ID, query = "select peticion from Peticion peticion where peticion.id = :id"),
 		@NamedQuery(name = Peticion.LISTAR_TODOS, query = "select peticion from Peticion peticion")
 		
-		,@NamedQuery(name = Peticion.OBTENER_LISTADO_RECOLECTORES, query = "select DISTINCT peticion.persona from Peticion peticion where peticion.persona  = :per" )
+		,@NamedQuery(name = Peticion.OBTENER_LISTADO_RECOLECTORES, query = "select DISTINCT peticion.persona from Peticion peticion" )
 		,@NamedQuery(name = Peticion.OBTENER_POR_FECHA, query = "select peticion.id, peticion.especie.genero, peticion.especie, peticion.persona.id, peticion.persona.correo from Peticion peticion where peticion.fecha = :fecha")
 })
 public class Peticion implements Serializable {
