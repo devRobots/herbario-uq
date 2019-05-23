@@ -5,7 +5,7 @@
 			"estado": "0",
 			"respuesta": "La solicitud sigue en espera",
 			"especie_ID": "1",
-			"solicitante_ID": "1234",
+			"persona_ID": "1234",
 			"fecha": "1999-06-06 10:55:00"
 		},
 		{
@@ -13,24 +13,24 @@
 			"estado": "1",
 			"respuesta": "la solicitud fue aceptada",
 			"especie_ID": "4321",
-			"solicitante_ID": "4567",
-			"fecha": "1999-06-06 10:55:00"
+			"persona_ID": "4567",
+			"fecha": "1999-06-07 10:53:00"
 		},
 		{
 			"id": "1",
 			"estado": "1",
 			"respuesta": "la solicitud fue aceptada",
 			"especie_ID": "4421",
-			"solicitante_ID": "9765",
-			"fecha": "1999-06-06 10:55:00"
+			"persona_ID": "9765",
+			"fecha": "1999-06-08 11:55:00"
 		},
 		{
 			"id": "1236",
 			"estado": "0",
 			"respuesta": "no cumple los requisitos",
 			"especie_ID": "4421",
-			"solicitante_ID": "9765",
-			"fecha": "1999-06-06 10:55:00"
+			"persona_ID": "4567",
+			"fecha": "1999-08-06 10:06:66"
 		}
 	]
 }

@@ -15,8 +15,9 @@ import javax.persistence.*;
 @NamedQueries({
 	@NamedQuery(name = Familia.BUSCAR_POR_ID, query = "select familia from Familia familia where familia.id = :id"),
 	@NamedQuery(name = Familia.LISTAR_TODOS, query = "select familia from Familia familia"),
-	@NamedQuery(name = Familia.CONTAR_TODOS, query = "select count(f) from Familia f"),
-	@NamedQuery(name = Familia.FAMILIA_MAS_ESPECIES, query = "select max(count(f)) from Familia f")
+	@NamedQuery(name = Familia.CONTAR_TODOS, query = "select count(f) from Familia f")
+	,@NamedQuery(name = Familia.FAMILIA_MAS_ESPECIES, query = "select f, max(select count(p) from Genero g inner join g.especies p where g.familia.id = f.id) from Familia f")
+
 })
 public class Familia implements Serializable {
 
@@ -41,7 +42,7 @@ public class Familia implements Serializable {
 	/**
 	 * generos de la familia
 	 */
-	@OneToMany
+	@OneToMany(mappedBy="familia")
 	private List<Genero> generos;
 	/**
 	 * constructor de la familia

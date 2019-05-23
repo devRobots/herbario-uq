@@ -15,9 +15,11 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = Peticion.BUSCAR_POR_ID, query = "select peticion from Peticion peticion where peticion.id = :id"),
-		@NamedQuery(name = Peticion.LISTAR_TODOS, query = "select peticion from Peticion peticion"),
-		@NamedQuery(name = Peticion.CONTAR_PERSONAS_ACEPTADAS, query = "select count(p) from Peticion p where p.estado = :estado group by p.fecha")
-		})
+		@NamedQuery(name = Peticion.LISTAR_TODOS, query = "select peticion from Peticion peticion")
+		
+		,@NamedQuery(name = Peticion.OBTENER_LISTADO_RECOLECTORES, query = "select DISTINCT peticion.persona from Peticion peticion where peticion.persona  = :per" )
+		,@NamedQuery(name = Peticion.OBTENER_POR_FECHA, query = "select peticion.id, peticion.especie.genero, peticion.especie, peticion.persona.id, peticion.persona.correo from Peticion peticion where peticion.fecha = :fecha")
+})
 public class Peticion implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -25,6 +27,9 @@ public class Peticion implements Serializable {
 	public static final String BUSCAR_POR_ID = "Peticion_findById";
 	public static final String LISTAR_TODOS = "Peticion_getAll";
 	public static final String CONTAR_PERSONAS_ACEPTADAS = "Peticion_countPersonaAceptadas";
+	
+	public static final String OBTENER_LISTADO_RECOLECTORES = "Peticion_getRecolectores";
+	public static final String OBTENER_POR_FECHA = "Peticion_getAllConFechaPedido";
 
 	/**
 	 * Id de la peticion
@@ -40,8 +45,8 @@ public class Peticion implements Serializable {
 	/**
 	 * Persona que envia la solicitud
 	 */
-	@OneToOne
-	private Persona solicitante;
+	@ManyToOne
+	private Persona persona;
 	/**
 	 * Especie de la planta(nombre)
 	 */
@@ -152,10 +157,10 @@ public class Peticion implements Serializable {
 	}
 
 	public Persona getSolicitante() {
-		return solicitante;
+		return persona;
 	}
 
 	public void setSolicitante(Persona solicitante) {
-		this.solicitante = solicitante;
+		this.persona = solicitante;
 	}
 }

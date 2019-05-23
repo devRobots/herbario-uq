@@ -14,14 +14,17 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = Genero.BUSCAR_POR_ID, query = "select genero from Genero genero where genero.id = :id"),
-	@NamedQuery(name = Genero.LISTAR_TODOS, query = "select genero from Genero genero")
-})
+	@NamedQuery(name = Genero.LISTAR_TODOS, query = "select genero from Genero genero"),
+	
+	@NamedQuery(name = Genero.OBTENER_TODAS_LAS_PLANTAS, query ="select planta from Genero genero, IN(genero.especies) planta where genero.id = :id")
+	})
 public class Genero implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	public static final String BUSCAR_POR_ID = "Genero_findById";
 	public static final String LISTAR_TODOS = "Genero_getAll";
+	public static final String OBTENER_TODAS_LAS_PLANTAS = "Genero_getAllPlantas";
 	
 	/**
 	 * Id del Genero
@@ -42,7 +45,7 @@ public class Genero implements Serializable {
 	/**
 	 * Especies de la Planta
 	 */
-	@OneToMany
+	@OneToMany(mappedBy="genero")
 	private List<Planta> especies;
 
 	/**
