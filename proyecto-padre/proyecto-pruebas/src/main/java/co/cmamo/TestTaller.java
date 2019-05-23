@@ -25,6 +25,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.cmamo.dto.ConsultaDTO;
+import co.cmamo.dto.RegistroDTO;
 
 @RunWith(Arquillian.class)
 public class TestTaller {
@@ -214,13 +215,12 @@ public class TestTaller {
 	public void testObtenerAllPeticionPorFecha() {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA, Object[].class);
 		
-		String entrada = "1999-06-06 10:55:00";
-		DateFormat format = new SimpleDateFormat("YYYY/MM/dd HH:mm:ss");
+		String entrada = "1999/06/06 10:55:00";
+		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date fecha;
 		try {
 			fecha = format.parse(entrada);
 			query.setParameter("fecha", fecha);
-
 			
 			List<Object[]> listaResultados = query.getResultList();
 			assertEquals(1, listaResultados.size());
@@ -229,10 +229,32 @@ public class TestTaller {
 		}
 		
 	}
+	
 	/**
 	 * 10
 	 * 
 	 */
+	@Test
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "peticion.json","planta.json","genero.json","persona.json"})
+	public void testObtenerAllPeticionPorFechaDTO() {
+		TypedQuery<RegistroDTO> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA,RegistroDTO.class); 
+		
+		
+		String entrada = "1999/06/06 10:55:00";
+		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date fecha;
+		try {
+			fecha = format.parse(entrada);
+			query.setParameter("fecha", fecha);
+			
+			List<RegistroDTO> listaResultados = query.getResultList();
+			assertEquals(1, listaResultados.size());
+		} catch (ParseException e) {
+			assertSame(e.getMessage(), null, e);
+		}
+		
+	}
 	
 	
 	
