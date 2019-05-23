@@ -2,7 +2,6 @@ package co.cmamo;
 
 import static org.junit.Assert.*;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -52,6 +51,7 @@ public class TestTaller {
 	@UsingDataSet({ "familia.json" })
 	public void testContarFamilias() {
 		TypedQuery<Long> query = entityManager.createNamedQuery(Familia.CONTAR_TODOS, Long.class);
+		
 		long cantFamilias = query.getSingleResult();
 
 		assertEquals(4, cantFamilias);
@@ -85,9 +85,9 @@ public class TestTaller {
 	@UsingDataSet({ "persona.json" })
 	public void testListarCantRegistrosPorPersona() {
 		TypedQuery<ConsultaDTO> query = entityManager.createNamedQuery(Persona.CONSULTA_DTO, ConsultaDTO.class);
-
+		
 		List<ConsultaDTO> personasSinPeticiones = query.getResultList();
-
+		
 		assertEquals(3, personasSinPeticiones.size());
 	}
 
@@ -128,7 +128,7 @@ public class TestTaller {
 	/**
 	 * 5
 	 * Test named query que dado el id de un genero permita obtener todas sus especies
-	 *  método Test que permita probar la consulta.
+	 *  mï¿½todo Test que permita probar la consulta.
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -145,7 +145,7 @@ public class TestTaller {
 	/**
 	 * 6
 	 * named query que dada la cedula de una persona se obtenga el listado de 
-	 * registros (envíos) que ha realizado
+	 * registros (envï¿½os) que ha realizado
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -205,8 +205,8 @@ public class TestTaller {
 	/**
 	 * 9
 	 * named query que dada una fecha de un registro se permita obtener un listado con el Id
-	 * del registro, el nombre de los géneros y plantas asociados, la cédula y el email de la
-	 *  persona que hizo la solicitud. De igual forma debe crear un método Test que le permita
+	 * del registro, el nombre de los gï¿½neros y plantas asociados, la cï¿½dula y el email de la
+	 *  persona que hizo la solicitud. De igual forma debe crear un mï¿½todo Test que le permita
 	 *  probar el correcto funcionamiento de la consulta. 
 	 */
 	@Test
@@ -215,11 +215,11 @@ public class TestTaller {
 	public void testObtenerAllPeticionPorFecha() {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA, Object[].class);
 		
-		String entrada = "1999/06/06 10:55:00";
-		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date fecha;
-		try {
-			fecha = format.parse(entrada);
+		try {			
+			String entrada = "1999-06-06 10:55:00";
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Date fecha = format.parse(entrada);
+			
 			query.setParameter("fecha", fecha);
 			
 			List<Object[]> listaResultados = query.getResultList();
@@ -227,35 +227,10 @@ public class TestTaller {
 		} catch (ParseException e) {
 			assertSame(e.getMessage(), null, e);
 		}
-		
 	}
 	
 	/**
 	 * 10
 	 * 
 	 */
-	@Test
-	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "peticion.json","planta.json","genero.json","persona.json"})
-	public void testObtenerAllPeticionPorFechaDTO() {
-		TypedQuery<RegistroDTO> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA,RegistroDTO.class); 
-		
-		
-		String entrada = "1999/06/06 10:55:00";
-		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date fecha;
-		try {
-			fecha = format.parse(entrada);
-			query.setParameter("fecha", fecha);
-			
-			List<RegistroDTO> listaResultados = query.getResultList();
-			assertEquals(1, listaResultados.size());
-		} catch (ParseException e) {
-			assertSame(e.getMessage(), null, e);
-		}
-		
-	}
-	
-	
-	
 }
