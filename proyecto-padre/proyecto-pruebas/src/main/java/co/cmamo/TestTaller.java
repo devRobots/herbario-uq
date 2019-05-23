@@ -2,7 +2,6 @@ package co.cmamo;
 
 import static org.junit.Assert.*;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -51,6 +50,7 @@ public class TestTaller {
 	@UsingDataSet({ "familia.json" })
 	public void testContarFamilias() {
 		TypedQuery<Long> query = entityManager.createNamedQuery(Familia.CONTAR_TODOS, Long.class);
+		
 		long cantFamilias = query.getSingleResult();
 
 		assertEquals(4, cantFamilias);
@@ -84,9 +84,9 @@ public class TestTaller {
 	@UsingDataSet({ "persona.json" })
 	public void testListarCantRegistrosPorPersona() {
 		TypedQuery<ConsultaDTO> query = entityManager.createNamedQuery(Persona.CONSULTA_DTO, ConsultaDTO.class);
-
+		
 		List<ConsultaDTO> personasSinPeticiones = query.getResultList();
-
+		
 		assertEquals(3, personasSinPeticiones.size());
 	}
 
@@ -214,26 +214,22 @@ public class TestTaller {
 	public void testObtenerAllPeticionPorFecha() {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA, Object[].class);
 		
-		String entrada = "1999-06-06 10:55:00";
-		DateFormat format = new SimpleDateFormat("YYYY/MM/dd HH:mm:ss");
-		Date fecha;
-		try {
-			fecha = format.parse(entrada);
+		try {			
+			String entrada = "1999-06-06 10:55:00";
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Date fecha = format.parse(entrada);
+			
 			query.setParameter("fecha", fecha);
-
 			
 			List<Object[]> listaResultados = query.getResultList();
 			assertEquals(1, listaResultados.size());
 		} catch (ParseException e) {
 			assertSame(e.getMessage(), null, e);
 		}
-		
 	}
+	
 	/**
 	 * 10
 	 * 
 	 */
-	
-	
-	
 }
