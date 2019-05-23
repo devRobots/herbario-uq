@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.cmamo.dto.ConsultaDTO;
+import co.cmamo.dto.RegistroDTO;
 
 @RunWith(Arquillian.class)
 public class TestTaller {
@@ -128,7 +129,7 @@ public class TestTaller {
 	/**
 	 * 5
 	 * Test named query que dado el id de un genero permita obtener todas sus especies
-	 *  método Test que permita probar la consulta.
+	 *  mï¿½todo Test que permita probar la consulta.
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -145,7 +146,7 @@ public class TestTaller {
 	/**
 	 * 6
 	 * named query que dada la cedula de una persona se obtenga el listado de 
-	 * registros (envíos) que ha realizado
+	 * registros (envï¿½os) que ha realizado
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -205,8 +206,8 @@ public class TestTaller {
 	/**
 	 * 9
 	 * named query que dada una fecha de un registro se permita obtener un listado con el Id
-	 * del registro, el nombre de los géneros y plantas asociados, la cédula y el email de la
-	 *  persona que hizo la solicitud. De igual forma debe crear un método Test que le permita
+	 * del registro, el nombre de los gï¿½neros y plantas asociados, la cï¿½dula y el email de la
+	 *  persona que hizo la solicitud. De igual forma debe crear un mï¿½todo Test que le permita
 	 *  probar el correcto funcionamiento de la consulta. 
 	 */
 	@Test

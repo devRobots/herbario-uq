@@ -19,6 +19,11 @@ import javax.persistence.*;
 		@NamedQuery(name = Peticion.CONTAR_PERSONAS_ACEPTADAS, query = "select count(peticion.persona) from Peticion peticion where peticion.estado = :estado group by peticion.fecha"),
 		@NamedQuery(name = Peticion.OBTENER_LISTADO_RECOLECTORES, query = "select DISTINCT peticion.persona from Peticion peticion" ),
 		@NamedQuery(name = Peticion.OBTENER_POR_FECHA, query = "select peticion.id, peticion.especie.genero, peticion.especie, peticion.persona.id, peticion.persona.correo from Peticion peticion where peticion.fecha = :fecha")
+		@NamedQuery(name = Peticion.LISTAR_TODOS, query = "select peticion from Peticion peticion")
+		
+		,@NamedQuery(name = Peticion.OBTENER_LISTADO_RECOLECTORES, query = "select DISTINCT peticion.persona from Peticion peticion" )
+		,@NamedQuery(name = Peticion.OBTENER_POR_FECHA, query = "select peticion.id, peticion.especie.genero, peticion.especie, peticion.persona.id, peticion.persona.correo from Peticion peticion where peticion.fecha = :fecha")
+		,@NamedQuery(name = Peticion.OBTENER_POR_FECHA_DTO, query ="select new co.cmamo.dto.RegistroDTO(peticion.id, peticion.especie.genero, peticion.especie, peticion.persona.id, peticion.persona.correo) from Peticion peticion where peticion.fecha = :fecha")
 })
 public class Peticion implements Serializable {
 
@@ -30,6 +35,7 @@ public class Peticion implements Serializable {
 	
 	public static final String OBTENER_LISTADO_RECOLECTORES = "Peticion_getRecolectores";
 	public static final String OBTENER_POR_FECHA = "Peticion_getAllConFechaPedido";
+	public static final String OBTENER_POR_FECHA_DTO = "Peticion_getAllConFechaRegistroDTO";
 
 	/**
 	 * Id de la peticion
