@@ -52,7 +52,7 @@ public class TestJPQL {
 		
 		List<Familia> familias = query.getResultList();
 
-		assertEquals(4, familias.size());
+		assertEquals(20, familias.size());
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class TestJPQL {
 		TypedQuery<Genero> query = entityManager.createNamedQuery(Genero.LISTAR_TODOS, Genero.class);
 		List<Genero> generos = query.getResultList();
 
-		assertEquals(4, generos.size());
+		assertEquals(40, generos.size());
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class TestJPQL {
 
 		List<Planta> plantas = query.getResultList();
 		
-		assertEquals(4, plantas.size());
+		assertEquals(80, plantas.size());
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class TestJPQL {
 		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.LISTAR_TODOS, Persona.class);
 		List<Persona> personas = query.getResultList();
 
-		assertEquals(3, personas.size());
+		assertEquals(20, personas.size());
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class TestJPQL {
 		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR_TODOS, Peticion.class);
 		List<Peticion> peticiones = query.getResultList();
 
-		assertEquals(4, peticiones.size());
+		assertEquals(40, peticiones.size());
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class TestJPQL {
 	public void logInTest() {
 		try {
 			TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.INICIAR_SESION, Persona.class);
-			query.setParameter("correo", "jc@mail.com");
-			query.setParameter("clave", "12345");
+			query.setParameter("correo", "montes.nascetur.ridiculus@lectussitamet.ca");
+			query.setParameter("clave", "9281");
 			Persona p = query.getSingleResult();
 			assertNotNull(p);
 		} catch (Exception e) {
@@ -134,10 +134,10 @@ public class TestJPQL {
 	@UsingDataSet({ "planta.json" })
 	public void listarPlantasPorGeneroTest() {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_GENERO, Planta.class);
-		query.setParameter("genero", "1234");
+		query.setParameter("genero", "34");
 		List<Planta> plantas = query.getResultList();
 
-		assertEquals(1, plantas.size());
+		assertEquals(2, plantas.size());
 	}
 
 	/**
@@ -148,12 +148,13 @@ public class TestJPQL {
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "planta.json", "genero.json", "familia.json" })
 	public void listarPlantasPorFamiliaTest() {
-		Familia f = entityManager.find(Familia.class, "1234");
+		Familia f = entityManager.find(Familia.class, "10");
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_FAMILIA, Planta.class);
 		query.setParameter("familia", f);
+		
 		List<Planta> plantas = query.getResultList();
 
-		assertEquals(2, plantas.size());
+		assertEquals(13, plantas.size());
 	}
 
 }

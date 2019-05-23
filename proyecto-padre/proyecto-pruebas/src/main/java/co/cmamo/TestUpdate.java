@@ -45,13 +45,13 @@ public class TestUpdate {
 	@UsingDataSet({"persona.json"})
 	public void updatePersonaTest() {
 		//Obtener Administrador a modificar
-		Administrador a = entityManager.find(Administrador.class, "1234");
+		Administrador a = entityManager.find(Administrador.class, "6");
 		//Edicion de la clave del Administrador
 		a.setClave("12345678");
 		//Modificacion del Administrador
 		entityManager.merge(a);
 		//Obtener administrador ya modificado
-		Administrador actualizado = entityManager.find(Administrador.class, "1234");
+		Administrador actualizado = entityManager.find(Administrador.class, "6");
 		//Verificar de que el administrador cambio su clave
 		
 		assertEquals("12345678", actualizado.getClave());
@@ -83,13 +83,13 @@ public class TestUpdate {
 	@UsingDataSet({"familia.json"})
 	public void updateFamiliaTest() {
 		//Obtener familia a modificar
-		Familia f = entityManager.find(Familia.class, "1234");
+		Familia f = entityManager.find(Familia.class, "14");
 		//Edicion del nombre a modificar
 		f.setNombre("holi");
 		//Modificacion de la familia
 		entityManager.merge(f);
 		//Obtener familia ya modificado
-		Familia actualizado = entityManager.find(Familia.class, "1234");
+		Familia actualizado = entityManager.find(Familia.class, "14");
 		//Verificar de que la familia cambio su nombre
 			
 		assertEquals("holi", actualizado.getNombre());
@@ -102,13 +102,13 @@ public class TestUpdate {
 	@UsingDataSet({"genero.json"})
 	public void updateGeneroTest() {
 		//Obtener Genero a modificar
-		Genero g = entityManager.find(Genero.class, "1234");
+		Genero g = entityManager.find(Genero.class, "25");
 		//Edicion del nombre a modificar
 		g.setNombre("hello");
 		//Modificacion del Genero
 		entityManager.merge(g);
 		//Obtener Genero ya modificado
-		Genero actualizado = entityManager.find(Genero.class, "1234");
+		Genero actualizado = entityManager.find(Genero.class, "25");
 		//Verificar de que el Genero cambio su nombre
 			
 		assertEquals("hello", actualizado.getNombre());
@@ -121,13 +121,13 @@ public class TestUpdate {
 	@UsingDataSet({"peticion.json"})
 	public void updatePeticionTest() {
 		//Obtener Peticion a modificar
-		Peticion p = entityManager.find(Peticion.class, "1234");
+		Peticion p = entityManager.find(Peticion.class, "31");
 		//Edicion del nombre a modificar
 		p.setRespuesta("la solicitud fue recibida");
 		//Modificacion del Genero
 		entityManager.merge(p);
 		//Obtener Genero ya modificado
-		Peticion actualizado = entityManager.find(Peticion.class, "1234");
+		Peticion actualizado = entityManager.find(Peticion.class, "31");
 		//Verificar de que el Genero cambio su nombre
 			
 		assertEquals("la solicitud fue recibida", actualizado.getRespuesta());

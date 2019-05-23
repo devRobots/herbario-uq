@@ -1,51 +1,254 @@
 {
-	"PERSONA": [
+	"persona": [
 		{
-			"id": "1234",
-			"dtype": "Administrador",
-			"nombre": "Juliana",
-			"apellido": "Cardenas",
-			"clave": "12345",
-			"correo": "jc@mail.com",
-			"estado": "1"
-		},
-		{
-			"id": "4567",
-			"dtype": "Recolector",
-			"nombre": "Jorge",
-			"apellido": "Suarez",
-			"clave": "12346",
-			"correo": "jz@mail.com",
-			"estado": "1"
-		},
-		{
-			"id": "9765",
+			"id": "1",
 			"dtype": "Empleado",
-			"nombre": "Fernanda",
-			"apellido": "Montoya",
-			"clave": "12345",
-			"correo": "fm@mail.com",
-			"estado": "1"
-		}
-	],
-	"RECOLECTOR": [
-		{
-			"id": "4567"
-		}
-	],
-	"EMPLEADO": [
-		{
-			"id": "9765",
-			"salario": 20007000
+			"nombre": "Dahlia",
+			"apellido": "Webster",
+			"clave": "6776",
+			"correo": "ac@et.org",
+			"estado": 0
 		},
 		{
-			"id": "1235",
-			"salario": 50007000
+			"id": "2",
+			"dtype": "Recolector",
+			"nombre": "Lawrence",
+			"apellido": "Barnett",
+			"clave": "4605",
+			"correo": "semper@imperdieteratnonummy.edu",
+			"estado": 1
+		},
+		{
+			"id": "3",
+			"dtype": "Administrador",
+			"nombre": "Drake",
+			"apellido": "Greene",
+			"clave": "8595",
+			"correo": "lectus@Duismienim.net",
+			"estado": 1
+		},
+		{
+			"id": "4",
+			"dtype": "Recolector",
+			"nombre": "Zachery",
+			"apellido": "Owens",
+			"clave": "2633",
+			"correo": "interdum.Nunc@diam.org",
+			"estado": 0
+		},
+		{
+			"id": "5",
+			"dtype": "Recolector",
+			"nombre": "Leonard",
+			"apellido": "Robles",
+			"clave": "6483",
+			"correo": "vulputate.mauris.sagittis@Nullatempor.edu",
+			"estado": 1
+		},
+		{
+			"id": "6",
+			"dtype": "Administrador",
+			"nombre": "Paloma",
+			"apellido": "Wade",
+			"clave": "1508",
+			"correo": "dolor.Fusce.mi@Duisdignissimtempor.net",
+			"estado": 1
+		},
+		{
+			"id": "7",
+			"dtype": "Recolector",
+			"nombre": "Theodore",
+			"apellido": "Boyer",
+			"clave": "9924",
+			"correo": "felis.orci.adipiscing@Donectincidunt.com",
+			"estado": 1
+		},
+		{
+			"id": "8",
+			"dtype": "Empleado",
+			"nombre": "Aidan",
+			"apellido": "Vaughn",
+			"clave": "5388",
+			"correo": "molestie@Donec.com",
+			"estado": 0
+		},
+		{
+			"id": "9",
+			"dtype": "Administrador",
+			"nombre": "Charlotte",
+			"apellido": "Boyer",
+			"clave": "6810",
+			"correo": "porta.elit.a@Nullamfeugiat.com",
+			"estado": 0
+		},
+		{
+			"id": "10",
+			"dtype": "Recolector",
+			"nombre": "Meghan",
+			"apellido": "Schultz",
+			"clave": "5148",
+			"correo": "orci.Phasellus@augueeu.com",
+			"estado": 0
+		},
+		{
+			"id": "11",
+			"dtype": "Recolector",
+			"nombre": "Hakeem",
+			"apellido": "Ferrell",
+			"clave": "1928",
+			"correo": "senectus@leo.org",
+			"estado": 1
+		},
+		{
+			"id": "12",
+			"dtype": "Recolector",
+			"nombre": "Illiana",
+			"apellido": "Davidson",
+			"clave": "7238",
+			"correo": "dictum@nisi.net",
+			"estado": 1
+		},
+		{
+			"id": "13",
+			"dtype": "Recolector",
+			"nombre": "Gregory",
+			"apellido": "Haney",
+			"clave": "9281",
+			"correo": "montes.nascetur.ridiculus@lectussitamet.ca",
+			"estado": 1
+		},
+		{
+			"id": "14",
+			"dtype": "Empleado",
+			"nombre": "Leigh",
+			"apellido": "Joyner",
+			"clave": "8169",
+			"correo": "aliquet.diam@ametnullaDonec.edu",
+			"estado": 1
+		},
+		{
+			"id": "15",
+			"dtype": "Empleado",
+			"nombre": "Kimberley",
+			"apellido": "Snow",
+			"clave": "2108",
+			"correo": "Cum.sociis@idsapien.com",
+			"estado": 1
+		},
+		{
+			"id": "16",
+			"dtype": "Administrador",
+			"nombre": "Kasimir",
+			"apellido": "Gonzalez",
+			"clave": "5536",
+			"correo": "eros.non@egestasAliquamfringilla.net",
+			"estado": 1
+		},
+		{
+			"id": "17",
+			"dtype": "Recolector",
+			"nombre": "Iliana",
+			"apellido": "Finley",
+			"clave": "8848",
+			"correo": "magna@eliterat.co.uk",
+			"estado": 0
+		},
+		{
+			"id": "18",
+			"dtype": "Administrador",
+			"nombre": "Charlotte",
+			"apellido": "Goodwin",
+			"clave": "8945",
+			"correo": "sed@arcu.co.uk",
+			"estado": 1
+		},
+		{
+			"id": "19",
+			"dtype": "Recolector",
+			"nombre": "Branden",
+			"apellido": "Greer",
+			"clave": "8258",
+			"correo": "posuere@Nunc.co.uk",
+			"estado": 1
+		},
+		{
+			"id": "20",
+			"dtype": "Recolector",
+			"nombre": "Dora",
+			"apellido": "Simon",
+			"clave": "5200",
+			"correo": "mus.Aenean@lacinia.co.uk",
+			"estado": 1
 		}
 	],
-	"ADMINISTRADOR": [
+	"Administrador": [
 		{
-			"id": "1234"
+			"id": "3"
+		},
+		{
+			"id": "6"
+		},
+		{
+			"id": "9"
+		},
+		{
+			"id": "16"
+		},
+		{
+			"id": "18"
+		}
+	],
+	"Recolector": [
+		{
+			"id": "2"
+		},
+		{
+			"id": "4"
+		},
+		{
+			"id": "5"
+		},
+		{
+			"id": "7"
+		},
+		{
+			"id": "10"
+		},
+		{
+			"id": "11"
+		},
+		{
+			"id": "12"
+		},
+		{
+			"id": "13"
+		},
+		{
+			"id": "17"
+		},
+		{
+			"id": "19"
+		},
+		{
+			"id": "20"
+		}
+	],
+	"Empleado" : [
+		{
+			"id": "1",
+			"salario": 700000
+		},
+		{
+			"id": "8",
+			"salario": 700000
+		},
+		{
+			"id": "14",
+			"salario": 700000
+		},
+		{
+			"id": "15",
+			"salario": 700000
 		}
 	]
 }

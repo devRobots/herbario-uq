@@ -53,7 +53,7 @@ public class TestTaller {
 		
 		long cantFamilias = query.getSingleResult();
 
-		assertEquals(4, cantFamilias);
+		assertEquals(20, cantFamilias);
 	}
 
 	@Test
@@ -76,7 +76,7 @@ public class TestTaller {
 
 		List<Persona> personasSinPeticiones = query.getResultList();
 
-		assertEquals(3, personasSinPeticiones.size());
+		assertEquals(20, personasSinPeticiones.size());
 	}
 
 	@Test
@@ -87,7 +87,7 @@ public class TestTaller {
 		
 		List<ConsultaDTO> personasSinPeticiones = query.getResultList();
 		
-		assertEquals(3, personasSinPeticiones.size());
+		assertEquals(20, personasSinPeticiones.size());
 	}
 
 	@Test
@@ -100,7 +100,8 @@ public class TestTaller {
 		
 		Familia f = (Familia) plantasPorFamilia.get(0)[0];
 
-		assertEquals("Rose", f.getNombre());
+		// TODO: :v
+		assertEquals("Abel", f.getNombre());
 	}
 	
 	/**
@@ -118,10 +119,10 @@ public class TestTaller {
 	public void testFamiliaPorIdPlanta() {
 		TypedQuery<Familia> query = entityManager.createNamedQuery(Planta.OBTENER_FAMILIA, Familia.class);
 
-		query.setParameter("id", "4321");
+		query.setParameter("id", "17");
 		List<Familia> familiaResultados = query.getResultList();
 
-		assertEquals(familiaResultados.get(0).getNombre(), "Rose");
+		assertEquals("Wang", familiaResultados.get(0).getNombre());
 	}
 	
 	/**
@@ -135,10 +136,10 @@ public class TestTaller {
 	public void testEspeciesPorIdGenero() {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Genero.OBTENER_TODAS_LAS_PLANTAS, Planta.class);
 		
-		query.setParameter("id", "1235");
+		query.setParameter("id", "14");
 		List<Planta> plantaResultados = query.getResultList();
 		
-		assertEquals(1, plantaResultados.size());
+		assertEquals(5, plantaResultados.size());
 	}
 	
 	/**
@@ -182,7 +183,7 @@ public class TestTaller {
 		
 		System.out.println("PUNTO 7 GUIA 9 FIN ------------  \n");
 
-		assertEquals(3, listaResultados.size());
+		assertEquals(20, listaResultados.size());
 	}
 	/**
 	 * 8
@@ -198,7 +199,7 @@ public class TestTaller {
 		
 		List<Persona> listaResultados = query.getResultList();
 		//REPARAR TODO DESPUES, REEPLANTAR
-		assertEquals(3, listaResultados.size());
+		assertEquals(17, listaResultados.size());
 	}
 	
 	/**
@@ -215,7 +216,7 @@ public class TestTaller {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA, Object[].class);
 		
 		try {			
-			String entrada = "1999-06-06 10:55:00";
+			String entrada = "2018-05-09 11:58:18";
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date fecha = format.parse(entrada);
 			

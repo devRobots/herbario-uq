@@ -15,7 +15,6 @@ import javax.persistence.*;
 @NamedQueries({
 	@NamedQuery(name = Genero.BUSCAR_POR_ID, query = "select genero from Genero genero where genero.id = :id"),
 	@NamedQuery(name = Genero.LISTAR_TODOS, query = "select genero from Genero genero"),
-	
 	@NamedQuery(name = Genero.OBTENER_TODAS_LAS_PLANTAS, query ="select planta from Genero genero, IN(genero.especies) planta where genero.id = :id")
 	})
 public class Genero implements Serializable {
