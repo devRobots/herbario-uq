@@ -1,7 +1,7 @@
 {
 	"GENERO": [
 		{
-			"id": "1234",
+			"id": "1235",
 			"nombre": "Roselin",
 			"familia_ID":"1234"			
 		},
@@ -19,6 +19,11 @@
 			"id": "1223",
 			"nombre": "Captusini",
 			"familia_ID":"1534"			
+		},
+		{
+			"id": "1261",
+			"nombre": "Cosini",
+			"familia_ID":"1434"
 		}
 	]
 }

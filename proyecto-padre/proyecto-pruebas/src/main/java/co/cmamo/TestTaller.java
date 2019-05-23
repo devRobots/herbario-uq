@@ -91,13 +91,15 @@ public class TestTaller {
 
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "persona.json", "planta.json", "genero.json", "familia.json" })
+	@UsingDataSet({ "familia.json", "genero.json", "planta.json" })
 	public void testFamiliaConMasEspecies() {
 		TypedQuery<Object[]> query = entityManager.createNamedQuery(Familia.FAMILIA_MAS_ESPECIES, Object[].class);
 
 		List<Object[]> plantasPorFamilia = query.getResultList();
 		
 		Familia f = (Familia) plantasPorFamilia.get(0)[0];
+		
+		System.out.println((Long) plantasPorFamilia.get(0)[1]);
 
 		assertEquals("Rose", f.getNombre());
 	}
@@ -126,7 +128,7 @@ public class TestTaller {
 	/**
 	 * 5
 	 * Test named query que dado el id de un genero permita obtener todas sus especies
-	 *  método Test que permita probar la consulta.
+	 *  mï¿½todo Test que permita probar la consulta.
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -143,7 +145,7 @@ public class TestTaller {
 	/**
 	 * 6
 	 * named query que dada la cedula de una persona se obtenga el listado de 
-	 * registros (envíos) que ha realizado
+	 * registros (envï¿½os) que ha realizado
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -203,8 +205,8 @@ public class TestTaller {
 	/**
 	 * 9
 	 * named query que dada una fecha de un registro se permita obtener un listado con el Id
-	 * del registro, el nombre de los géneros y plantas asociados, la cédula y el email de la
-	 *  persona que hizo la solicitud. De igual forma debe crear un método Test que le permita
+	 * del registro, el nombre de los gï¿½neros y plantas asociados, la cï¿½dula y el email de la
+	 *  persona que hizo la solicitud. De igual forma debe crear un mï¿½todo Test que le permita
 	 *  probar el correcto funcionamiento de la consulta. 
 	 */
 	@Test
