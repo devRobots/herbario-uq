@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.cmamo.dto.ConsultaDTO;
-import co.cmamo.dto.RegistroDTO;
 
 @RunWith(Arquillian.class)
 public class TestTaller {
@@ -71,9 +70,9 @@ public class TestTaller {
 		TypedQuery<Long> query = entityManager.createNamedQuery(Peticion.CONTAR_PERSONAS_ACEPTADAS, Long.class);
 		query.setParameter("estado", EstadoPeticion.APROBADO);
 
-		long cantPersonasAceptadas = query.getSingleResult();
-
-		assertEquals(2, cantPersonasAceptadas);
+		List<Long> cantPersonasAceptadas = query.getResultList();
+		
+		assertEquals(8, cantPersonasAceptadas.size());
 	}
 
 	/**
