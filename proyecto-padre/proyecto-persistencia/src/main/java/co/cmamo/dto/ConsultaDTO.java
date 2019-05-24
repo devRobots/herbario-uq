@@ -2,19 +2,16 @@ package co.cmamo.dto;
 
 import java.util.List;
 
-import co.cmamo.Peticion;
+import co.cmamo.*;
 
 public class ConsultaDTO {
 	private String id;
-	private int cantRegistros;
+	private long cantRegistros;
 	
-	public ConsultaDTO() {
-		id = ":v";
-		cantRegistros = 0;
-	}
-	
-	public ConsultaDTO(String id, List<Peticion> peticiones) {
-		cantRegistros = peticiones.isEmpty()? 0 : peticiones.size();
+	public ConsultaDTO(String id, Object registros_raw) {
+		@SuppressWarnings("unchecked")
+		List<Peticion> registros = (List<Peticion>) registros_raw;
+		this.cantRegistros = registros == null ? 0 : registros.size();
 		this.id = id;
 	}
 
@@ -26,11 +23,11 @@ public class ConsultaDTO {
 		this.id = id;
 	}
 
-	public int getCantRegistros() {
+	public long getCantRegistros() {
 		return cantRegistros;
 	}
 
-	public void setCantRegistros(int cantRegistros) {
+	public void setCantRegistros(long cantRegistros) {
 		this.cantRegistros = cantRegistros;
 	}
 }

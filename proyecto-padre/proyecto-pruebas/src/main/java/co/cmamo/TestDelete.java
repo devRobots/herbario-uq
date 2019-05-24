@@ -45,10 +45,10 @@ public class TestDelete {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"familia.json"})
 	public void eliminarFamiliaTest() {
-		Familia e = entityManager.find(Familia.class, "1534");
+		Familia e = entityManager.find(Familia.class, "2");
 		entityManager.remove(e);
 		
-		Familia a = entityManager.find(Familia.class, "1534");
+		Familia a = entityManager.find(Familia.class, "2");
 		assertNull(a);
 	}
 	/**
@@ -58,10 +58,10 @@ public class TestDelete {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"genero.json"})
 	public void eliminarGeneroTest() {
-		Genero e = entityManager.find(Genero.class, "1234");
+		Genero e = entityManager.find(Genero.class, "14");
 		entityManager.remove(e);
 		
-		Genero a = entityManager.find(Genero.class, "1234");
+		Genero a = entityManager.find(Genero.class, "14");
 		assertNull(a);
 	}
 	/**
@@ -71,10 +71,10 @@ public class TestDelete {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
 	public void eliminarPersonaTest() {
-		Administrador e = entityManager.find(Administrador.class, "1234");
+		Administrador e = entityManager.find(Administrador.class, "16");
 		entityManager.remove(e);
 
-		Administrador a = entityManager.find(Administrador.class, "1234");
+		Administrador a = entityManager.find(Administrador.class, "16");
 		
 		assertNull(a);
 	}
@@ -85,10 +85,10 @@ public class TestDelete {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"planta.json"})
 	public void eliminarPlantaTest() {
-		Planta e = entityManager.find(Planta.class, "4321");
+		Planta e = entityManager.find(Planta.class, "11");
 		entityManager.remove(e);
 		
-		Planta a = entityManager.find(Planta.class, "4321");
+		Planta a = entityManager.find(Planta.class, "11");
 		assertNull(a);
 	}
 	/**
@@ -98,10 +98,10 @@ public class TestDelete {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"peticion.json"})
 	public void eliminarPeticionTest() {
-		Peticion e = entityManager.find(Peticion.class, "1234");
+		Peticion e = entityManager.find(Peticion.class, "23");
 		entityManager.remove(e);
 		
-		Peticion a = entityManager.find(Peticion.class, "1234");
+		Peticion a = entityManager.find(Peticion.class, "23");
 		
 		assertNull(a);
 	}

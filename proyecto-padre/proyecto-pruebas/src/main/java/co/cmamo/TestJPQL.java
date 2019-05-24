@@ -40,110 +40,121 @@ public class TestJPQL {
 				.addAsResource("persistenceForTest.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
+
 	/**
 	 * listar familias test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"familia.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "familia.json" })
 	public void listarFamiliasTest() {
 		TypedQuery<Familia> query = entityManager.createNamedQuery(Familia.LISTAR_TODOS, Familia.class);
-		List<Familia> familias = query.getResultList();
 		
-		assertEquals(4, familias.size());
+		List<Familia> familias = query.getResultList();
+
+		assertEquals(20, familias.size());
 	}
+
 	/**
 	 * listar Generos test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"genero.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "genero.json" })
 	public void listarGenerosTest() {
 		TypedQuery<Genero> query = entityManager.createNamedQuery(Genero.LISTAR_TODOS, Genero.class);
 		List<Genero> generos = query.getResultList();
-		
-		assertEquals(4, generos.size());
+
+		assertEquals(40, generos.size());
 	}
+
 	/**
 	 * listar plantas test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"planta.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "planta.json" })
 	public void listarPlantasTest() {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_TODOS, Planta.class);
+
 		List<Planta> plantas = query.getResultList();
 		
-		assertEquals(3, plantas.size());
+		assertEquals(80, plantas.size());
 	}
+
 	/**
 	 * listar personas test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"persona.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "persona.json" })
 	public void listarPersonasTest() {
 		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.LISTAR_TODOS, Persona.class);
 		List<Persona> personas = query.getResultList();
-		
-		assertEquals(3, personas.size());
+
+		assertEquals(20, personas.size());
 	}
+
 	/**
 	 * lista de peticiones test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"peticion.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "peticion.json" })
 	public void listarPeticionTest() {
 		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR_TODOS, Peticion.class);
 		List<Peticion> peticiones = query.getResultList();
-		
-		assertEquals(4, peticiones.size());
+
+		assertEquals(40, peticiones.size());
 	}
+
 	/**
-	 *  LogInTest
+	 * LogInTest
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"persona.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "persona.json" })
 	public void logInTest() {
 		try {
 			TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.INICIAR_SESION, Persona.class);
-			query.setParameter("correo", "jc@mail.com");
-			query.setParameter("clave", "12345");
+			query.setParameter("correo", "montes.nascetur.ridiculus@lectussitamet.ca");
+			query.setParameter("clave", "9281");
 			Persona p = query.getSingleResult();
 			assertNotNull(p);
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
 	}
+
 	/**
 	 * Listar Planta por Genero Test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"planta.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "planta.json" })
 	public void listarPlantasPorGeneroTest() {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_GENERO, Planta.class);
-		query.setParameter("genero", "1234");
+		query.setParameter("genero", "34");
 		List<Planta> plantas = query.getResultList();
-		
-		assertEquals(1, plantas.size());
+
+		assertEquals(2, plantas.size());
 	}
+
 	/**
 	 * 
 	 * Listar Planta por Familia Test
 	 */
 	@Test
-	@Transactional(value=TransactionMode.ROLLBACK)
-	@UsingDataSet({"planta.json","genero.json","familia.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "planta.json", "genero.json", "familia.json" })
 	public void listarPlantasPorFamiliaTest() {
-		Familia f = entityManager.find(Familia.class, "1234");
+		Familia f = entityManager.find(Familia.class, "10");
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_FAMILIA, Planta.class);
 		query.setParameter("familia", f);
-		List<Planta> plantas = query.getResultList();
 		
-		assertEquals(2, plantas.size());
+		List<Planta> plantas = query.getResultList();
+
+		assertEquals(13, plantas.size());
 	}
-	
+
 }

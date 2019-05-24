@@ -11,6 +11,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  * Informacion basica de cada una de las personas asociadas a la entidad
@@ -27,7 +28,13 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona"),
 	@NamedQuery(name = Persona.INICIAR_SESION, query = "select persona from Persona persona where persona.correo = :correo and persona.clave = :clave"),
 	@NamedQuery(name = Persona.LISTAR_SIN_PETICIONES, query = "select persona from Persona persona left join persona.peticiones peticiones where persona.peticiones is empty"),
-	@NamedQuery(name = Persona.CONSULTA_DTO, query = "select p from Persona p")
+	@NamedQuery(name = Persona.CONSULTA_DTO, query = "select new co.cmamo.dto.ConsultaDTO(persona.id, peticiones) from Persona persona left join persona.peticiones peticiones")
+	
+	//select departamento from Pais pais INNER JOIN pais.departamentos departamento where país.codigo = :codigo 
+	,@NamedQuery(name = Persona.OBTENER_LISTADO_PETICIONES, query = "select peticion from Persona persona INNER JOIN persona.peticiones peticion where persona.id = :id")
+	//7.select curso.nombre, estudiante from Curso curso LEFT JOIN curso.estudiantes estudiante where curso.codigo = :código 
+	,@NamedQuery(name = Persona.OBTENER_PETICIONES_ASOCIADAS, query = "select persona.id, peticiones from Persona persona left join persona.peticiones peticiones")
+
 })
 public class Persona implements Serializable {
 
@@ -39,8 +46,11 @@ public class Persona implements Serializable {
 	public static final String LISTAR_TODOS = "Persona_getAll";
 	public static final String INICIAR_SESION = "Persona_iniciarSesion";
 	public static final String LISTAR_SIN_PETICIONES = "Persona_getAllsinPeticiones";
+	
+	public static final String OBTENER_LISTADO_PETICIONES = "Persona_getListaDePeticiones";
+	public static final String OBTENER_PETICIONES_ASOCIADAS = "Persona_getListPeticionesAsociadas";
 	public static final String CONSULTA_DTO = "Persona_contPersonasByPeticiones";
-
+	
 	/**
 	 * id de la persona
 	 */
@@ -74,6 +84,7 @@ public class Persona implements Serializable {
 	/**
 	 * Registros
 	 */
+	@OneToMany(mappedBy="persona")
 	List<Peticion> peticiones;
 	
 	/**

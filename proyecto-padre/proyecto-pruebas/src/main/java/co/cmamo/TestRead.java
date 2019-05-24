@@ -44,8 +44,8 @@ public class TestRead {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"familia.json"})
 	public void findFamiliaTest() {
-		Familia f = entityManager.find(Familia.class, "1234");
-		assertEquals("Rose", f.getNombre());
+		Familia f = entityManager.find(Familia.class, "13");
+		assertEquals("Abel", f.getNombre());
 	}
 	/**
 	 * Test buscar genero
@@ -54,8 +54,8 @@ public class TestRead {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"genero.json"})
 	public void findGeneroTest() {
-		Genero g = entityManager.find(Genero.class, "1234");
-		assertEquals("Roselin", g.getNombre());
+		Genero g = entityManager.find(Genero.class, "3");
+		assertEquals("Dexter-Ava", g.getNombre());
 	}
 	/**
 	 *  Test Buscar persona
@@ -64,8 +64,8 @@ public class TestRead {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"persona.json"})
 	public void findPersonaTest() {
-		Empleado p = entityManager.find(Empleado.class, "9765");
-		assertEquals("Fernanda", p.getNombre());
+		Empleado p = entityManager.find(Empleado.class, "14");
+		assertEquals("Leigh", p.getNombre());
 	}
 	/**
 	 * test buscar planta
@@ -74,8 +74,8 @@ public class TestRead {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"planta.json"})
 	public void findPlantaTest() {
-		Planta p = entityManager.find(Planta.class, "4321");
-		assertEquals("cosa1", p.getEspecie());
+		Planta p = entityManager.find(Planta.class, "36");
+		assertEquals("Tara Beverly Johnston", p.getEspecie());
 	}
 	
 }
