@@ -2,6 +2,7 @@ package co.cmamo;
 
 import static org.junit.Assert.*;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,7 +36,7 @@ public class TestTaller {
 	private EntityManager entityManager;
 
 	/**
-	 * general el archivo de depliegue de pruebas
+	 * genera el archivo de despliegue de pruebas
 	 * 
 	 * @return genera un archivo de configuracion web
 	 */
@@ -45,7 +46,10 @@ public class TestTaller {
 				.addAsResource("persistenceForTest.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
-
+	
+	/**
+	 * Prueba de contar familia
+	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "familia.json" })
@@ -56,7 +60,10 @@ public class TestTaller {
 
 		assertEquals(20, cantFamilias);
 	}
-
+	
+	/**
+	 * Test contar personas
+	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "peticion.json" })
@@ -69,6 +76,9 @@ public class TestTaller {
 		assertEquals(2, cantPersonasAceptadas);
 	}
 
+	/**
+	 * Test que mira todas las Personas sin registro
+	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "persona.json" })
@@ -80,6 +90,9 @@ public class TestTaller {
 		assertEquals(20, personasSinPeticiones.size());
 	}
 
+	/**
+	 * Test que lista la cantidad de registro por persona
+	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "persona.json" })
@@ -91,6 +104,9 @@ public class TestTaller {
 		assertEquals(20, personasSinPeticiones.size());
 	}
 
+	/**
+	 * Test de Familia con mas especies
+	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "persona.json", "planta.json", "genero.json", "familia.json" })
@@ -234,4 +250,25 @@ public class TestTaller {
 	 * 10
 	 * 
 	 */
+	@Test
+	@Transactional(value = TransactionMode.ROLLBACK)
+	@UsingDataSet({ "peticion.json","planta.json","genero.json","persona.json"})
+	public void testObtenerAllPeticionPorFechaDTO() {
+		TypedQuery<RegistroDTO> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA,RegistroDTO.class); 
+		
+		
+		String entrada = "1999/06/06 10:55:00";
+		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date fecha;
+		try {
+			fecha = format.parse(entrada);
+			query.setParameter("fecha", fecha);
+			
+			List<RegistroDTO> listaResultados = query.getResultList();
+			assertEquals(1, listaResultados.size());
+		} catch (ParseException e) {
+			assertSame(e.getMessage(), null, e);
+		}
+		
+	}
 }
