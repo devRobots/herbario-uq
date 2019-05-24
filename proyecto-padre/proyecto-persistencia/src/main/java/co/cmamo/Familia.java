@@ -16,7 +16,8 @@ import javax.persistence.*;
 	@NamedQuery(name = Familia.BUSCAR_POR_ID, query = "select familia from Familia familia where familia.id = :id"),
 	@NamedQuery(name = Familia.LISTAR_TODOS, query = "select familia from Familia familia"),
 	@NamedQuery(name = Familia.CONTAR_TODOS, query = "select count(f) from Familia f"),
-	@NamedQuery(name = Familia.FAMILIA_MAS_ESPECIES, query = "select f, max(select count(p) from Genero g inner join g.especies p where g.familia.id = f.id) from Familia f")
+	@NamedQuery(name = Familia.FAMILIA_MAS_ESPECIES, query = "select f, max(select count(p) from Genero g inner join g.especies p where g.familia.id = f.id) from Familia f"),
+	@NamedQuery(name = Familia.FAMILIA_MAS_ESPECIES_2, query = "select f, max(count(e)) from Familia f inner join f.generos generos inner join generos.especies e")
 })
 public class Familia implements Serializable {
 
@@ -26,6 +27,7 @@ public class Familia implements Serializable {
 	public static final String LISTAR_TODOS = "Familia_getAll";
 	public static final String CONTAR_TODOS = "Familia_countAll";
 	public static final String FAMILIA_MAS_ESPECIES = "Familia_getMaxEspecies";
+	public static final String FAMILIA_MAS_ESPECIES_2 = "Familia_getMaxEspecies2";
 	
 	/**
 	 * ID de la familia

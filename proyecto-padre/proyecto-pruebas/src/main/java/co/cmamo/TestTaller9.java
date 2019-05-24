@@ -24,10 +24,10 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import co.cmamo.dto.ConsultaDTO;
+import co.cmamo.dto.RegistroDTO;
 
 @RunWith(Arquillian.class)
-public class TestTaller {
+public class TestTaller9 {
 	/**
 	 * instancia para realizar las transaciones con las entidades
 	 */
@@ -45,84 +45,6 @@ public class TestTaller {
 				.addAsResource("persistenceForTest.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
-	
-	/**
-	 * Prueba de contar familia
-	 */
-	@Test
-	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "familia.json" })
-	public void testContarFamilias() {
-		TypedQuery<Long> query = entityManager.createNamedQuery(Familia.CONTAR_TODOS, Long.class);
-		
-		long cantFamilias = query.getSingleResult();
-
-		assertEquals(20, cantFamilias);
-	}
-	
-	/**
-	 * Test contar personas
-	 */
-	@Test
-	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "peticion.json" })
-	public void testContarPersonas() {
-		TypedQuery<Long> query = entityManager.createNamedQuery(Peticion.CONTAR_PERSONAS_ACEPTADAS, Long.class);
-		query.setParameter("estado", EstadoPeticion.APROBADO);
-
-		List<Long> cantPersonasAceptadas = query.getResultList();
-		
-		assertEquals(8, cantPersonasAceptadas.size());
-	}
-
-	/**
-	 * Test que mira todas las Personas sin registro
-	 */
-	@Test
-	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "persona.json" })
-	public void testPersonasSinRegistros() {
-		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.LISTAR_SIN_PETICIONES, Persona.class);
-
-		List<Persona> personasSinPeticiones = query.getResultList();
-
-		assertEquals(20, personasSinPeticiones.size());
-	}
-
-	/**
-	 * Test que lista la cantidad de registro por persona
-	 */
-	@Test
-	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "persona.json" })
-	public void testListarCantRegistrosPorPersona() {
-		TypedQuery<ConsultaDTO> query = entityManager.createNamedQuery(Persona.CONSULTA_DTO, ConsultaDTO.class);
-		
-		List<ConsultaDTO> personasSinPeticiones = query.getResultList();
-		
-		assertEquals(20, personasSinPeticiones.size());
-	}
-
-	/**
-	 * Test de Familia con mas especies
-	 */
-	@Test
-	@Transactional(value = TransactionMode.ROLLBACK)
-	@UsingDataSet({ "persona.json", "planta.json", "genero.json", "familia.json" })
-	public void testFamiliaConMasEspecies() {
-		TypedQuery<Object[]> query = entityManager.createNamedQuery(Familia.FAMILIA_MAS_ESPECIES, Object[].class);
-
-		List<Object[]> plantasPorFamilia = query.getResultList();
-		
-		Familia f = (Familia) plantasPorFamilia.get(0)[0];
-
-		// TODO: :v
-		assertEquals("Abel", f.getNombre());
-	}
-	
-	/**
-	 * Taller 9
-	 */
 	
 	/**
 	 * 4
@@ -201,12 +123,12 @@ public class TestTaller {
 
 		assertEquals(20, listaResultados.size());
 	}
+	
 	/**
 	 * 8
 	 *  named query que permita obtener un listado de los recolectores
 	 *  que han realizado registros (no se deben obtener clientes repetidos)
 	 */
-	
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	@UsingDataSet({ "peticion.json","persona.json"})
@@ -256,8 +178,8 @@ public class TestTaller {
 		TypedQuery<RegistroDTO> query = entityManager.createNamedQuery(Peticion.OBTENER_POR_FECHA,RegistroDTO.class); 
 		
 		
-		String entrada = "1999/06/06 10:55:00";
-		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		String entrada = "2018-05-09 11:58:18";
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date fecha;
 		try {
 			fecha = format.parse(entrada);
