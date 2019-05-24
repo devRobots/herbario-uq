@@ -168,7 +168,9 @@ public class TestTaller9 {
 	}
 	
 	/**
-	 * 10
+	 * 10. Test  con base a la consulta del punto anterior, pero en lugar de obtener
+	 * un listado de arreglos de objetos obtenga un listado de DTO que contenga la
+	 * información solicitada. 
 	 * 
 	 */
 	@Test
