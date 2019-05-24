@@ -8,6 +8,8 @@ import co.cmamo.*;
 
 @Remote
 public interface AdminEJBRemote {
+	
+	String JNDI = "";
 
 	/**
 	 * Registra un empleado en la BD si es posible
