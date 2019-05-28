@@ -6,6 +6,7 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="proyecto-negocio.jar" deploy-path="/" handle="module:/resource/proyecto-negocio/proyecto-negocio">
+            <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

@@ -24,5 +24,4 @@ public class AdminDelegado {
 		}
 		return adminDelegado;
 	}
-	
 }
