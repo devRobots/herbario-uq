@@ -1,5 +1,7 @@
 package co.cmamo.ejb;
 
+import java.util.ArrayList;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -9,6 +11,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import co.cmamo.Administrador;
+import co.cmamo.EstadoActividad;
+import co.cmamo.Peticion;
 
 /**
  * Controla las configuraciones iniciales por defecto
@@ -39,7 +43,15 @@ public class SetupEJB {
     	
     	if (contarAdmins == 0) {
 			Administrador a = new Administrador();
-			// TODO: Agregar campos
+			a.setApellido("Rosas Toro");
+			a.setClave("12345");
+			a.setCorreo("ysrosast_1@uqvirtual.edu.co");
+			a.setEstado(EstadoActividad.ACTIVO);
+			a.setId("1");
+			a.setNombre("Yesid");
+			a.setPeticiones(new ArrayList<Peticion>());
+			
+			entityManager.persist(a);
 		}
     	
     }

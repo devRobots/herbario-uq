@@ -61,14 +61,9 @@ public class AdminEJB implements AdminEJBRemote {
 			if (entityManager.find(Empleado.class, anterior.getId()) == null) {
 				throw new ElementoInexistenteExcepcion("El empleado que se busca reemplazar no existe");
 			}
-
-			// TODO: Consultar sobre el metodo merge()
-			try {
-				entityManager.merge(nuevo);
-				return true;
-			} catch (Exception e) {
-				return false;
-			}
+			
+			entityManager.merge(nuevo);
+			return true;
 		} catch (Exception e) {
 			return false;
 		}
