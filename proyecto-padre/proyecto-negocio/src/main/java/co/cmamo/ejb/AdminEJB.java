@@ -6,6 +6,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import co.cmamo.Empleado;
@@ -25,6 +26,7 @@ import co.cmamo.excepciones.ElementoRepetidoExcepcion;
 @LocalBean
 public class AdminEJB implements AdminEJBRemote {
 
+	@PersistenceContext
 	private EntityManager entityManager;
 
 	/**
