@@ -226,4 +226,20 @@ public class Persona implements Serializable {
 	public void setPeticiones(List<Peticion> peticiones) {
 		this.peticiones = peticiones;
 	}
+
+	@Override
+	protected Persona clone() {
+		Persona clone = new Empleado();
+		clone.setApellido(apellido);
+		clone.setClave(clave);
+		clone.setCorreo(correo);
+		clone.setEstado(estado);
+		clone.setId(id);
+		clone.setNombre(nombre);
+		clone.setPeticiones(peticiones);
+		
+		return clone;
+	}
+	
+	
 }

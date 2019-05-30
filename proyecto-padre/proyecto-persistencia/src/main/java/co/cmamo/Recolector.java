@@ -9,10 +9,14 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+		@NamedQuery(name = Recolector.LISTAR_RECOLECTOR, query = "select r from Recolector r")
+})
 public class Recolector extends Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	public static final String LISTAR_RECOLECTOR = "Recolector_ListarTodos";
 	
 	/**
 	 * Constructor recolector
