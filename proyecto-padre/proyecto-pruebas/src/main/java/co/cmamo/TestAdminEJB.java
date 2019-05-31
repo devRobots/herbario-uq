@@ -47,6 +47,7 @@ public class TestAdminEJB {
 	@UsingDataSet({"persona.json"})
 	public void crearEmpleadoTest() {
 		Empleado e = new Empleado();
+		e.setNombre("Cristian Camilo");
 		e.setApellido("Quiceno Laurente");
 		e.setClave("123");
 		e.setCorreo("ccquicenol@uqvirtual.edu.co");

@@ -9,7 +9,7 @@ import co.cmamo.*;
 @Remote
 public interface AdminEJBRemote {
 	
-	public static final String JNDI = "java:global/proyecto-ear/proyecto-negocio/SetupEJB!co.cmamo.ejb.SetupEJB, java:global/proyecto-ear/proyecto-negocio/SetupEJB";
+	public static final String JNDI = "java:global/proyecto-ear/proyecto-negocio/AdminEJB!co.cmamo.ejb.AdminEJBRemote, java:global/proyecto-ear/proyecto-negocio/AdminEJB!co.cmamo.ejb.AdminEJB";
 
 	/**
 	 * Registra un empleado en la BD si es posible
