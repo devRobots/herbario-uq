@@ -1046,7 +1046,7 @@
       <property name="keepstate" value="true"></property>
       <property name="isComposite" value="true"></property>
       <property name="appLocation" value="${com.sun.aas.instanceRootURI}/eclipseApps/proyecto-ear/"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="102188149100249088"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="102191758259191808"></property>
       <property name="defaultAppName" value="proyecto-ear"></property>
       <module name="proyecto-negocio.jar">
         <engine sniffer="ejb"></engine>

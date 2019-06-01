@@ -637,6 +637,7 @@
     <server config-ref="server-config" name="server">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
       <application-ref ref="proyecto-ear" virtual-servers="server"></application-ref>
+      <application-ref ref="proyecto-web" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jms/__defaultConnectionFactory"></resource-ref>
@@ -1045,7 +1046,7 @@
       <property name="keepstate" value="true"></property>
       <property name="isComposite" value="true"></property>
       <property name="appLocation" value="${com.sun.aas.instanceRootURI}/eclipseApps/proyecto-ear/"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="102188149100249088"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="102191758259191808"></property>
       <property name="defaultAppName" value="proyecto-ear"></property>
       <module name="proyecto-negocio.jar">
         <engine sniffer="ejb"></engine>
@@ -1054,6 +1055,17 @@
       </module>
       <engine sniffer="ear"></engine>
       <engine sniffer="jpa"></engine>
+    </application>
+    <application context-root="/proyecto-web" object-type="user" name="proyecto-web" directory-deployed="true" location="${com.sun.aas.instanceRootURI}/eclipseApps/proyecto-web/">
+      <property name="archiveType" value="war"></property>
+      <property name="keepstate" value="true"></property>
+      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/eclipseApps/proyecto-web/"></property>
+      <property name="defaultAppName" value="proyecto-web"></property>
+      <module name="proyecto-web">
+        <engine sniffer="weld"></engine>
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
     </application>
   </applications>
 </domain>
