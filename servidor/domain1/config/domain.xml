@@ -1043,6 +1043,7 @@
   <applications>
     <application object-type="user" name="proyecto-ear" directory-deployed="true" location="${com.sun.aas.instanceRootURI}/eclipseApps/proyecto-ear/">
       <property name="archiveType" value="ear"></property>
+      <property name="org.glassfish.ejb.startup.keepstate" value="true"></property>
       <property name="keepstate" value="true"></property>
       <property name="isComposite" value="true"></property>
       <property name="appLocation" value="${com.sun.aas.instanceRootURI}/eclipseApps/proyecto-ear/"></property>

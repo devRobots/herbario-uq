@@ -97,15 +97,19 @@ public class AdminEJB implements AdminEJBRemote {
 
 	@Override
 	public List<Empleado> listarEmpleados() {
-		TypedQuery<Empleado> query = entityManager.createNamedQuery(Empleado.LISTAR_EMPLEADOS, Empleado.class);
+		try {
+			TypedQuery<Empleado> query = entityManager.createNamedQuery(Empleado.LISTAR_EMPLEADOS, Empleado.class);
 
-		List<Empleado> listado = query.getResultList();
-		
-		if (listado == null) {
-			listado = new ArrayList<Empleado>();
+			List<Empleado> listado = query.getResultList();
+			
+			if (listado == null) {
+				listado = new ArrayList<Empleado>();
+			}
+
+			return listado;
+		} catch (Exception e) {
+			return new ArrayList<Empleado>();
 		}
-
-		return listado;
 	}
 
 	/*

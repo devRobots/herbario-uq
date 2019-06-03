@@ -91,14 +91,13 @@ public class EdicionEmpleadoControlador {
 		persona.setClave(cmpClave.getText());
 		persona.setCorreo(cmpEmail.getText());
 		
-//		TODO: Reparar
-//		if (manejador.registrarEmpleado(persona)) {
-//			manejador.agregarALista(persona);
-//			Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
-//			escenarioEditar.close();
-//		} else {
-//			Utilidades.mostrarMensaje("Registro", "Error en registro!!");
-//		}
+		if (manejador.registrarEmpleado(persona)) {
+			manejador.agregarALista(persona);
+			Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
+			escenarioEditar.close();
+		} else {
+			Utilidades.mostrarMensaje("Registro", "Error en registro!!");
+		}
 	}
 
 	/**

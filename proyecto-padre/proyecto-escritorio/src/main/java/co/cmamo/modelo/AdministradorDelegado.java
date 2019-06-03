@@ -8,6 +8,7 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import co.cmamo.ejb.AdminEJB;
 import co.cmamo.ejb.AdminEJBRemote;
 import co.cmamo.Empleado;
 import co.cmamo.Persona;
@@ -36,8 +37,9 @@ public class AdministradorDelegado {
 	 */
 	private AdministradorDelegado() {
 		try {
-			adminEJB = (AdminEJBRemote) new InitialContext().lookup(AdminEJBRemote.JNDI);
-		} catch (NamingException e) {
+			adminEJB = new AdminEJB();
+//			adminEJB = (AdminEJBRemote) new InitialContext().lookup(AdminEJBRemote.JNDI);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
