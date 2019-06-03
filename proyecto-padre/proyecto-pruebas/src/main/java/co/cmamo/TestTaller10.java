@@ -43,7 +43,7 @@ public class TestTaller10 {
 	}
 	
 	/**
-	 * 1. Prueba que permite contar determinar el número de familias que se han registrado
+	 * 1. Prueba que permite contar determinar el nï¿½mero de familias que se han registrado
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -57,8 +57,8 @@ public class TestTaller10 {
 	}
 	
 	/**
-	 * 2. Test que permita contar el número de personas a 
-	 * las que le han aceptado un registro (envio) por día
+	 * 2. Test que permita contar el nï¿½mero de personas a 
+	 * las que le han aceptado un registro (envio) por dï¿½a
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -104,7 +104,7 @@ public class TestTaller10 {
 
 	/**
 	 * 5. Test que permita determinar cual es la familia 
-	 * que más especies tiene registradas. 
+	 * que mï¿½s especies tiene registradas. 
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -116,7 +116,6 @@ public class TestTaller10 {
 		
 		Familia f = (Familia) plantasPorFamilia.get(0)[0];
 
-		// TODO: :v
 		assertEquals("Abel", f.getNombre());
 	}
 	

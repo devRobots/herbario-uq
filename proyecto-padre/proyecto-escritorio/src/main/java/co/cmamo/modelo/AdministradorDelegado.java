@@ -37,6 +37,7 @@ public class AdministradorDelegado {
 	 */
 	private AdministradorDelegado() {
 		try {
+			// TODO: Arreglar
 			adminEJB = new AdminEJB();
 //			adminEJB = (AdminEJBRemote) new InitialContext().lookup(AdminEJBRemote.JNDI);
 		} catch (Exception e) {

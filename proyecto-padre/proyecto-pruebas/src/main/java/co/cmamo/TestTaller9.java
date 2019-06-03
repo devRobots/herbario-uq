@@ -136,7 +136,7 @@ public class TestTaller9 {
 		TypedQuery<Persona> query = entityManager.createNamedQuery(Peticion.OBTENER_LISTADO_RECOLECTORES, Persona.class);
 		
 		List<Persona> listaResultados = query.getResultList();
-		//REPARAR TODO DESPUES, REEPLANTAR
+
 		assertEquals(17, listaResultados.size());
 	}
 	
@@ -170,7 +170,7 @@ public class TestTaller9 {
 	/**
 	 * 10. Test  con base a la consulta del punto anterior, pero en lugar de obtener
 	 * un listado de arreglos de objetos obtenga un listado de DTO que contenga la
-	 * información solicitada. 
+	 * informaciï¿½n solicitada. 
 	 * 
 	 */
 	@Test

@@ -9,8 +9,11 @@ import co.cmamo.modelo.AdministradorDelegado;
 import co.cmamo.modelo.EmpleadoObservable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -30,7 +33,8 @@ public class ManejadorEscenarios {
 	/**
 	 * tipo de panel inicial
 	 */
-	private BorderPane bordePanel;
+	@FXML
+	private BorderPane bordePane;
 	/**
 	 * para almacenar empleados observables
 	 */
@@ -39,7 +43,26 @@ public class ManejadorEscenarios {
 	 * conexion con capa de negocio
 	 */
 	private AdministradorDelegado administradorDelegado;
+	
+    @FXML
+    void close() {
+    	System.exit(0);
+    }
+    
+    @FXML
+    void irAlHerbario() {
+    	cargarEscenaHerbario();
+    }
 
+    @FXML
+    void irAlPanel() {
+    	cargarEscenaPanel();
+    }
+    
+    public ManejadorEscenarios() {
+		
+	}
+	
 	/**
 	 * recibe el escenario principla de la aplicacion
 	 * 
@@ -54,16 +77,16 @@ public class ManejadorEscenarios {
 
 		try {
 			// se inicializa el escenario
-			escenario.setTitle("Balotera");
+			escenario.setTitle("Herbario UQ");
 
 			// se carga la vista
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("./vista/inicio.fxml"));
 
-			bordePanel = (BorderPane) loader.load();
+			bordePane = (BorderPane) loader.load();
 
 			// se carga la escena
-			Scene scene = new Scene(bordePanel);
+			Scene scene = new Scene(bordePane);
 			escenario.setScene(scene);
 			escenario.show();
 
@@ -81,18 +104,53 @@ public class ManejadorEscenarios {
 	public void cargarEscena() {
 
 		try {
-
-			
 			empleadosObservables = administradorDelegado.listarEmpleadosObservables();
 
 			FXMLLoader loader2 = new FXMLLoader();
-			loader2.setLocation(Main.class.getResource("vista/detalle_empleado.fxml"));
+			loader2.setLocation(Main.class.getResource("./vista/detalle_empleado.fxml"));
+			
 			AnchorPane panelAncho = (AnchorPane) loader2.load();
-			bordePanel.setCenter(panelAncho);
+			bordePane.setCenter(panelAncho);
 
 			EmpleadoControlador controlador = loader2.getController();
 			controlador.setEscenarioInicial(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+	}
+
+	/**
+	 * carga una escena en el centro del escenario
+	 */
+	public void cargarEscenaPanel() {
+		try {
+			FXMLLoader loader2 = new FXMLLoader();
+			loader2.setLocation(Main.class.getResource("./vista/detalle_empleado.fxml"));
+			
+			AnchorPane panelAncho = (AnchorPane) loader2.load();
+			bordePane.setCenter(panelAncho);
+
+			EmpleadoControlador controlador = loader2.getController();
+			controlador.setEscenarioInicial(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * carga una escena en el centro del escenario
+	 */
+	public void cargarEscenaHerbario() {
+
+		try {
+			FXMLLoader loader3 = new FXMLLoader();
+			loader3.setLocation(Main.class.getResource("./vista/herbario.fxml"));
+			
+			AnchorPane panelAncho = (AnchorPane) loader3.load();
+			bordePane.setCenter(panelAncho);
+
+			HerbarioControlador controlador = loader3.getController();
+			controlador.setEscenarioInicial(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -181,5 +239,4 @@ public class ManejadorEscenarios {
 	public boolean eliminarEmpleado(Empleado empleado) {
 		return administradorDelegado.eliminarEmpleado(empleado);
 	}
-
 }

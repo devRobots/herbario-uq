@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.EmpleadoControlador">
@@ -63,9 +64,33 @@
 								<Label fx:id="txtFechaNacimiento" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 							</children>
 						</GridPane>
-						<Button layoutX="350.0" layoutY="357.0" mnemonicParsing="false" text="Editar" AnchorPane.bottomAnchor="14.0" />
-						<Button layoutX="272.0" layoutY="357.0" mnemonicParsing="false" onAction="#elimiarEmpleado" text="Eliminar" AnchorPane.bottomAnchor="14.0" />
-						<Button layoutX="193.0" layoutY="357.0" mnemonicParsing="false" onAction="#agregarEmpleado" text="Agregar" AnchorPane.bottomAnchor="14.0" />
+                  <GridPane AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+            						<Button mnemonicParsing="false" text="Editar" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+            						<Button mnemonicParsing="false" onAction="#elimiarEmpleado" text="Eliminar" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+            						<Button mnemonicParsing="false" onAction="#agregarEmpleado" text="Agregar" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </GridPane>
 					</children>
 				</AnchorPane>
 			</items>

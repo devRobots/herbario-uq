@@ -32,7 +32,7 @@ public class SetupEJB {
      * Default constructor. 
      */
     public SetupEJB() {
-        // TODO Auto-generated constructor stub
+        
     }
 
     @PostConstruct

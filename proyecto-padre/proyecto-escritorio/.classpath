@@ -25,5 +25,10 @@
 	</classpathentry>
 	<classpathentry kind="src" path="/proyecto-negocio"/>
 	<classpathentry kind="src" path="/proyecto-persistencia"/>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
