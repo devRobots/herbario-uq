@@ -1,5 +1,6 @@
 package co.cmamo.ejb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -99,6 +100,10 @@ public class AdminEJB implements AdminEJBRemote {
 		TypedQuery<Empleado> query = entityManager.createNamedQuery(Empleado.LISTAR_EMPLEADOS, Empleado.class);
 
 		List<Empleado> listado = query.getResultList();
+		
+		if (listado == null) {
+			listado = new ArrayList<Empleado>();
+		}
 
 		return listado;
 	}

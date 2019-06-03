@@ -24,5 +24,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="/proyecto-negocio"/>
+	<classpathentry kind="src" path="/proyecto-persistencia"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
