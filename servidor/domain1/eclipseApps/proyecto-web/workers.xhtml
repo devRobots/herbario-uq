@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:jsf="http://xmlns.jcp.org/jsf"
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
 	<meta charset="utf-8" />
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps." />
@@ -26,26 +31,27 @@
 <body>
 	<header class="demo-header mdl-layout__header mdl-color--green-900 mdl-color-text--grey-50">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Empleados</span>
-          <div class="mdl-layout-spacer"></div>
-          
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">Acerca de</li>
-            <li class="mdl-menu__item">Contacto</li>
-            <li class="mdl-menu__item">Informacion Legal</li>
-          </ul>
+	        <span class="mdl-layout-title">Empleados</span>
+	        <div class="mdl-layout-spacer"></div>
+	          
+	        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+	        	<i class="material-icons">more_vert</i>
+	        </button>
+	        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+	            <li class="mdl-menu__item">Acerca de</li>
+	            <li class="mdl-menu__item">Contacto</li>
+	            <li class="mdl-menu__item">Informacion Legal</li>
+	        </ul>
         </div>
-      </header>
+    </header>
 	<div class="mdl-grid demo-content">
-		<div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            
-        </div>
-        <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-            
-    	</div>
+        <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+              	<div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+	              	
+              	</div>
+            </div>
+		</div>
 	</div>
 </body>
 </html>

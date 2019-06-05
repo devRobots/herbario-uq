@@ -28,13 +28,9 @@ import javax.persistence.OneToMany;
 	@NamedQuery(name = Persona.LISTAR_TODOS, query = "select persona from Persona persona"),
 	@NamedQuery(name = Persona.INICIAR_SESION, query = "select persona from Persona persona where persona.correo = :correo and persona.clave = :clave"),
 	@NamedQuery(name = Persona.LISTAR_SIN_PETICIONES, query = "select persona from Persona persona left join persona.peticiones peticiones where persona.peticiones is empty"),
-	@NamedQuery(name = Persona.CONSULTA_DTO, query = "select new co.cmamo.dto.ConsultaDTO(persona.id, peticiones) from Persona persona left join persona.peticiones peticiones")
-	
-	//select departamento from Pais pais INNER JOIN pais.departamentos departamento where país.codigo = :codigo 
-	,@NamedQuery(name = Persona.OBTENER_LISTADO_PETICIONES, query = "select peticion from Persona persona INNER JOIN persona.peticiones peticion where persona.id = :id")
-	//7.select curso.nombre, estudiante from Curso curso LEFT JOIN curso.estudiantes estudiante where curso.codigo = :código 
-	,@NamedQuery(name = Persona.OBTENER_PETICIONES_ASOCIADAS, query = "select persona.id, peticiones from Persona persona left join persona.peticiones peticiones")
-
+	@NamedQuery(name = Persona.CONSULTA_DTO, query = "select new co.cmamo.dto.ConsultaDTO(persona.id, peticiones) from Persona persona left join persona.peticiones peticiones"),
+	@NamedQuery(name = Persona.OBTENER_LISTADO_PETICIONES, query = "select peticion from Persona persona INNER JOIN persona.peticiones peticion where persona.id = :id"),
+	@NamedQuery(name = Persona.OBTENER_PETICIONES_ASOCIADAS, query = "select persona.id, peticiones from Persona persona left join persona.peticiones peticiones")
 })
 public class Persona implements Serializable {
 
