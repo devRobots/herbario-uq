@@ -6,7 +6,6 @@ package co.cmamo.modelo;
 import java.util.List;
 
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 
 import co.cmamo.Empleado;
 import co.cmamo.Persona;
