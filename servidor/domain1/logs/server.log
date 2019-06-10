@@ -17061,3 +17061,1910 @@ java.lang.Exception: java.lang.IllegalStateException: ContainerBase.addChild: st
 [2019-06-09T16:39:35.210-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560116375210] [levelValue: 800] [[
   herbario-uq-web was successfully deployed in 9.074 milliseconds.]]
 
+[2019-06-09T17:27:33.206-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253206] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:27:33.487-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253487] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:27:33.782-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253782] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Registro actually got transformed]]
+
+[2019-06-09T17:27:33.806-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253806] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Especie actually got transformed]]
+
+[2019-06-09T17:27:33.812-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253812] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Persona actually got transformed]]
+
+[2019-06-09T17:27:33.819-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253819] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Genero actually got transformed]]
+
+[2019-06-09T17:27:33.824-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253824] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Familia actually got transformed]]
+
+[2019-06-09T17:27:33.827-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253827] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Recolector actually got transformed]]
+
+[2019-06-09T17:27:33.831-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253831] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Administrador actually got transformed]]
+
+[2019-06-09T17:27:33.834-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253834] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Empleado actually got transformed]]
+
+[2019-06-09T17:27:33.874-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253874] [levelValue: 800] [[
+  EclipseLink, version: Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a]]
+
+[2019-06-09T17:27:33.969-0500] [glassfish 5.1] [WARNING] [poolmgr.create_resource_error] [javax.enterprise.resource.resourceadapter.com.sun.enterprise.resource.allocator] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253969] [levelValue: 900] [[
+  RAR5038:Unexpected exception while creating resource for pool HebarioUQPool. Exception : javax.resource.spi.ResourceAllocationException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)]]
+
+[2019-06-09T17:27:33.969-0500] [glassfish 5.1] [WARNING] [poolmgr.get_connection_failure] [javax.enterprise.resource.resourceadapter.com.sun.enterprise.connectors] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253969] [levelValue: 900] [[
+  RAR5117 : Failed to obtain/create connection from connection pool [ HebarioUQPool ]. Reason : com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)]]
+
+[2019-06-09T17:27:33.996-0500] [glassfish 5.1] [WARNING] [jdbc.exc_get_conn] [javax.enterprise.resource.resourceadapter.com.sun.gjc.spi] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119253996] [levelValue: 900] [[
+  RAR5114 : Error allocating connection : [Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)]]]
+
+[2019-06-09T17:27:34.019-0500] [glassfish 5.1] [SEVERE] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq.ejb] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119254019] [levelValue: 1000] [[
+  
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:318)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:150)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:172)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.setOrDetectDatasource(DatabaseSessionImpl.java:233)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:815)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:256)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:769)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:219)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:197)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:388)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:175)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:83)
+	at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:199)
+	at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:486)
+	at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:206)
+	at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:144)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:901)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:410)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:195)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:516)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:512)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:511)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:542)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:534)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:533)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1441)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:86)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1823)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1699)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:166)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:439)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:144)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:218)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:515)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:97)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:138)
+	... 56 more
+Caused by: javax.resource.spi.ResourceAllocationException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:295)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:172)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:142)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:91)
+	... 57 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:79)
+	at com.sun.enterprise.resource.pool.ConnectionPool.addResource(ConnectionPool.java:258)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResourceAndAddToPool(ConnectionPool.java:1487)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResources(ConnectionPool.java:919)
+	at com.sun.enterprise.resource.pool.ConnectionPool.initPool(ConnectionPool.java:206)
+	at com.sun.enterprise.resource.pool.ConnectionPool.internalGetResource(ConnectionPool.java:490)
+	at com.sun.enterprise.resource.pool.ConnectionPool.getResource(ConnectionPool.java:357)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResourceFromPool(PoolManagerImpl.java:221)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResource(PoolManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.getResource(ConnectionManagerImpl.java:336)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:283)
+	... 61 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:899)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResource(ConnectionPool.java:1164)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:74)
+	... 71 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:86)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:882)
+	... 73 more
+Caused by: javax.resource.spi.ResourceAllocationException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:105)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:63)
+	... 74 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2219)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2014)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor115.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:428)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:136)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:107)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:91)
+	... 75 more
+]]
+
+[2019-06-09T17:27:34.023-0500] [glassfish 5.1] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119254023] [levelValue: 1000] [[
+  Exception while invoking class org.glassfish.persistence.jpa.JPADeployer prepare method]]
+
+[2019-06-09T17:27:34.037-0500] [glassfish 5.1] [SEVERE] [] [] [tid: _ThreadID=47 _ThreadName=Thread-9] [timeMillis: 1560119254037] [levelValue: 1000] [[
+  javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:854)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:219)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:197)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:388)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:175)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:83)
+	at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:199)
+	at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:486)
+	at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:206)
+	at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:144)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:901)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:410)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:195)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:516)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:512)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:511)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:542)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:534)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:533)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1441)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:86)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1823)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1699)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:166)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:439)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:144)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:218)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:515)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:318)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:150)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:172)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.setOrDetectDatasource(DatabaseSessionImpl.java:233)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:815)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:256)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:769)
+	... 51 more
+Caused by: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:97)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:138)
+	... 56 more
+Caused by: javax.resource.spi.ResourceAllocationException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:295)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:172)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:142)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:91)
+	... 57 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:79)
+	at com.sun.enterprise.resource.pool.ConnectionPool.addResource(ConnectionPool.java:258)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResourceAndAddToPool(ConnectionPool.java:1487)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResources(ConnectionPool.java:919)
+	at com.sun.enterprise.resource.pool.ConnectionPool.initPool(ConnectionPool.java:206)
+	at com.sun.enterprise.resource.pool.ConnectionPool.internalGetResource(ConnectionPool.java:490)
+	at com.sun.enterprise.resource.pool.ConnectionPool.g]]
+
+[2019-06-09T17:27:34.037-0500] [glassfish 5.1] [SEVERE] [] [] [tid: _ThreadID=47 _ThreadName=Thread-9] [timeMillis: 1560119254037] [levelValue: 1000] [[
+  etResource(ConnectionPool.java:357)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResourceFromPool(PoolManagerImpl.java:221)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResource(PoolManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.getResource(ConnectionManagerImpl.java:336)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:283)
+	... 61 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:899)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResource(ConnectionPool.java:1164)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:74)
+	... 71 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:86)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:882)
+	... 73 more
+Caused by: javax.resource.spi.ResourceAllocationException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:105)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:63)
+	... 74 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2219)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2014)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor115.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:428)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:136)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:107)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:91)
+	... 75 more
+]]
+
+[2019-06-09T17:27:34.040-0500] [glassfish 5.1] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119254040] [levelValue: 1000] [[
+  Exception while preparing the app]]
+
+[2019-06-09T17:27:34.041-0500] [glassfish 5.1] [SEVERE] [NCLS-CORE-00026] [javax.enterprise.system.core] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119254041] [levelValue: 1000] [[
+  Exception during lifecycle processing
+javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:854)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:219)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:197)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:388)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:175)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:83)
+	at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:199)
+	at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:486)
+	at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:206)
+	at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:144)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:901)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:410)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:195)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:516)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:512)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:511)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:542)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:534)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:533)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1441)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:86)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1823)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1699)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:166)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:439)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:144)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:218)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:515)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:318)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:150)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:172)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.setOrDetectDatasource(DatabaseSessionImpl.java:233)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:815)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:256)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:769)
+	... 51 more
+Caused by: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:97)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:138)
+	... 56 more
+Caused by: javax.resource.spi.ResourceAllocationException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:295)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:172)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:142)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:91)
+	... 57 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:79)
+	at com.sun.enterprise.resource.pool.ConnectionPool.addResource(ConnectionPool.java:258)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResourceAndAddToPool(ConnectionPool.java:1487)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResources(ConnectionPool.java:919)
+	at com.sun.enterprise.resource.pool.ConnectionPool.initPool(ConnectionPool.java:206)
+	at com.sun.enterprise.resource.pool.ConnectionPool.internalGetResource(ConnectionPool.java:490)
+	at com.sun.enterprise.resource.pool.ConnectionPool.getResource(ConnectionPool.java:357)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResourceFromPool(PoolManagerImpl.java:221)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResource(PoolManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.getResource(ConnectionManagerImpl.java:336)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:283)
+	... 61 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:899)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResource(ConnectionPool.java:1164)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:74)
+	... 71 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:86)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:882)
+	... 73 more
+Caused by: javax.resource.spi.ResourceAllocationException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:105)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:63)
+	... 74 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2219)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2014)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor115.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:428)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:136)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:107)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:91)
+	... 75 more
+]]
+
+[2019-06-09T17:27:34.061-0500] [glassfish 5.1] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119254061] [levelValue: 1000] [[
+  Exception while preparing the app : Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+Error Code: 0
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:318)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:150)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:172)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.setOrDetectDatasource(DatabaseSessionImpl.java:233)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:815)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:256)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:769)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:219)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:197)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:388)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:175)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:83)
+	at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:199)
+	at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:486)
+	at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:206)
+	at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:144)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:901)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:410)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:195)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:516)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:512)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:511)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:542)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:534)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:533)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1441)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:86)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1823)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1699)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:166)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:439)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:144)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:218)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:515)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:97)
+	at org.eclipse.persistence.sessions.JNDIConnector.connect(JNDIConnector.java:138)
+	... 56 more
+Caused by: javax.resource.spi.ResourceAllocationException: Error in allocating a connection. Cause: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:295)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:172)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.allocateConnection(ConnectionManagerImpl.java:142)
+	at com.sun.gjc.spi.base.AbstractDataSource.getConnection(AbstractDataSource.java:91)
+	... 57 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:79)
+	at com.sun.enterprise.resource.pool.ConnectionPool.addResource(ConnectionPool.java:258)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResourceAndAddToPool(ConnectionPool.java:1487)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResources(ConnectionPool.java:919)
+	at com.sun.enterprise.resource.pool.ConnectionPool.initPool(ConnectionPool.java:206)
+	at com.sun.enterprise.resource.pool.ConnectionPool.internalGetResource(ConnectionPool.java:490)
+	at com.sun.enterprise.resource.pool.ConnectionPool.getResource(ConnectionPool.java:357)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResourceFromPool(PoolManagerImpl.java:221)
+	at com.sun.enterprise.resource.pool.PoolManagerImpl.getResource(PoolManagerImpl.java:147)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.getResource(ConnectionManagerImpl.java:336)
+	at com.sun.enterprise.connectors.ConnectionManagerImpl.internalGetConnection(ConnectionManagerImpl.java:283)
+	... 61 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:899)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createResource(ConnectionPool.java:1164)
+	at com.sun.enterprise.resource.pool.datastructure.RWLockDataStructure.addResource(RWLockDataStructure.java:74)
+	... 71 more
+Caused by: com.sun.appserv.connectors.internal.api.PoolingException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:86)
+	at com.sun.enterprise.resource.pool.ConnectionPool.createSingleResource(ConnectionPool.java:882)
+	... 73 more
+Caused by: javax.resource.spi.ResourceAllocationException: Connection could not be allocated because: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:105)
+	at com.sun.enterprise.resource.allocator.LocalTxConnectorAllocator.createResource(LocalTxConnectorAllocator.java:63)
+	... 74 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2219)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2014)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor115.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:428)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:136)
+	at com.mysql.jdbc.jdbc2.optional.MysqlDataSource.getConnection(MysqlDataSource.java:107)
+	at com.sun.gjc.spi.DSManagedConnectionFactory.createManagedConnection(DSManagedConnectionFactory.java:91)
+	... 75 more
+]]
+
+[2019-06-09T17:29:12.449-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119352449] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:29:14.177-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119354177] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:29:14.180-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119354180] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:29:14.182-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119354182] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:29:15.641-0500] [glassfish 5.1] [INFO] [jsf.config.listener.version] [javax.enterprise.resource.webcontainer.jsf.config] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119355641] [levelValue: 800] [[
+  Inicializando Mojarra 2.3.9 para el contexto '']]
+
+[2019-06-09T17:29:17.412-0500] [glassfish 5.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119357412] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2019-06-09T17:29:17.415-0500] [glassfish 5.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=169 _ThreadName=Thread-51] [timeMillis: 1560119357415] [levelValue: 800] [[
+  Loading application __admingui done in 5.785 ms]]
+
+[2019-06-09T17:29:18.067-0500] [glassfish 5.1] [WARNING] [] [javax.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=48 _ThreadName=admin-listener(3)] [timeMillis: 1560119358067] [levelValue: 900] [[
+  Context path from ServletContext:  differs from path from bundle: /]]
+
+[2019-06-09T17:29:18.089-0500] [glassfish 5.1] [INFO] [NCLS-REST-00001] [javax.enterprise.admin.rest] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [timeMillis: 1560119358089] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2019-06-09T17:29:21.350-0500] [glassfish 5.1] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=48 _ThreadName=admin-listener(3)] [timeMillis: 1560119361350] [levelValue: 800] [[
+  Redirecting to &#x2f;]]
+
+[2019-06-09T17:29:21.658-0500] [glassfish 5.1] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [timeMillis: 1560119361658] [levelValue: 800] [[
+  Admin Console: Initializing Session Attributes...]]
+
+[2019-06-09T17:32:00.045-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520045] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:32:00.274-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520274] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:32:00.554-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520554] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Registro actually got transformed]]
+
+[2019-06-09T17:32:00.562-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520562] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Especie actually got transformed]]
+
+[2019-06-09T17:32:00.567-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520567] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Persona actually got transformed]]
+
+[2019-06-09T17:32:00.573-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520573] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Genero actually got transformed]]
+
+[2019-06-09T17:32:00.577-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520577] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Familia actually got transformed]]
+
+[2019-06-09T17:32:00.580-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520580] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Recolector actually got transformed]]
+
+[2019-06-09T17:32:00.582-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520582] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Administrador actually got transformed]]
+
+[2019-06-09T17:32:00.584-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520584] [levelValue: 800] [[
+  co.edu.uniquindio.grid.entidades.Empleado actually got transformed]]
+
+[2019-06-09T17:32:00.614-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119520614] [levelValue: 800] [[
+  EclipseLink, version: Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a]]
+
+[2019-06-09T17:32:01.109-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq.connection] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119521109] [levelValue: 800] [[
+  /file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq login successful]]
+
+[2019-06-09T17:32:04.835-0500] [glassfish 5.1] [WARNING] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119524835] [levelValue: 900] [[
+  
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Cannot add foreign key constraint
+Error Code: 1215
+Call: ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_RECOLECTOR_CEDULA FOREIGN KEY (RECOLECTOR_CEDULA) REFERENCES PERSONA (CEDULA)
+Query: DataModifyQuery(sql="ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_RECOLECTOR_CEDULA FOREIGN KEY (RECOLECTOR_CEDULA) REFERENCES PERSONA (CEDULA)")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:908)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:970)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:640)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeNoSelectCall(DatasourceCallQueryMechanism.java:304)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeNoSelect(DatasourceCallQueryMechanism.java:284)
+	at org.eclipse.persistence.queries.DataModifyQuery.executeDatabaseQuery(DataModifyQuery.java:87)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.internalExecuteQuery(AbstractSession.java:3349)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1827)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.priviledgedExecuteNonSelectingCall(AbstractSession.java:5212)
+	at org.eclipse.persistence.tools.schemaframework.TableDefinition.createForeignConstraintsOnDatabase(TableDefinition.java:896)
+	at org.eclipse.persistence.tools.schemaframework.SchemaManager.createForeignConstraints(SchemaManager.java:194)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createConstraints(TableCreator.java:119)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createTables(TableCreator.java:185)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createTables(TableCreator.java:150)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createTables(TableCreator.java:142)
+	at org.eclipse.persistence.tools.schemaframework.SchemaManager.createDefaultTables(SchemaManager.java:1030)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.generateDefaultTables(EntityManagerFactoryProvider.java:110)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDLToDatabase(EntityManagerSetupImpl.java:4398)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4326)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4226)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:816)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:219)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:197)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:388)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:175)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:83)
+	at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:199)
+	at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:486)
+	at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:206)
+	at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:144)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:901)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:410)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:195)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:516)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:512)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:511)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:542)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:534)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:533)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1441)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:86)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1823)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1699)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:166)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:439)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:144)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:218)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:515)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Cannot add foreign key constraint
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at com.sun.gjc.spi.base.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:101)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:898)
+	... 79 more
+]]
+
+[2019-06-09T17:32:05.195-0500] [glassfish 5.1] [WARNING] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525195] [levelValue: 900] [[
+  
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Cannot add foreign key constraint
+Error Code: 1215
+Call: ALTER TABLE ESPECIE ADD CONSTRAINT FK_ESPECIE_GENERO_ID FOREIGN KEY (GENERO_ID) REFERENCES GENERO (ID)
+Query: DataModifyQuery(sql="ALTER TABLE ESPECIE ADD CONSTRAINT FK_ESPECIE_GENERO_ID FOREIGN KEY (GENERO_ID) REFERENCES GENERO (ID)")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:908)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:970)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:640)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeNoSelectCall(DatasourceCallQueryMechanism.java:304)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeNoSelect(DatasourceCallQueryMechanism.java:284)
+	at org.eclipse.persistence.queries.DataModifyQuery.executeDatabaseQuery(DataModifyQuery.java:87)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.internalExecuteQuery(AbstractSession.java:3349)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1827)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.priviledgedExecuteNonSelectingCall(AbstractSession.java:5212)
+	at org.eclipse.persistence.tools.schemaframework.TableDefinition.createForeignConstraintsOnDatabase(TableDefinition.java:896)
+	at org.eclipse.persistence.tools.schemaframework.SchemaManager.createForeignConstraints(SchemaManager.java:194)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createConstraints(TableCreator.java:119)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createTables(TableCreator.java:185)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createTables(TableCreator.java:150)
+	at org.eclipse.persistence.tools.schemaframework.TableCreator.createTables(TableCreator.java:142)
+	at org.eclipse.persistence.tools.schemaframework.SchemaManager.createDefaultTables(SchemaManager.java:1030)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.generateDefaultTables(EntityManagerFactoryProvider.java:110)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDLToDatabase(EntityManagerSetupImpl.java:4398)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4326)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4226)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:816)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:219)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:197)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:388)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:175)
+	at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:83)
+	at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:199)
+	at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:486)
+	at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:206)
+	at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:144)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:901)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:410)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:195)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:516)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:512)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:511)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:542)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:534)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:533)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1441)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:86)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1823)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1699)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:166)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:439)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:144)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:218)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:515)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Cannot add foreign key constraint
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at com.sun.gjc.spi.base.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:101)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:898)
+	... 79 more
+]]
+
+[2019-06-09T17:32:05.342-0500] [glassfish 5.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525342] [levelValue: 800] [[
+  Portable JNDI names for EJB AdminEJB: [java:global/ear-huq/negocio-huq/AdminEJB!co.edu.uniquindio.grid.ejbs.AdminEJBRemote, java:global/ear-huq/negocio-huq/AdminEJB!co.edu.uniquindio.grid.ejbs.AdminEJB]]]
+
+[2019-06-09T17:32:05.343-0500] [glassfish 5.1] [INFO] [AS-EJB-00055] [javax.enterprise.ejb.container] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525343] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB AdminEJB: [co.edu.uniquindio.grid.ejbs.AdminEJBRemote, co.edu.uniquindio.grid.ejbs.AdminEJBRemote#co.edu.uniquindio.grid.ejbs.AdminEJBRemote]]]
+
+[2019-06-09T17:32:05.629-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525629] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:32:05.636-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525636] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:32:05.642-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525642] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.hibernate.validator.cdi.ValidationExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:32:05.647-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525647] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:32:05.650-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525650] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorMandatory is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.652-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525652] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNever is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.655-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525655] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNotSupported is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.656-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525656] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequired is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.657-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525657] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequiresNew is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.659-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525659] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorSupports is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.664-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525664] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionHolder is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.665-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525665] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionInterceptor is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.666-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525666] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.TransactionalExceptionMapper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.669-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525669] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.servlet.internal.CdiExternalRequestScope is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.674-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525674] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider$JaxRsParamProducer is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.675-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525675] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.677-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525677] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.ibm.jbatch.container.cdi.BatchProducerBean is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:32:05.998-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119525998] [levelValue: 800] [[
+  ear-huq was successfully deployed in 6.019 milliseconds.]]
+
+[2019-06-09T17:34:39.242-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.container.ejb.org.glassfish.ejb.startup] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119679242] [levelValue: 800] [[
+  keepstate options resolved to true, saving appId 102243699030425600 for application herbario-uq-ear.]]
+
+[2019-06-09T17:34:39.354-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia.connection] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119679354] [levelValue: 800] [[
+  /file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia logout successful]]
+
+[2019-06-09T17:34:39.905-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119679905] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:34:40.130-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680130] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:34:40.196-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680196] [levelValue: 800] [[
+  co.cmamo.Planta actually got transformed]]
+
+[2019-06-09T17:34:40.201-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680201] [levelValue: 800] [[
+  co.cmamo.Genero actually got transformed]]
+
+[2019-06-09T17:34:40.205-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680205] [levelValue: 800] [[
+  co.cmamo.Administrador actually got transformed]]
+
+[2019-06-09T17:34:40.209-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680209] [levelValue: 800] [[
+  co.cmamo.Persona actually got transformed]]
+
+[2019-06-09T17:34:40.212-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680212] [levelValue: 800] [[
+  co.cmamo.Empleado actually got transformed]]
+
+[2019-06-09T17:34:40.217-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680217] [levelValue: 800] [[
+  co.cmamo.Familia actually got transformed]]
+
+[2019-06-09T17:34:40.220-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680220] [levelValue: 800] [[
+  co.cmamo.Recolector actually got transformed]]
+
+[2019-06-09T17:34:40.224-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680224] [levelValue: 800] [[
+  co.cmamo.Peticion actually got transformed]]
+
+[2019-06-09T17:34:40.237-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680237] [levelValue: 800] [[
+  EclipseLink, version: Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a]]
+
+[2019-06-09T17:34:40.267-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia.connection] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680267] [levelValue: 800] [[
+  /file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia login successful]]
+
+[2019-06-09T17:34:40.529-0500] [glassfish 5.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680529] [levelValue: 800] [[
+  Portable JNDI names for EJB SetupEJB: [java:global/herbario-uq-ear/herbario-uq-negocio/SetupEJB!co.cmamo.ejbs.SetupEJB, java:global/herbario-uq-ear/herbario-uq-negocio/SetupEJB]]]
+
+[2019-06-09T17:34:40.642-0500] [glassfish 5.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680642] [levelValue: 800] [[
+  Portable JNDI names for EJB AdminEJB: [java:global/herbario-uq-ear/herbario-uq-negocio/AdminEJB!co.cmamo.ejbs.AdminEJB, java:global/herbario-uq-ear/herbario-uq-negocio/AdminEJB!co.cmamo.ejbs.AdminEJBRemote]]]
+
+[2019-06-09T17:34:40.643-0500] [glassfish 5.1] [INFO] [AS-EJB-00055] [javax.enterprise.ejb.container] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680643] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB AdminEJB: [co.cmamo.ejbs.AdminEJBRemote, co.cmamo.ejbs.AdminEJBRemote#co.cmamo.ejbs.AdminEJBRemote]]]
+
+[2019-06-09T17:34:40.836-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680836] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.hibernate.validator.cdi.ValidationExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:34:40.843-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680843] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:34:40.850-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680850] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:34:40.859-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680859] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:34:40.872-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680872] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.servlet.internal.CdiExternalRequestScope is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.873-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680873] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionHolder is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.875-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680875] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionInterceptor is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.876-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680876] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.TransactionalExceptionMapper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.877-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680877] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider$JaxRsParamProducer is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.878-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680878] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.ibm.jbatch.container.cdi.BatchProducerBean is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.880-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680880] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorMandatory is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.881-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680881] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNever is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.882-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680882] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNotSupported is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.883-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680883] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequired is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.885-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680885] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequiresNew is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.886-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680886] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorSupports is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:40.887-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119680887] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:34:41.449-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=133 _ThreadName=admin-listener(6)] [timeMillis: 1560119681449] [levelValue: 800] [[
+  herbario-uq-ear was successfully deployed in 2.314 milliseconds.]]
+
+[2019-06-09T17:36:56.161-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.container.ejb.org.glassfish.ejb.startup] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816161] [levelValue: 800] [[
+  keepstate options resolved to true, saving appId 102243699030425600 for application herbario-uq-ear.]]
+
+[2019-06-09T17:36:56.318-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia.connection] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816318] [levelValue: 800] [[
+  /file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia logout successful]]
+
+[2019-06-09T17:36:56.423-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816423] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:56.641-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816641] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:56.800-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816800] [levelValue: 800] [[
+  co.cmamo.Planta actually got transformed]]
+
+[2019-06-09T17:36:56.806-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816806] [levelValue: 800] [[
+  co.cmamo.Genero actually got transformed]]
+
+[2019-06-09T17:36:56.809-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816809] [levelValue: 800] [[
+  co.cmamo.Administrador actually got transformed]]
+
+[2019-06-09T17:36:56.817-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816817] [levelValue: 800] [[
+  co.cmamo.Persona actually got transformed]]
+
+[2019-06-09T17:36:56.821-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816821] [levelValue: 800] [[
+  co.cmamo.Empleado actually got transformed]]
+
+[2019-06-09T17:36:56.827-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816827] [levelValue: 800] [[
+  co.cmamo.Familia actually got transformed]]
+
+[2019-06-09T17:36:56.830-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816830] [levelValue: 800] [[
+  co.cmamo.Recolector actually got transformed]]
+
+[2019-06-09T17:36:56.833-0500] [glassfish 5.1] [INFO] [NCLS-COMUTIL-00017] [javax.enterprise.system.util] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816833] [levelValue: 800] [[
+  co.cmamo.Peticion actually got transformed]]
+
+[2019-06-09T17:36:56.844-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816844] [levelValue: 800] [[
+  EclipseLink, version: Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a]]
+
+[2019-06-09T17:36:56.873-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia.connection] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119816873] [levelValue: 800] [[
+  /file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/herbario-uq-ear/lib/herbario-uq-persistencia.jar/_herbario-uq-persistencia login successful]]
+
+[2019-06-09T17:36:57.009-0500] [glassfish 5.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817009] [levelValue: 800] [[
+  Portable JNDI names for EJB AdminEJB: [java:global/herbario-uq-ear/herbario-uq-negocio/AdminEJB!co.cmamo.ejbs.AdminEJB, java:global/herbario-uq-ear/herbario-uq-negocio/AdminEJB!co.cmamo.ejbs.AdminEJBRemote]]]
+
+[2019-06-09T17:36:57.010-0500] [glassfish 5.1] [INFO] [AS-EJB-00055] [javax.enterprise.ejb.container] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817010] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB AdminEJB: [co.cmamo.ejbs.AdminEJBRemote, co.cmamo.ejbs.AdminEJBRemote#co.cmamo.ejbs.AdminEJBRemote]]]
+
+[2019-06-09T17:36:57.036-0500] [glassfish 5.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817036] [levelValue: 800] [[
+  Portable JNDI names for EJB SetupEJB: [java:global/herbario-uq-ear/herbario-uq-negocio/SetupEJB!co.cmamo.ejbs.SetupEJB, java:global/herbario-uq-ear/herbario-uq-negocio/SetupEJB]]]
+
+[2019-06-09T17:36:57.084-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817084] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.hibernate.validator.cdi.ValidationExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:36:57.090-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817090] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:36:57.104-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817104] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:36:57.107-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817107] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:36:57.109-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817109] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.servlet.internal.CdiExternalRequestScope is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.113-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817113] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.114-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817114] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionHolder is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.115-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817115] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionInterceptor is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.116-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817116] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.TransactionalExceptionMapper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.117-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817117] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider$JaxRsParamProducer is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.120-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817120] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.ibm.jbatch.container.cdi.BatchProducerBean is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.122-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817122] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorMandatory is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.123-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817123] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNever is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.124-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817124] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNotSupported is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.125-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817125] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequired is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.126-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817126] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequiresNew is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.127-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817127] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorSupports is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:36:57.341-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [timeMillis: 1560119817341] [levelValue: 800] [[
+  herbario-uq-ear was successfully deployed in 1.190 milliseconds.]]
+
+[2019-06-09T17:36:59.160-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819160] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:59.892-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819892] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:59.900-0500] [glassfish 5.1] [SEVERE] [] [global] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819900] [levelValue: 1000] [[
+  Class [ Lco/cmamo/ejbs/AdminEJB; ] not found. Error while loading [ class co.cmamo.EmpleadoBean ]]]
+
+[2019-06-09T17:36:59.906-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819906] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:59.907-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819907] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:59.908-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819908] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:59.909-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819909] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2019-06-09T17:36:59.994-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819994] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:36:59.997-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119819997] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:37:00.005-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820005] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:37:00.017-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820017] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.hibernate.validator.cdi.ValidationExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2019-06-09T17:37:00.022-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820022] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.servlet.internal.CdiExternalRequestScope is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.027-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820027] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider$JaxRsParamProducer is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.028-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820028] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionHolder is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.029-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820029] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.WebAppExceptionInterceptor is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.030-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820030] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.jersey.ext.cdi1x.transaction.internal.TransactionalExceptionMapper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.031-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820031] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.ibm.jbatch.container.cdi.BatchProducerBean is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.034-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820034] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.039-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820039] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorMandatory is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.040-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820040] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNever is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.041-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820041] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorNotSupported is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.042-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820042] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequired is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.043-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820043] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorRequiresNew is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.045-0500] [glassfish 5.1] [WARN] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820045] [levelValue: 900] [[
+  WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.glassfish.cdi.transaction.TransactionalInterceptorSupports is deprecated from CDI 1.1!]]
+
+[2019-06-09T17:37:00.048-0500] [glassfish 5.1] [INFO] [] [org.jboss.weld.Bootstrap] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820048] [levelValue: 800] [[
+  WELD-000119: Not generating any bean definitions from co.cmamo.EmpleadoBean because of underlying class loading error: Type co.cmamo.ejbs.AdminEJB not found.  If this is unexpected, enable DEBUG logging to see the full error.]]
+
+[2019-06-09T17:37:00.514-0500] [glassfish 5.1] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820514] [levelValue: 800] [[
+  Initializing Soteria 1.0.1 for context '/herbario-uq-web']]
+
+[2019-06-09T17:37:00.575-0500] [glassfish 5.1] [INFO] [jsf.config.listener.version] [javax.enterprise.resource.webcontainer.jsf.config] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119820575] [levelValue: 800] [[
+  Inicializando Mojarra 2.3.9 para el contexto '/herbario-uq-web']]
+
+[2019-06-09T17:37:01.829-0500] [glassfish 5.1] [INFO] [] [org.primefaces.webapp.PostConstructApplicationEventListener] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119821829] [levelValue: 800] [[
+  Running on PrimeFaces 6.2]]
+
+[2019-06-09T17:37:01.846-0500] [glassfish 5.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119821846] [levelValue: 800] [[
+  Loading application [herbario-uq-web] at [/herbario-uq-web]]]
+
+[2019-06-09T17:37:01.862-0500] [glassfish 5.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560119821862] [levelValue: 800] [[
+  herbario-uq-web was successfully deployed in 4.339 milliseconds.]]
+
+[2019-06-09T17:39:58.371-0500] [glassfish 5.1] [WARNING] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=59 _ThreadName=p: thread-pool-1; w: 1] [timeMillis: 1560119998371] [levelValue: 900] [[
+  
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingDefaultMultipleTableSubclassRead(InheritancePolicy.java:1338)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingMultipleTableSubclassRead(InheritancePolicy.java:1440)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2723)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+	at co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados(AdminEJB.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1057)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1129)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4796)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:632)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:800)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:139)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:345)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4768)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4756)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:181)
+	at com.sun.ejb.containers.EJBObjectInvocationHandlerDelegate.invoke(EJBObjectInvocationHandlerDelegate.java:55)
+	at com.sun.proxy.$Proxy330.listarEmpleados(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie.dispatchToMethod(ReflectiveTie.java:113)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie._invoke(ReflectiveTie.java:143)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatchToServant(ServerRequestDispatcherImpl.java:490)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatch(ServerRequestDispatcherImpl.java:161)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequestRequest(MessageMediatorImpl.java:1520)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:1396)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleInput(MessageMediatorImpl.java:901)
+	at com.sun.corba.ee.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:183)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:665)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.dispatch(MessageMediatorImpl.java:467)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.doWork(MessageMediatorImpl.java:2193)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:467)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:510)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.sun.gjc.spi.jdbc40.PreparedStatementWrapper40.executeQuery(PreparedStatementWrapper40.java:618)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+	... 74 more
+]]
+
+[2019-06-09T17:39:58.385-0500] [glassfish 5.1] [WARNING] [AS-EJB-00056] [javax.enterprise.ejb.container] [tid: _ThreadID=59 _ThreadName=p: thread-pool-1; w: 1] [timeMillis: 1560119998385] [levelValue: 900] [[
+  A system exception occurred during an invocation on EJB AdminEJB, method: public java.util.List co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados()]]
+
+[2019-06-09T17:39:58.386-0500] [glassfish 5.1] [WARNING] [] [javax.enterprise.ejb.container] [tid: _ThreadID=59 _ThreadName=p: thread-pool-1; w: 1] [timeMillis: 1560119998386] [levelValue: 900] [[
+  
+javax.ejb.EJBException
+	at com.sun.ejb.containers.EJBContainerTransactionManager.processSystemException(EJBContainerTransactionManager.java:728)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.completeNewTx(EJBContainerTransactionManager.java:678)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.postInvokeTx(EJBContainerTransactionManager.java:483)
+	at com.sun.ejb.containers.BaseContainer.postInvokeTx(BaseContainer.java:4576)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2084)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2054)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:188)
+	at com.sun.ejb.containers.EJBObjectInvocationHandlerDelegate.invoke(EJBObjectInvocationHandlerDelegate.java:55)
+	at com.sun.proxy.$Proxy330.listarEmpleados(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie.dispatchToMethod(ReflectiveTie.java:113)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie._invoke(ReflectiveTie.java:143)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatchToServant(ServerRequestDispatcherImpl.java:490)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatch(ServerRequestDispatcherImpl.java:161)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequestRequest(MessageMediatorImpl.java:1520)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:1396)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleInput(MessageMediatorImpl.java:901)
+	at com.sun.corba.ee.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:183)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:665)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.dispatch(MessageMediatorImpl.java:467)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.doWork(MessageMediatorImpl.java:2193)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:467)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:510)
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+	at co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados(AdminEJB.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1057)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1129)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4796)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:632)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:800)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:139)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:345)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4768)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4756)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:181)
+	... 19 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingDefaultMultipleTableSubclassRead(InheritancePolicy.java:1338)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingMultipleTableSubclassRead(InheritancePolicy.java:1440)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2723)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+	... 52 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.sun.gjc.spi.jdbc40.PreparedStatementWrapper40.executeQuery(PreparedStatementWrapper40.java:618)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+	... 74 more
+]]
+
+[2019-06-09T17:42:13.929-0500] [glassfish 5.1] [WARNING] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=61 _ThreadName=p: thread-pool-1; w: 3] [timeMillis: 1560120133929] [levelValue: 900] [[
+  
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingDefaultMultipleTableSubclassRead(InheritancePolicy.java:1338)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingMultipleTableSubclassRead(InheritancePolicy.java:1440)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2723)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+	at co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados(AdminEJB.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1057)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1129)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4796)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:632)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:800)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:139)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:345)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4768)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4756)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:181)
+	at com.sun.ejb.containers.EJBObjectInvocationHandlerDelegate.invoke(EJBObjectInvocationHandlerDelegate.java:55)
+	at com.sun.proxy.$Proxy330.listarEmpleados(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie.dispatchToMethod(ReflectiveTie.java:113)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie._invoke(ReflectiveTie.java:143)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatchToServant(ServerRequestDispatcherImpl.java:490)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatch(ServerRequestDispatcherImpl.java:161)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequestRequest(MessageMediatorImpl.java:1520)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:1396)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleInput(MessageMediatorImpl.java:901)
+	at com.sun.corba.ee.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:183)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:665)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.dispatch(MessageMediatorImpl.java:467)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.doWork(MessageMediatorImpl.java:2193)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:467)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:510)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.sun.gjc.spi.jdbc40.PreparedStatementWrapper40.executeQuery(PreparedStatementWrapper40.java:618)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+	... 74 more
+]]
+
+[2019-06-09T17:42:13.931-0500] [glassfish 5.1] [WARNING] [AS-EJB-00056] [javax.enterprise.ejb.container] [tid: _ThreadID=61 _ThreadName=p: thread-pool-1; w: 3] [timeMillis: 1560120133931] [levelValue: 900] [[
+  A system exception occurred during an invocation on EJB AdminEJB, method: public java.util.List co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados()]]
+
+[2019-06-09T17:42:13.931-0500] [glassfish 5.1] [WARNING] [] [javax.enterprise.ejb.container] [tid: _ThreadID=61 _ThreadName=p: thread-pool-1; w: 3] [timeMillis: 1560120133931] [levelValue: 900] [[
+  
+javax.ejb.EJBException
+	at com.sun.ejb.containers.EJBContainerTransactionManager.processSystemException(EJBContainerTransactionManager.java:728)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.completeNewTx(EJBContainerTransactionManager.java:678)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.postInvokeTx(EJBContainerTransactionManager.java:483)
+	at com.sun.ejb.containers.BaseContainer.postInvokeTx(BaseContainer.java:4576)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2084)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2054)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:188)
+	at com.sun.ejb.containers.EJBObjectInvocationHandlerDelegate.invoke(EJBObjectInvocationHandlerDelegate.java:55)
+	at com.sun.proxy.$Proxy330.listarEmpleados(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie.dispatchToMethod(ReflectiveTie.java:113)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie._invoke(ReflectiveTie.java:143)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatchToServant(ServerRequestDispatcherImpl.java:490)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatch(ServerRequestDispatcherImpl.java:161)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequestRequest(MessageMediatorImpl.java:1520)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:1396)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleInput(MessageMediatorImpl.java:901)
+	at com.sun.corba.ee.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:183)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:665)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.dispatch(MessageMediatorImpl.java:467)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.doWork(MessageMediatorImpl.java:2193)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:467)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:510)
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+	at co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados(AdminEJB.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1057)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1129)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4796)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:632)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:800)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:139)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:345)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4768)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4756)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:181)
+	... 19 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingDefaultMultipleTableSubclassRead(InheritancePolicy.java:1338)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingMultipleTableSubclassRead(InheritancePolicy.java:1440)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2723)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+	... 52 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.sun.gjc.spi.jdbc40.PreparedStatementWrapper40.executeQuery(PreparedStatementWrapper40.java:618)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+	... 74 more
+]]
+
+[2019-06-09T17:46:40.610-0500] [glassfish 5.1] [WARNING] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq] [tid: _ThreadID=61 _ThreadName=p: thread-pool-1; w: 3] [timeMillis: 1560120400610] [levelValue: 900] [[
+  
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingDefaultMultipleTableSubclassRead(InheritancePolicy.java:1338)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingMultipleTableSubclassRead(InheritancePolicy.java:1440)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2723)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+	at co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados(AdminEJB.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1057)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1129)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4796)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:632)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:800)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:139)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:345)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4768)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4756)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:181)
+	at com.sun.ejb.containers.EJBObjectInvocationHandlerDelegate.invoke(EJBObjectInvocationHandlerDelegate.java:55)
+	at com.sun.proxy.$Proxy330.listarEmpleados(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie.dispatchToMethod(ReflectiveTie.java:113)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie._invoke(ReflectiveTie.java:143)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatchToServant(ServerRequestDispatcherImpl.java:490)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatch(ServerRequestDispatcherImpl.java:161)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequestRequest(MessageMediatorImpl.java:1520)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:1396)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleInput(MessageMediatorImpl.java:901)
+	at com.sun.corba.ee.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:183)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:665)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.dispatch(MessageMediatorImpl.java:467)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.doWork(MessageMediatorImpl.java:2193)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:467)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:510)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.sun.gjc.spi.jdbc40.PreparedStatementWrapper40.executeQuery(PreparedStatementWrapper40.java:618)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+	... 74 more
+]]
+
+[2019-06-09T17:46:40.612-0500] [glassfish 5.1] [WARNING] [AS-EJB-00056] [javax.enterprise.ejb.container] [tid: _ThreadID=61 _ThreadName=p: thread-pool-1; w: 3] [timeMillis: 1560120400612] [levelValue: 900] [[
+  A system exception occurred during an invocation on EJB AdminEJB, method: public java.util.List co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados()]]
+
+[2019-06-09T17:46:40.612-0500] [glassfish 5.1] [WARNING] [] [javax.enterprise.ejb.container] [tid: _ThreadID=61 _ThreadName=p: thread-pool-1; w: 3] [timeMillis: 1560120400612] [levelValue: 900] [[
+  
+javax.ejb.EJBException
+	at com.sun.ejb.containers.EJBContainerTransactionManager.processSystemException(EJBContainerTransactionManager.java:728)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.completeNewTx(EJBContainerTransactionManager.java:678)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.postInvokeTx(EJBContainerTransactionManager.java:483)
+	at com.sun.ejb.containers.BaseContainer.postInvokeTx(BaseContainer.java:4576)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2084)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2054)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:188)
+	at com.sun.ejb.containers.EJBObjectInvocationHandlerDelegate.invoke(EJBObjectInvocationHandlerDelegate.java:55)
+	at com.sun.proxy.$Proxy330.listarEmpleados(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie.dispatchToMethod(ReflectiveTie.java:113)
+	at com.sun.corba.ee.impl.presentation.rmi.ReflectiveTie._invoke(ReflectiveTie.java:143)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatchToServant(ServerRequestDispatcherImpl.java:490)
+	at com.sun.corba.ee.impl.protocol.ServerRequestDispatcherImpl.dispatch(ServerRequestDispatcherImpl.java:161)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequestRequest(MessageMediatorImpl.java:1520)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:1396)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleInput(MessageMediatorImpl.java:901)
+	at com.sun.corba.ee.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:183)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.handleRequest(MessageMediatorImpl.java:665)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.dispatch(MessageMediatorImpl.java:467)
+	at com.sun.corba.ee.impl.protocol.MessageMediatorImpl.doWork(MessageMediatorImpl.java:2193)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:467)
+	at com.sun.corba.ee.impl.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:510)
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+	at co.edu.uniquindio.grid.ejbs.AdminEJB.listarEmpleados(AdminEJB.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1057)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1129)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4796)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:632)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:800)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:584)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:139)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:859)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:799)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:345)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4768)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4756)
+	at com.sun.ejb.containers.EJBObjectInvocationHandler.invoke(EJBObjectInvocationHandler.java:181)
+	... 19 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+Error Code: 1054
+Call: SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))
+	bind => [2 parameters bound]
+Query: ReadAllQuery(name="ListarEmpleados" referenceClass=Empleado sql="SELECT DISTINCT t0.DTYPE FROM PERSONA t0, EMPLEADO t1 WHERE ((t1.CEDULA = t0.CEDULA) AND (t0.DTYPE IN (?, ?)))")
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+	at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingDefaultMultipleTableSubclassRead(InheritancePolicy.java:1338)
+	at org.eclipse.persistence.descriptors.InheritancePolicy.selectAllRowUsingMultipleTableSubclassRead(InheritancePolicy.java:1440)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2723)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+	... 52 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't1.CEDULA' in 'where clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at com.sun.gjc.spi.jdbc40.PreparedStatementWrapper40.executeQuery(PreparedStatementWrapper40.java:618)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+	... 74 more
+]]
+
+[2019-06-09T18:44:05.358-0500] [glassfish 5.1] [INFO] [] [org.eclipse.persistence.session./file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq.connection] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [timeMillis: 1560123845358] [levelValue: 800] [[
+  /file:/home/yesid/Escritorio/herbario-uq/servidor/domain1/eclipseApps/ear-huq/lib/persistencia-huq.jar/_persistencia-huq logout successful]]
+
+[2019-06-09T20:46:00.697-0500] [glassfish 5.1] [WARNING] [] [java.util.prefs] [tid: _ThreadID=188 _ThreadName=Timer-4] [timeMillis: 1560131160697] [levelValue: 900] [[
+  Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.]]
+

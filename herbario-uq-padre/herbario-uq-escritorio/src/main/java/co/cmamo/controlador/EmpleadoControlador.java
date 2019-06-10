@@ -112,7 +112,9 @@ public class EmpleadoControlador {
 			txtApellido.setText(empleado.getApellido().getValue());
 			txtEmail.setText(empleado.getEmail().getValue());
 			txtClave.setText(empleado.getClave().getValue());
-			txtFechaNacimiento.setText(empleado.getFechaNacimiento().getValue().toString());
+
+			// TODO: Agregar fecha de nacimiento a la clase Persona
+			// txtFechaNacimiento.setText(empleado.getFechaNacimiento().getValue().toString());
 		} else {
 			txtCedula.setText("");
 			txtNombre.setText("");
@@ -138,10 +140,7 @@ public class EmpleadoControlador {
 	 */
 	@FXML
 	public void elimiarEmpleado() {
-
 		int indice = tablaEmpleados.getSelectionModel().getSelectedIndex();
-
-		System.out.println(tablaEmpleados.getItems().size());
 
 		Empleado empleado = tablaEmpleados.getItems().get(indice).getEmpleado();
 
@@ -151,7 +150,5 @@ public class EmpleadoControlador {
 		} else {
 			Utilidades.mostrarMensaje("Error", "El empleado no pudo ser eliminado");
 		}
-
 	}
-
 }

@@ -7,6 +7,8 @@ import java.util.Date;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import static javafx.scene.control.Alert.AlertType.*;
+
 /**
  * Permite manejar las operaciones generales de la capa de presentacion
  * @author EinerZG
@@ -19,12 +21,30 @@ public final class Utilidades {
 	 * @param titulo subtitulo de la alerta
 	 * @param mensaje mensaje principal
 	 */
-	public static void mostrarMensaje( String titulo, String mensaje ) {
+	public static void mostrarMensaje( String titulo, String mensaje) {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Herbario UQ");
 		alert.setHeaderText(titulo);
 		alert.setContentText(mensaje);
-		alert.showAndWait();	
+		alert.showAndWait();
+	}
+	
+	public static void mostrarMensaje( String titulo, String mensaje, int tipo ) {
+		Alert alert = new Alert(setTipoAlerta(tipo));
+		alert.setTitle("Herbario UQ");
+		alert.setHeaderText(titulo);
+		alert.setContentText(mensaje);
+		alert.showAndWait();
+	}
+	
+	private static AlertType setTipoAlerta(int tipo) {
+		switch (tipo) {
+		case -2: return ERROR;
+		case -1: return WARNING;
+		case 0:  return NONE;
+		case 1:  return CONFIRMATION;
+		default: return INFORMATION;
+		}
 	}
 	
 	/**

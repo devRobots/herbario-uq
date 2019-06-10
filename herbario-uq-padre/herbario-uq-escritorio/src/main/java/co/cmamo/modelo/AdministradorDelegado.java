@@ -9,7 +9,6 @@ import javax.naming.InitialContext;
 
 import co.cmamo.Empleado;
 import co.cmamo.Persona;
-import co.cmamo.ejbs.AdminEJB;
 import co.cmamo.ejbs.AdminEJBRemote;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,8 +35,6 @@ public class AdministradorDelegado {
 	 */
 	private AdministradorDelegado() {
 		try {
-			// TODO: Arreglar
-			adminEJB = new AdminEJB();
 			adminEJB = (AdminEJBRemote) new InitialContext().lookup(AdminEJBRemote.JNDI);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -93,10 +90,13 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<EmpleadoObservable> listarEmpleadosObservables() {
 		List<Empleado> empleados = listarEmpleado();
+		
 		ObservableList<EmpleadoObservable> empleadosObservables = FXCollections.observableArrayList();
+		
 		for (Persona persona : empleados) {
 			empleadosObservables.add(new EmpleadoObservable(persona));
 		}
+		
 		return empleadosObservables;
 	}
 

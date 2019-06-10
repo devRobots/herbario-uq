@@ -7,6 +7,7 @@ import co.cmamo.Empleado;
 import co.cmamo.Persona;
 import co.cmamo.modelo.AdministradorDelegado;
 import co.cmamo.modelo.EmpleadoObservable;
+import co.cmamo.util.Utilidades;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,6 +37,16 @@ public class ManejadorEscenarios {
 	@FXML
 	private BorderPane bordePane;
 	/**
+	 * Panel de la escena Dashboard
+	 */
+	@FXML
+	private AnchorPane panelDashboard;
+	/**
+	 * Panel de la escena Herbario
+	 */
+	@FXML
+	private AnchorPane panelHerbario;
+	/**
 	 * para almacenar empleados observables
 	 */
 	private ObservableList<EmpleadoObservable> empleadosObservables;
@@ -43,26 +54,31 @@ public class ManejadorEscenarios {
 	 * conexion con capa de negocio
 	 */
 	private AdministradorDelegado administradorDelegado;
-	
-    @FXML
-    void close() {
-    	System.exit(0);
-    }
-    
-    @FXML
-    void irAlHerbario() {
-    	cargarEscenaHerbario();
-    }
 
-    @FXML
-    void irAlPanel() {
-    	cargarEscenaPanel();
-    }
-    
-    public ManejadorEscenarios() {
-		
+	@FXML
+	void close() {
+		System.exit(0);
+	}
+
+	@FXML
+	void irAlHerbario() {
+		cargarEscenaHerbario();
+	}
+
+	@FXML
+	void irAlPanel() {
+		cargarEscenaPanel();
 	}
 	
+	@FXML
+	void acercaDe() {
+		Utilidades.mostrarMensaje("Hola mundo", "Esto es un mensaje de prueba", -2);
+	}
+
+	public ManejadorEscenarios() {
+
+	}
+
 	/**
 	 * recibe el escenario principla de la aplicacion
 	 * 
@@ -102,59 +118,65 @@ public class ManejadorEscenarios {
 	 * carga una escena en el centro del escenario
 	 */
 	public void cargarEscena() {
-
 		try {
 			empleadosObservables = administradorDelegado.listarEmpleadosObservables();
 
 			FXMLLoader loader2 = new FXMLLoader();
 			loader2.setLocation(Main.class.getResource("./vista/detalle_empleado.fxml"));
-			
-			AnchorPane panelAncho = (AnchorPane) loader2.load();
-			bordePane.setCenter(panelAncho);
+
+			panelDashboard = (AnchorPane) loader2.load();
+			bordePane.setCenter(panelDashboard);
 
 			EmpleadoControlador controlador = loader2.getController();
 			controlador.setEscenarioInicial(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**
 	 * carga una escena en el centro del escenario
 	 */
 	public void cargarEscenaPanel() {
-		try {
-			FXMLLoader loader2 = new FXMLLoader();
-			loader2.setLocation(Main.class.getResource("./vista/detalle_empleado.fxml"));
-			
-			AnchorPane panelAncho = (AnchorPane) loader2.load();
-			bordePane.setCenter(panelAncho);
+		if (panelDashboard == null) {
+			try {
+				administradorDelegado = AdministradorDelegado.administradorDelegado;
+				empleadosObservables = administradorDelegado.listarEmpleadosObservables();
+				
+				FXMLLoader loader2 = new FXMLLoader();
+				loader2.setLocation(Main.class.getResource("./vista/detalle_empleado.fxml"));
 
-			EmpleadoControlador controlador = loader2.getController();
-			controlador.setEscenarioInicial(this);
-		} catch (IOException e) {
-			e.printStackTrace();
+				panelDashboard = (AnchorPane) loader2.load();
+
+				EmpleadoControlador controlador = loader2.getController();
+				controlador.setEscenarioInicial(this);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+		
+		bordePane.setCenter(panelDashboard);
 	}
+
 	/**
 	 * carga una escena en el centro del escenario
 	 */
 	public void cargarEscenaHerbario() {
+		if (panelHerbario == null) {
+			try {
+				FXMLLoader loader3 = new FXMLLoader();
+				loader3.setLocation(Main.class.getResource("./vista/herbario.fxml"));
 
-		try {
-			FXMLLoader loader3 = new FXMLLoader();
-			loader3.setLocation(Main.class.getResource("./vista/herbario.fxml"));
-			
-			AnchorPane panelAncho = (AnchorPane) loader3.load();
-			bordePane.setCenter(panelAncho);
+				panelHerbario = (AnchorPane) loader3.load();
 
-			HerbarioControlador controlador = loader3.getController();
-			controlador.setEscenarioInicial(this);
-		} catch (IOException e) {
-			e.printStackTrace();
+				HerbarioControlador controlador = loader3.getController();
+				controlador.setEscenarioInicial(this);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 
+		bordePane.setCenter(panelHerbario);
 	}
 
 	/**

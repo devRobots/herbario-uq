@@ -11,11 +11,15 @@
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#irAlPanel" text="Ir al Panel" />
-                  <MenuItem mnemonicParsing="false" onAction="#irAlHerbario" text="Ir al Herbario" />
               <MenuItem mnemonicParsing="false" onAction="#close" text="Cerrar" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Navegar">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irAlPanel" text="Ir al Panel" />
+                  <MenuItem mnemonicParsing="false" onAction="#irAlHerbario" text="Ir al Herbario" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Editar">
             <items>
               <MenuItem mnemonicParsing="false" text="Eliminar" />
@@ -23,7 +27,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="Acerca de" />
+              <MenuItem mnemonicParsing="false" onAction="#acercaDe" text="Acerca de" />
             </items>
           </Menu>
         </menus>

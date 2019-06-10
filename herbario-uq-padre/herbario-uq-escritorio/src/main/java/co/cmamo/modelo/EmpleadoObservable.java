@@ -52,7 +52,6 @@ public class EmpleadoObservable {
 	 * @param nombre
 	 */
 	public EmpleadoObservable(String cedula, String nombre) {
-
 		this.cedula = new SimpleStringProperty(cedula);
 		this.nombre = new SimpleStringProperty(nombre);
 
@@ -69,7 +68,6 @@ public class EmpleadoObservable {
 	 * @param empleado que se quiere volver observable
 	 */
 	public EmpleadoObservable(Persona empleado) {
-
 		this.empleado = (Empleado) empleado;
 		this.cedula = new SimpleStringProperty(empleado.getId());
 		this.nombre = new SimpleStringProperty(empleado.getNombre());
@@ -89,14 +87,12 @@ public class EmpleadoObservable {
 	 * @param fecha
 	 */
 	public EmpleadoObservable(String cedula, String nombre, String apellido, String email, String clave, Date fecha) {
-
 		this.cedula = new SimpleStringProperty(cedula);
 		this.nombre = new SimpleStringProperty(nombre);
 		this.apellido = new SimpleStringProperty(apellido);
 		this.email = new SimpleStringProperty(email);
 		this.clave = new SimpleStringProperty(clave);
 		this.fechaNacimiento = new SimpleObjectProperty<>(fecha);
-
 	}
 
 	/**

@@ -320,7 +320,7 @@
       <property name="EnableQueryTimeouts" value="true"></property>
       <property name="LogXaCommands" value="false"></property>
       <property name="PrepStmtCacheSize" value="25"></property>
-      <property name="Password" value="12345"></property>
+      <property name="Password" value="root"></property>
       <property name="SelfDestructOnPingMaxOperations" value="0"></property>
       <property name="ZeroDateTimeBehavior" value="exception"></property>
       <property name="CallableStmtCacheSize" value="100"></property>
@@ -364,8 +364,8 @@
       <property name="UseReadAheadInput" value="true"></property>
       <property name="ParseInfoCacheFactory" value="com.mysql.jdbc.PerConnectionLRUFactory"></property>
       <property name="DefaultFetchSize" value="0"></property>
-      <property name="URL" value="jdbc:mysql://localhost:3306/herbarioUQ"></property>
-      <property name="Url" value="jdbc:mysql://localhost:3306/herbarioUQ"></property>
+      <property name="URL" value="jdbc:mysql://localhost:3306/herbario"></property>
+      <property name="Url" value="jdbc:mysql://localhost:3306/herbario"></property>
       <property name="AllowMasterDownConnections" value="false"></property>
       <property name="CacheDefaultTimezone" value="true"></property>
       <property name="QueriesBeforeRetryMaster" value="50"></property>
