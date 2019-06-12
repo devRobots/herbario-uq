@@ -1,17 +1,13 @@
 package co.cmamo.modelo;
 
-import java.util.Date;
-
 import co.cmamo.Empleado;
 import co.cmamo.Persona;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
  * Permite transformar una persona en formato observable
- * 
+ *
  * @author EinerZG
  * @version 1.0
  */
@@ -38,16 +34,12 @@ public class EmpleadoObservable {
 	 */
 	private StringProperty clave;
 	/**
-	 * fecha de nacimiento observable de un empleado
-	 */
-	private ObjectProperty<Date> fechaNacimiento;
-	/**
 	 * empleado asociado
 	 */
 	private Empleado empleado;
 
 	/**
-	 * 
+	 *
 	 * @param cedula
 	 * @param nombre
 	 */
@@ -55,44 +47,41 @@ public class EmpleadoObservable {
 		this.cedula = new SimpleStringProperty(cedula);
 		this.nombre = new SimpleStringProperty(nombre);
 
-		this.apellido = new SimpleStringProperty("Algo");
-		this.email = new SimpleStringProperty("algo@mail.com");
-		this.clave = new SimpleStringProperty("12345");
-		this.fechaNacimiento = new SimpleObjectProperty<>(new Date());
+		apellido = new SimpleStringProperty("Algo");
+		email = new SimpleStringProperty("algo@mail.com");
+		clave = new SimpleStringProperty("12345");
 
 	}
 
 	/**
 	 * constructor que genera con empleado observable con base a un empleado
-	 * 
+	 *
 	 * @param empleado que se quiere volver observable
 	 */
 	public EmpleadoObservable(Persona empleado) {
 		this.empleado = (Empleado) empleado;
-		this.cedula = new SimpleStringProperty(empleado.getId());
-		this.nombre = new SimpleStringProperty(empleado.getNombre());
-		this.apellido = new SimpleStringProperty(empleado.getApellido());
-		this.email = new SimpleStringProperty(empleado.getCorreo());
-		this.clave = new SimpleStringProperty(empleado.getClave());
+		cedula = new SimpleStringProperty(empleado.getId());
+		nombre = new SimpleStringProperty(empleado.getNombre());
+		apellido = new SimpleStringProperty(empleado.getApellido());
+		email = new SimpleStringProperty(empleado.getCorreo());
+		clave = new SimpleStringProperty(empleado.getClave());
 	}
 
 	/**
 	 * permite generar una instanci usando todos los empleados
-	 * 
+	 *
 	 * @param cedula
 	 * @param nombre
 	 * @param apellido
 	 * @param email
 	 * @param clave
-	 * @param fecha
 	 */
-	public EmpleadoObservable(String cedula, String nombre, String apellido, String email, String clave, Date fecha) {
+	public EmpleadoObservable(String cedula, String nombre, String apellido, String email, String clave) {
 		this.cedula = new SimpleStringProperty(cedula);
 		this.nombre = new SimpleStringProperty(nombre);
 		this.apellido = new SimpleStringProperty(apellido);
 		this.email = new SimpleStringProperty(email);
 		this.clave = new SimpleStringProperty(clave);
-		this.fechaNacimiento = new SimpleObjectProperty<>(fecha);
 	}
 
 	/**
@@ -163,20 +152,6 @@ public class EmpleadoObservable {
 	 */
 	public void setClave(StringProperty clave) {
 		this.clave = clave;
-	}
-
-	/**
-	 * @return the fechaNacimiento
-	 */
-	public ObjectProperty<Date> getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-
-	/**
-	 * @param fechaNacimiento the fechaNacimiento to set
-	 */
-	public void setFechaNacimiento(ObjectProperty<Date> fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	/**

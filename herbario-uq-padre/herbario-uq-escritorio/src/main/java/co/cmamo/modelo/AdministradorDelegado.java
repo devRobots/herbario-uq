@@ -9,6 +9,8 @@ import javax.naming.InitialContext;
 
 import co.cmamo.Empleado;
 import co.cmamo.Persona;
+import co.cmamo.Recolector;
+import co.cmamo.ejbs.AdminEJB;
 import co.cmamo.ejbs.AdminEJBRemote;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,9 +37,10 @@ public class AdministradorDelegado {
 	 */
 	private AdministradorDelegado() {
 		try {
+			adminEJB = new AdminEJB();
 			adminEJB = (AdminEJBRemote) new InitialContext().lookup(AdminEJBRemote.JNDI);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
@@ -70,7 +73,7 @@ public class AdministradorDelegado {
 	 * 
 	 * @return todos los empleados
 	 */
-	public List<Empleado> listarEmpleado() {
+	public List<Empleado> listarEmpleados() {
 		return adminEJB.listarEmpleados();
 	}
 
@@ -84,20 +87,66 @@ public class AdministradorDelegado {
 	}
 
 	/**
+	 * pemite registar un nuevo empleado
+	 * 
+	 * @param recolector empleado a agregar
+	 * @return devuelve true si el empleado fue eliminado
+	 */
+	public boolean registrarRecolector(Recolector recolector) {
+		return adminEJB.crearRecolector(recolector);
+	}
+
+	/**
+	 * devuvel la lista de empleado que estan en la base de datos
+	 * 
+	 * @return todos los empleados
+	 */
+	public List<Recolector> listarRecolectores() {
+		return adminEJB.listarRecolectores();
+	}
+
+	/**
+	 * permite eliminar el empleado por cedula
+	 * 
+	 * @return empleado si fue eliminado
+	 */
+	public boolean eliminarEmpleado(Recolector recolector) {
+		return adminEJB.invalidarRecolector(recolector.getId());
+	}
+
+	/**
 	 * genera una lista de empleados observables
 	 * 
 	 * @return todos los empleados obsevables
 	 */
-	public ObservableList<EmpleadoObservable> listarEmpleadosObservables() {
-		List<Empleado> empleados = listarEmpleado();
+	public ObservableList<PersonaObservable> listarEmpleadosObservables() {
+		List<Empleado> empleados = listarEmpleados();
 		
-		ObservableList<EmpleadoObservable> empleadosObservables = FXCollections.observableArrayList();
+		ObservableList<PersonaObservable> empleadosObservables = FXCollections.observableArrayList();
 		
 		for (Persona persona : empleados) {
-			empleadosObservables.add(new EmpleadoObservable(persona));
+			empleadosObservables.add(new PersonaObservable(persona));
 		}
 		
 		return empleadosObservables;
+	}
+
+
+	/**
+	 * genera una lista de empleados observables
+	 * 
+	 * @return todos los empleados obsevables
+	 */
+	public ObservableList<PersonaObservable> listarRecolectoresObservables() {
+		List<Recolector> recolectores = listarRecolectores();
+		
+		ObservableList<PersonaObservable> recolectoresObservables = FXCollections.observableArrayList();
+		
+		for (Persona persona : recolectores) {
+			recolectoresObservables.add(new PersonaObservable(persona));
+		}
+		
+		return recolectoresObservables;
 	}
 
 }

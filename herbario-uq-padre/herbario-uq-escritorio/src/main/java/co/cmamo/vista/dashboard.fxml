@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.DashboardControlador">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.DashboardControlador">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -32,12 +32,6 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <TableView prefHeight="200.0" prefWidth="200.0">
-                                <columns>
-                                  <TableColumn maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Cedula" />
-                                  <TableColumn maxWidth="1.7976931348623157E308" minWidth="110.0" prefWidth="110.0" text="Nombre" />
-                                </columns>
-                              </TableView>
                               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <children>
                                     <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
@@ -96,17 +90,17 @@
                                              <children>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Editar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#editarEmpleado" text="Editar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Invalidar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#invalidarEmpleado" text="Invalidar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Agregar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#agregarEmpleado" text="Agregar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                              </children>
@@ -115,6 +109,12 @@
                                     </GridPane>
                                  </children>
                               </AnchorPane>
+                              <TableView fx:id="tablaEmpleados" prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn fx:id="cedulaEmpleadoColumna" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Cedula" />
+                                  <TableColumn fx:id="nombreEmpleadoColumna" maxWidth="1.7976931348623157E308" minWidth="110.0" prefWidth="110.0" text="Nombre" />
+                                </columns>
+                              </TableView>
                            </children>
                         </GridPane>
                      </children>
@@ -134,10 +134,10 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TableView prefHeight="200.0" prefWidth="200.0">
+                              <TableView fx:id="tablaRecolectores" prefHeight="200.0" prefWidth="200.0">
                                  <columns>
-                                    <TableColumn maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Cedula" />
-                                    <TableColumn maxWidth="1.7976931348623157E308" minWidth="110.0" prefWidth="110.0" text="Nombre" />
+                                    <TableColumn fx:id="cedulaRecolectorColumna" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Cedula" />
+                                    <TableColumn fx:id="cedulaRecolectorColumna" maxWidth="1.7976931348623157E308" minWidth="110.0" prefWidth="110.0" text="Nombre" />
                                  </columns>
                               </TableView>
                               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -198,17 +198,17 @@
                                              <children>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Editar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#editarRecolector" text="Editar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Invalidar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#invalidarRecolector" text="Invalidar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Agregar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#agregarRecolector" text="Agregar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                              </children>
@@ -278,10 +278,10 @@
                                                       <Label text="Especie:" GridPane.rowIndex="1" />
                                                       <Label text="Genero:" GridPane.rowIndex="2" />
                                                       <Label text="Familia:" GridPane.rowIndex="3" />
-                                                      <Label fx:id="txtCedula2" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
-                                                      <Label fx:id="txtNombre2" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                                                      <Label fx:id="txtApellido2" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                                                      <Label fx:id="txtEmail2" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                                                      <Label fx:id="txtIdPeticion" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                                                      <Label fx:id="txtEspeciePeticion" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                                      <Label fx:id="txtGeneroPeticion" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                                      <Label fx:id="txtFamiliaPeticion" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
                                                    </children>
                                                 </GridPane>
                                              </children>
@@ -311,12 +311,12 @@
                                              <children>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Rechazar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#rechazarPeticion" text="Rechazar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                    <children>
-                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Aprobar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+                                                      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#aprobarPeticion" text="Aprobar" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
                                                    </children>
                                                 </AnchorPane>
                                              </children>
