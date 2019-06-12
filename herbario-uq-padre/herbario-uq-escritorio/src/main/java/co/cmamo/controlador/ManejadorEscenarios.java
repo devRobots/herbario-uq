@@ -72,7 +72,7 @@ public class ManejadorEscenarios {
 	
 	@FXML
 	void acercaDe() {
-		Utilidades.mostrarMensaje("Hola mundo", "Esto es un mensaje de prueba", -2);
+		Utilidades.mostrarMensaje("Hola mundo", "Esto es un mensaje de prueba", -1);
 	}
 
 	public ManejadorEscenarios() {

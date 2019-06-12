@@ -8,5 +8,8 @@
         <dependent-module archiveName="herbario-uq-negocio.jar" deploy-path="/" handle="module:/resource/herbario-uq-negocio/herbario-uq-negocio">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="herbario-uq-web.war" deploy-path="/" handle="module:/resource/herbario-uq-web/herbario-uq-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
