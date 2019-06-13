@@ -72,7 +72,8 @@
                <children>
                   <AnchorPane>
                      <children>
-                  		<Button mnemonicParsing="false" onAction="#registrarPersona" text="Aceptar" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  		<Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" text="Crear" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificar" text="Modificar" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane GridPane.columnIndex="1">

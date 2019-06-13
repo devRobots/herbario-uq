@@ -78,6 +78,40 @@ public interface AdminEJBRemote {
 	 * @return boolean Si se invalido o no
 	 */
 	public boolean invalidarRecolector(String id);
+	
+	/**
+	 * Registra un recolector en la BD si es posible
+	 * @param empleado Recolector que se quiere registrar
+	 * @return boolean Si se registro o no
+	 */
+	public boolean crearPeticion(Peticion peticion);
+	
+	/**
+	 * Modifica un recolector en la BD si es posible
+	 * @param mod	Recolector con que se va a modificar
+	 * @return boolean Si se modifico o no
+	 */
+	public boolean modificarPeticion(Peticion mod);
+	
+	/**
+	 * Buscar un recolector en la BD si es posible
+	 * @param id Criterio de busqueda del Recolector
+	 * @return recolector Recolector que se buscaba o null sino existe
+	 */
+	public Peticion buscarPeticion(long id);
+
+	/**
+	 * Lista todos los recolectores en la BD
+	 * @return List<Recolector> Recolectores que se encontraron
+	 */
+	public List<Peticion> listarPeticiones();
+
+	/**
+	 * Invalida un recolector en la BD si es posible
+	 * @param id ID del recolector que se quiere invalidar
+	 * @return boolean Si se invalido o no
+	 */
+	public boolean eliminarPeticion(long id);
 
 	/**
 	 * Registra un familia en la BD si es posible

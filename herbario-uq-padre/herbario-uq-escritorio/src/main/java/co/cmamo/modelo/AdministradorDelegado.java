@@ -11,6 +11,7 @@ import co.cmamo.Empleado;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
 import co.cmamo.Persona;
+import co.cmamo.Peticion;
 import co.cmamo.Planta;
 import co.cmamo.Recolector;
 import co.cmamo.ejbs.AdminEJB;
@@ -43,7 +44,7 @@ public class AdministradorDelegado {
 			adminEJB = new AdminEJB();
 			adminEJB = (AdminEJBRemote) new InitialContext().lookup(AdminEJBRemote.JNDI);
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 		}
 	}
 
@@ -123,6 +124,34 @@ public class AdministradorDelegado {
 	 * @param recolector empleado a agregar
 	 * @return devuelve true si el empleado fue eliminado
 	 */
+	public boolean registrarPeticion(Peticion peticion) {
+		return adminEJB.crearPeticion(peticion);
+	}
+
+	/**
+	 * devuvel la lista de empleado que estan en la base de datos
+	 * 
+	 * @return todos los empleados
+	 */
+	public List<Peticion> listarPeticiones() {
+		return adminEJB.listarPeticiones();
+	}
+
+	/**
+	 * permite eliminar el empleado por cedula
+	 * 
+	 * @return empleado si fue eliminado
+	 */
+	public boolean eliminarPeticion(Peticion peticion) {
+		return adminEJB.eliminarPeticion(peticion.getId());
+	}
+
+	/**
+	 * pemite registar un nuevo empleado
+	 * 
+	 * @param recolector empleado a agregar
+	 * @return devuelve true si el empleado fue eliminado
+	 */
 	public boolean registrarFamilia(Familia familia) {
 		return adminEJB.crearFamilia(familia);
 	}
@@ -130,7 +159,7 @@ public class AdministradorDelegado {
 	public Familia obtenerFamilia(String nombre) {
 		return adminEJB.buscarFamilia(nombre);
 	}
-	
+
 	/**
 	 * devuvel la lista de empleado que estan en la base de datos
 	 * 
@@ -148,7 +177,6 @@ public class AdministradorDelegado {
 	public boolean eliminarFamilia(Familia familia) {
 		return adminEJB.eliminarFamilia(familia.getId());
 	}
-
 
 	/**
 	 * pemite registar un nuevo empleado
@@ -197,7 +225,6 @@ public class AdministradorDelegado {
 		return adminEJB.listarPlantas();
 	}
 
-
 	/**
 	 * devuvel la lista de empleado que estan en la base de datos
 	 * 
@@ -206,7 +233,6 @@ public class AdministradorDelegado {
 	public List<Planta> listarPlantas(Familia familia) {
 		return adminEJB.listarPlantas(familia);
 	}
-
 
 	/**
 	 * devuvel la lista de empleado que estan en la base de datos
@@ -226,7 +252,6 @@ public class AdministradorDelegado {
 		return false; // adminEJB.eliminarPlanta(planta.getId());
 	}
 
-
 	/**
 	 * genera una lista de empleados observables
 	 * 
@@ -234,16 +259,15 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<PersonaObservable> listarEmpleadosObservables() {
 		List<Empleado> empleados = listarEmpleados();
-		
+
 		ObservableList<PersonaObservable> empleadosObservables = FXCollections.observableArrayList();
-		
+
 		for (Persona persona : empleados) {
 			empleadosObservables.add(new PersonaObservable(persona));
 		}
-		
+
 		return empleadosObservables;
 	}
-
 
 	/**
 	 * genera una lista de empleados observables
@@ -252,16 +276,16 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<PersonaObservable> listarRecolectoresObservables() {
 		List<Recolector> recolectores = listarRecolectores();
-		
+
 		ObservableList<PersonaObservable> recolectoresObservables = FXCollections.observableArrayList();
-		
+
 		for (Persona persona : recolectores) {
 			recolectoresObservables.add(new PersonaObservable(persona));
 		}
-		
+
 		return recolectoresObservables;
 	}
-	
+
 	/**
 	 * genera una lista de empleados observables
 	 * 
@@ -269,16 +293,16 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<TaxonomiaObservable> listarFamiliasObservables() {
 		List<Familia> familias = listarFamilias();
-		
+
 		ObservableList<TaxonomiaObservable> familiasObservables = FXCollections.observableArrayList();
-		
-		for (Familia familia: familias) {
+
+		for (Familia familia : familias) {
 			familiasObservables.add(new TaxonomiaObservable(familia));
 		}
-		
+
 		return familiasObservables;
 	}
-	
+
 	/**
 	 * genera una lista de empleados observables
 	 * 
@@ -286,16 +310,16 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<TaxonomiaObservable> listarGenerosObservables(Familia familia) {
 		List<Genero> generos = listarGeneros(familia);
-		
+
 		ObservableList<TaxonomiaObservable> generosObservables = FXCollections.observableArrayList();
-		
-		for (Genero genero: generos) {
+
+		for (Genero genero : generos) {
 			generosObservables.add(new TaxonomiaObservable(genero));
 		}
-		
+
 		return generosObservables;
 	}
-	
+
 	/**
 	 * genera una lista de empleados observables
 	 * 
@@ -303,16 +327,16 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<TaxonomiaObservable> listarEspeciesObservables(Familia familia) {
 		List<Planta> especies = listarPlantas(familia);
-		
+
 		ObservableList<TaxonomiaObservable> especiesObservables = FXCollections.observableArrayList();
-		
-		for (Planta especie: especies) {
+
+		for (Planta especie : especies) {
 			especiesObservables.add(new TaxonomiaObservable(especie));
 		}
-		
+
 		return especiesObservables;
 	}
-	
+
 	/**
 	 * genera una lista de empleados observables
 	 * 
@@ -320,14 +344,38 @@ public class AdministradorDelegado {
 	 */
 	public ObservableList<TaxonomiaObservable> listarEspeciesObservables(Genero genero) {
 		List<Planta> especies = listarPlantas(genero);
-		
+
 		ObservableList<TaxonomiaObservable> especiesObservables = FXCollections.observableArrayList();
-		
-		for (Planta especie: especies) {
+
+		for (Planta especie : especies) {
 			especiesObservables.add(new TaxonomiaObservable(especie));
 		}
-		
+
 		return especiesObservables;
+	}
+
+	public ObservableList<PeticionObservable> listarPeticionesObservables() {
+		List<Peticion> peticiones = listarPeticiones();
+
+		ObservableList<PeticionObservable> peticionesObservables = FXCollections.observableArrayList();
+
+		for (Peticion peticion : peticiones) {
+			peticionesObservables.add(new PeticionObservable(peticion));
+		}
+
+		return peticionesObservables;
+	}
+
+	public void modificarPeticion(Peticion peticion) {
+		adminEJB.modificarPeticion(peticion);
+	}
+
+	public boolean modificarEmpleado(Empleado empleado) {
+		return adminEJB.modificarEmpleado(empleado);
+	}
+
+	public boolean modificarRecolector(Recolector recolector) {
+		return adminEJB.modificarRecolector(recolector);
 	}
 
 }

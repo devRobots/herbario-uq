@@ -3,15 +3,18 @@ package co.cmamo.controlador;
 import java.io.IOException;
 
 import co.cmamo.Empleado;
+import co.cmamo.EstadoPeticion;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
 import co.cmamo.Main;
 import co.cmamo.Persona;
+import co.cmamo.Peticion;
 import co.cmamo.Planta;
 import co.cmamo.Recolector;
 import co.cmamo.modelo.AdministradorDelegado;
 import co.cmamo.modelo.TaxonomiaObservable;
 import co.cmamo.modelo.PersonaObservable;
+import co.cmamo.modelo.PeticionObservable;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,12 +25,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class DashboardControlador {
-	private ManejadorEscenarios manejador;
-
 	private AdministradorDelegado delegado;
 
 	private ObservableList<PersonaObservable> empleadosObservables;
@@ -35,6 +37,7 @@ public class DashboardControlador {
 	private ObservableList<TaxonomiaObservable> familiasObservables;
 	private ObservableList<TaxonomiaObservable> generosObservables;
 	private ObservableList<TaxonomiaObservable> especiesObservables;
+	private ObservableList<PeticionObservable> peticionesObservables;
 
 	private Stage ventanaCrearPersona;
 	private EdicionPersonaControlador controladorCrearPersona;
@@ -59,33 +62,45 @@ public class DashboardControlador {
 
 	@FXML
 	private TableColumn<PersonaObservable, String> nombreRecolectorColumna;
-	
+
 	@FXML
-    private TableView<TaxonomiaObservable> tablaFamilias;
+	private TableView<TaxonomiaObservable> tablaFamilias;
 
-    @FXML
-    private TableColumn<TaxonomiaObservable, String> idFamiliaColumna;
+	@FXML
+	private TableColumn<TaxonomiaObservable, String> idFamiliaColumna;
 
-    @FXML
-    private TableColumn<TaxonomiaObservable, String> nombreFamiliaColumna;
+	@FXML
+	private TableColumn<TaxonomiaObservable, String> nombreFamiliaColumna;
 
-    @FXML
-    private TableView<TaxonomiaObservable> tablaGeneros;
+	@FXML
+	private TableView<TaxonomiaObservable> tablaGeneros;
 
-    @FXML
-    private TableColumn<TaxonomiaObservable, String> idGeneroColumna;
+	@FXML
+	private TableColumn<TaxonomiaObservable, String> idGeneroColumna;
 
-    @FXML
-    private TableColumn<TaxonomiaObservable, String> nombreGeneroColumna;
+	@FXML
+	private TableColumn<TaxonomiaObservable, String> nombreGeneroColumna;
 
-    @FXML
-    private TableView<TaxonomiaObservable> tablaEspecies;
+	@FXML
+	private TableView<TaxonomiaObservable> tablaEspecies;
 
-    @FXML
-    private TableColumn<TaxonomiaObservable, String> idEspecieColumna;
+	@FXML
+	private TableColumn<TaxonomiaObservable, String> idEspecieColumna;
 
-    @FXML
-    private TableColumn<TaxonomiaObservable, String> nombreEspecieColumna;
+	@FXML
+	private TableColumn<TaxonomiaObservable, String> nombreEspecieColumna;
+
+	@FXML
+	private TableView<PeticionObservable> tablaPeticiones;
+
+	@FXML
+	private TableColumn<PeticionObservable, String> idPeticionColumna;
+
+	@FXML
+	private TableColumn<PeticionObservable, String> estadoPeticionColumna;
+
+	@FXML
+	private TableColumn<PeticionObservable, String> nombrePeticionColumna;
 
 	@FXML
 	private Label txtCedulaEmpleado;
@@ -129,11 +144,10 @@ public class DashboardControlador {
 	@FXML
 	private Label txtFamiliaPeticion;
 
-	public DashboardControlador() {
-	}
+	@FXML
+	private TextArea txtRespuestaPeticion;
 
-	public void setEscenarioInicial(ManejadorEscenarios manejador) {
-		this.manejador = manejador;
+	public DashboardControlador() {
 	}
 
 	public AdministradorDelegado getAdministradorDelegado() {
@@ -146,7 +160,8 @@ public class DashboardControlador {
 
 		empleadosObservables = delegado.listarEmpleadosObservables();
 		recolectoresObservables = delegado.listarRecolectoresObservables();
-		
+		peticionesObservables = delegado.listarPeticionesObservables();
+
 		familiasObservables = delegado.listarFamiliasObservables();
 		generosObservables = FXCollections.observableArrayList();
 		especiesObservables = FXCollections.observableArrayList();
@@ -164,10 +179,12 @@ public class DashboardControlador {
 		nombreGeneroColumna.setCellValueFactory(celda -> celda.getValue().getNombre());
 
 		idEspecieColumna.setCellValueFactory(celda -> celda.getValue().getId());
+		estadoPeticionColumna.setCellValueFactory(celda -> celda.getValue().getEstado());
 		nombreEspecieColumna.setCellValueFactory(celda -> celda.getValue().getNombre());
 
 		mostrarDetalleEmpleado(null);
 		mostrarDetalleRecolector(null);
+		mostrarDetallePeticion(null);
 
 		tablaEmpleados.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> mostrarDetalleEmpleado(newValue));
@@ -177,12 +194,16 @@ public class DashboardControlador {
 				.addListener((observable, oldValue, newValue) -> mostrarDetalleRecolector(newValue));
 		tablaRecolectores.setItems(recolectoresObservables);
 
+		tablaPeticiones.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> mostrarDetallePeticion(newValue));
+		tablaPeticiones.setItems(peticionesObservables);
+
 		tablaFamilias.getSelectionModel().selectedItemProperty()
-			.addListener((observable, oldValue, newValue) -> listarDeFamilias(newValue));
+				.addListener((observable, oldValue, newValue) -> listarDeFamilias(newValue));
 		tablaFamilias.setItems(familiasObservables);
 
 		tablaGeneros.getSelectionModel().selectedItemProperty()
-			.addListener((observable, oldValue, newValue) -> listarDeGeneros(newValue));
+				.addListener((observable, oldValue, newValue) -> listarDeGeneros(newValue));
 		tablaGeneros.setItems(generosObservables);
 	}
 
@@ -193,6 +214,7 @@ public class DashboardControlador {
 		}
 		controladorCrearPersona.cargarPersona(null);
 		controladorCrearPersona.setTipo(new Empleado());
+		controladorCrearPersona.setModo(false);
 
 		ventanaCrearPersona.showAndWait();
 	}
@@ -204,6 +226,7 @@ public class DashboardControlador {
 		}
 		controladorCrearPersona.cargarPersona(null);
 		controladorCrearPersona.setTipo(new Recolector());
+		controladorCrearPersona.setModo(false);
 
 		ventanaCrearPersona.showAndWait();
 	}
@@ -231,7 +254,7 @@ public class DashboardControlador {
 
 	@FXML
 	void invalidarRecolector(ActionEvent event) {
-		PersonaObservable personaObservable = tablaEmpleados.getSelectionModel().getSelectedItem();
+		PersonaObservable personaObservable = tablaRecolectores.getSelectionModel().getSelectedItem();
 		if (personaObservable != null) {
 			Recolector persona = (Recolector) personaObservable.getPersona();
 			delegado.eliminarRecolector(persona);
@@ -240,26 +263,46 @@ public class DashboardControlador {
 
 	@FXML
 	void aprobarPeticion(ActionEvent event) {
+		PeticionObservable peticionObservable = tablaPeticiones.getSelectionModel().getSelectedItem();
 		
+		if (peticionObservable != null) {
+			Peticion peticion = peticionObservable.getPeticion();
+
+			delegado.registrarFamilia(peticion.getEspecie().getGenero().getFamilia());
+			delegado.registrarGenero(peticion.getEspecie().getGenero());
+			delegado.registrarPlanta(peticion.getEspecie());
+			
+			peticion.setEstado(EstadoPeticion.APROBADO);
+			delegado.modificarPeticion(peticion);
+		}
 	}
-	
+
 	@FXML
 	void rechazarPeticion(ActionEvent event) {
+		PeticionObservable peticionObservable = tablaPeticiones.getSelectionModel().getSelectedItem();
+		
+		if (peticionObservable != null) {
+			Peticion peticion = peticionObservable.getPeticion();
 
+			peticion.setRespuesta(txtRespuestaPeticion.getText());
+			peticion.setEstado(EstadoPeticion.RECHAZADO);
+			
+			delegado.modificarPeticion(peticion);
+		}
 	}
-	
+
 	@FXML
-    void agregarFamilia(ActionEvent event) {
+	void agregarFamilia(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
 		controladorCrearTaxonomia.setAntecesor(null);
 		ventanaCrearTaxonomia.showAndWait();
-    }
+	}
 
-    @FXML
-    void editarFamilia(ActionEvent event) {
+	@FXML
+	void editarFamilia(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
 			inicializarEscenarioCrearTaxonomia();
 		}
@@ -267,29 +310,29 @@ public class DashboardControlador {
 		controladorCrearTaxonomia.setAntecesor(null);
 		controladorCrearTaxonomia.cargarCampos(tablaFamilias.getSelectionModel().getSelectedItem());
 		ventanaCrearTaxonomia.showAndWait();
-    }
+	}
 
-    @FXML
-    void eliminarFamilia(ActionEvent event) {
-    	TaxonomiaObservable taxonomia = tablaFamilias.getSelectionModel().getSelectedItem();
-    	if (taxonomia != null) {
-    		Familia familia = (Familia) taxonomia.getTaxonomia();
-    		delegado.eliminarFamilia(familia);
-		}
-    }
-	
 	@FXML
-    void agregarGenero(ActionEvent event) {
+	void eliminarFamilia(ActionEvent event) {
+		TaxonomiaObservable taxonomia = tablaFamilias.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {
+			Familia familia = (Familia) taxonomia.getTaxonomia();
+			delegado.eliminarFamilia(familia);
+		}
+	}
+
+	@FXML
+	void agregarGenero(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
 		controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
 		ventanaCrearTaxonomia.showAndWait();
-    }
+	}
 
-    @FXML
-    void editarGenero(ActionEvent event) {
+	@FXML
+	void editarGenero(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
 			inicializarEscenarioCrearTaxonomia();
 		}
@@ -297,29 +340,29 @@ public class DashboardControlador {
 		controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
 		controladorCrearTaxonomia.cargarCampos(tablaGeneros.getSelectionModel().getSelectedItem());
 		ventanaCrearTaxonomia.showAndWait();
-    }
+	}
 
-    @FXML
-    void eliminarGenero(ActionEvent event) {
-    	TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
-    	if (taxonomia != null) {
-    		Genero genero = (Genero) taxonomia.getTaxonomia();
-    		delegado.eliminarGenero(genero);
-		}
-    }
-	
 	@FXML
-    void agregarEspecie(ActionEvent event) {
+	void eliminarGenero(ActionEvent event) {
+		TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {
+			Genero genero = (Genero) taxonomia.getTaxonomia();
+			delegado.eliminarGenero(genero);
+		}
+	}
+
+	@FXML
+	void agregarEspecie(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
 		controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
 		ventanaCrearTaxonomia.showAndWait();
-    }
+	}
 
-    @FXML
-    void editarEspecie(ActionEvent event) {
+	@FXML
+	void editarEspecie(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
 			inicializarEscenarioCrearTaxonomia();
 		}
@@ -327,35 +370,37 @@ public class DashboardControlador {
 		controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
 		controladorCrearTaxonomia.cargarCampos(tablaEspecies.getSelectionModel().getSelectedItem());
 		ventanaCrearTaxonomia.showAndWait();
-    }
+	}
 
-    @FXML
-    void eliminarEspecie(ActionEvent event) {
-    	TaxonomiaObservable taxonomia = tablaFamilias.getSelectionModel().getSelectedItem();
-    	if (taxonomia != null) {
-    		Planta especie = (Planta) taxonomia.getTaxonomia();
-    		delegado.eliminarPlanta(especie);
+	@FXML
+	void eliminarEspecie(ActionEvent event) {
+		TaxonomiaObservable taxonomia = tablaEspecies.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {
+			Planta especie = (Planta) taxonomia.getTaxonomia();
+			delegado.eliminarPlanta(especie);
 		}
-    }
-    
-    public void listarDeFamilias(TaxonomiaObservable taxonomia) {
-    	Familia familia = (Familia)taxonomia.getTaxonomia();
+	}
 
-    	generosObservables = delegado.listarGenerosObservables(familia);
-    	tablaGeneros.setItems(generosObservables);
+	public void listarDeFamilias(TaxonomiaObservable taxonomia) {
+		if (taxonomia != null) {
+			Familia familia = (Familia) taxonomia.getTaxonomia();
 
-    	especiesObservables = delegado.listarEspeciesObservables(familia);
-    	tablaEspecies.setItems(especiesObservables);
-    }
-    
-    public void listarDeGeneros(TaxonomiaObservable taxonomia) {
-    	if (taxonomia != null) {
-    		Genero genero = (Genero)taxonomia.getTaxonomia();
+			generosObservables = delegado.listarGenerosObservables(familia);
+			tablaGeneros.setItems(generosObservables);
 
-        	especiesObservables = delegado.listarEspeciesObservables(genero);
-        	tablaEspecies.setItems(especiesObservables);
+			especiesObservables = delegado.listarEspeciesObservables(familia);
+			tablaEspecies.setItems(especiesObservables);
 		}
-    }
+	}
+
+	public void listarDeGeneros(TaxonomiaObservable taxonomia) {
+		if (taxonomia != null) {
+			Genero genero = (Genero) taxonomia.getTaxonomia();
+
+			especiesObservables = delegado.listarEspeciesObservables(genero);
+			tablaEspecies.setItems(especiesObservables);
+		}
+	}
 
 	public void mostrarDetalleEmpleado(PersonaObservable empleado) {
 		if (empleado != null) {
@@ -388,17 +433,35 @@ public class DashboardControlador {
 			txtClaveRecolector.setText("Empty");
 		}
 	}
-	
+
+	public void mostrarDetallePeticion(PeticionObservable newValue) {
+		if (newValue != null) {
+			txtIdPeticion.setText(newValue.getId().get());
+			txtEspeciePeticion.setText(newValue.getEspecie().get());
+			txtGeneroPeticion.setText(newValue.getGenero().get());
+			txtFamiliaPeticion.setText(newValue.getFamilia().get());
+		}
+		else {
+			txtIdPeticion.setText("Empty");
+			txtEspeciePeticion.setText("Empty");
+			txtGeneroPeticion.setText("Empty");
+			txtFamiliaPeticion.setText("Empty");
+		}
+	}
+
 	public void editarPersona(PersonaObservable persona, Persona p) {
 		if (ventanaCrearPersona == null) {
 			inicializarEscenarioCrearPersona();
 		}
-		controladorCrearPersona.cargarPersona(persona);
-		controladorCrearPersona.setTipo(p);
+		if (persona != null) {
+			controladorCrearPersona.cargarPersona(persona);
+			controladorCrearPersona.setTipo(p);
+			controladorCrearPersona.setModo(true);
 
-		ventanaCrearPersona.showAndWait();
+			ventanaCrearPersona.showAndWait();
+		}
 	}
-	
+
 	public void inicializarEscenarioCrearPersona() {
 		try {
 			// se carga la interfaz
@@ -420,7 +483,7 @@ public class DashboardControlador {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void inicializarEscenarioCrearTaxonomia() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -444,7 +507,7 @@ public class DashboardControlador {
 		if (persona instanceof Empleado) {
 			empleadosObservables.add(new PersonaObservable(persona));
 			tablaEmpleados.refresh();
-		} else if (persona instanceof Recolector){
+		} else if (persona instanceof Recolector) {
 			recolectoresObservables.add(new PersonaObservable(persona));
 			tablaRecolectores.refresh();
 		}
@@ -452,14 +515,18 @@ public class DashboardControlador {
 
 	public void agregarTaxonomiaALista(Object taxonomia) {
 		if (taxonomia instanceof Familia) {
-			familiasObservables.add(new TaxonomiaObservable((Familia)taxonomia));
+			familiasObservables = delegado.listarFamiliasObservables();
+			tablaFamilias.setItems(familiasObservables);
 			tablaFamilias.refresh();
-		} else if (taxonomia instanceof Genero){
-			generosObservables.add(new TaxonomiaObservable((Genero)taxonomia));
+		} else if (taxonomia instanceof Genero) {
+			Familia familia = (Familia) tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia();
+			generosObservables = delegado.listarGenerosObservables(familia);
+			tablaGeneros.setItems(generosObservables);
 			tablaGeneros.refresh();
-		}
-		else {
-			especiesObservables.add(new TaxonomiaObservable((Planta)taxonomia));
+		} else {
+			Genero genero = (Genero) tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia();
+			especiesObservables = delegado.listarEspeciesObservables(genero);
+			tablaEspecies.setItems(especiesObservables);
 			tablaEspecies.refresh();
 		}
 	}

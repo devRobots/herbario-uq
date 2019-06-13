@@ -163,7 +163,7 @@ public class TestAdminEJB {
 	@UsingDataSet({"familia.json"})
 	public void crearFamiliaTest() {
 		Familia f = new Familia();
-		f.setId("224");
+		f.setId(224);
 		f.setNombre("Asereje");
 		
 		assertTrue(adminEJB.crearFamilia(f));
@@ -202,7 +202,7 @@ public class TestAdminEJB {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"familia.json"})
 	public void eliminarFamiliaTest() {
-		adminEJB.eliminarFamilia("11");
+		adminEJB.eliminarFamilia(11);
 
 		Familia f = adminEJB.buscarFamilia("11");
 		
@@ -214,7 +214,7 @@ public class TestAdminEJB {
 	@UsingDataSet({"genero.json"})
 	public void crearGeneroTest() {
 		Genero g = new Genero();
-		g.setId("224");
+		g.setId(224);
 		g.setNombre("Asereje");
 		
 		assertTrue(adminEJB.crearGenero(g));
@@ -253,7 +253,7 @@ public class TestAdminEJB {
 	@Transactional(value=TransactionMode.ROLLBACK)
 	@UsingDataSet({"genero.json"})
 	public void eliminarGeneroTest() {
-		adminEJB.eliminarGenero("11");
+		adminEJB.eliminarGenero(11);
 
 		Genero g = adminEJB.buscarGenero("11");
 		
@@ -265,7 +265,7 @@ public class TestAdminEJB {
 	@UsingDataSet({"planta.json", "genero.json"})
 	public void crearPlantaTest() {
 		Planta p = new Planta();
-		p.setId("224");
+		p.setId(224);
 		p.setEspecie("Asereje");
 		p.setGenero(adminEJB.buscarGenero("12"));
 		

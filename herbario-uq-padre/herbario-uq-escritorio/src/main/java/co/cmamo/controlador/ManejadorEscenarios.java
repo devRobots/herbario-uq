@@ -40,6 +40,11 @@ public class ManejadorEscenarios {
 	private AnchorPane panelHerbario;
 
 	@FXML
+	void recargar() {
+		cargarEscena();
+	}
+
+	@FXML
 	void close() {
 		System.exit(0);
 	}
@@ -108,9 +113,6 @@ public class ManejadorEscenarios {
 
 			panelDashboard = (AnchorPane) loader2.load();
 			bordePane.setCenter(panelDashboard);
-
-			DashboardControlador controlador = loader2.getController();
-			controlador.setEscenarioInicial(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

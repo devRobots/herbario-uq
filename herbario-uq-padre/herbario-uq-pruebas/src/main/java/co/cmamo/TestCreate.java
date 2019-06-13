@@ -46,7 +46,7 @@ public class TestCreate {
 	@UsingDataSet({"familia.json"})
 	public void persistFamiliaTest() {
 		Familia e = new Familia();
-		e.setId("78");
+		e.setId(78);
 		e.setNombre("Joselin");
 		
 		entityManager.persist(e);
@@ -62,7 +62,7 @@ public class TestCreate {
 	@UsingDataSet({"genero.json", "familia.json"})
 	public void persistGeneroTest() {
 		Genero e = new Genero();
-		e.setId("738");
+		e.setId(738);
 		e.setNombre("Joselin");
 		e.setFamilia(entityManager.find(Familia.class, "1534"));
 		
@@ -80,7 +80,7 @@ public class TestCreate {
 	@UsingDataSet({"planta.json","genero.json"})
 	public void persistPlantaTest(){
 		Planta e = new Planta();
-		e.setId("738");
+		e.setId(738);
 		e.setEspecie("");
 		e.setGenero(entityManager.find(Genero.class, "1230"));
 		

@@ -38,8 +38,8 @@ public class EdicionTaxonomiaControlador {
     			else {
     				Utilidades.mostrarMensaje("Registro", "Error en registro!!", -2);
     			}
-    		}
-        	else if (antecesor instanceof Familia) {
+    		}	
+        	else	 if (antecesor instanceof Familia) {
         		Genero genero = new Genero();
     			genero.setNombre(txtNombre.getText());
     			genero.setFamilia((Familia)antecesor);

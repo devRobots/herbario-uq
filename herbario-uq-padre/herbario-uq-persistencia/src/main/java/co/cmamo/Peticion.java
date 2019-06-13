@@ -37,8 +37,7 @@ public class Peticion implements Serializable {
 	 * Id de la peticion
 	 */
 	@Id
-	@Column(unique = true, nullable = false)
-	private String id;
+	private long id;
 	/**
 	 * Estado de la Peticion
 	 */
@@ -131,7 +130,7 @@ public class Peticion implements Serializable {
 	 * 
 	 * @return
 	 */
-	public String getId() {
+	public long getId() {
 		return this.id;
 	}
 
@@ -140,7 +139,7 @@ public class Peticion implements Serializable {
 	 * 
 	 * @param id
 	 */
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

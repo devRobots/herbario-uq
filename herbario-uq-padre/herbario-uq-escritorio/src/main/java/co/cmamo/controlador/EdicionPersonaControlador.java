@@ -10,6 +10,7 @@ import co.cmamo.modelo.AdministradorDelegado;
 import co.cmamo.modelo.PersonaObservable;
 import co.cmamo.util.Utilidades;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -21,6 +22,16 @@ import javafx.stage.Stage;
  */
 public class EdicionPersonaControlador {
 
+	/**
+	 * campo para la cedula
+	 */
+	@FXML
+	private Button btnAgregar;
+	/**
+	 * campo para la cedula
+	 */
+	@FXML
+	private Button btnModificar;
 	/**
 	 * campo para la cedula
 	 */
@@ -57,12 +68,20 @@ public class EdicionPersonaControlador {
 	private DashboardControlador controlador;
 
 	private Persona persona;
+	
+	
 	/**
 	 *
 	 */
 	@FXML
 	private void initialize() {
-
+		
+	}
+	
+	public void setModo(boolean edicion) {
+		cmpCedula.setEditable(!edicion);
+		btnAgregar.setVisible(!edicion);
+		btnModificar.setVisible(edicion);
 	}
 
 	/**
@@ -88,7 +107,7 @@ public class EdicionPersonaControlador {
 	 * permite registrar una persona en la base de datos
 	 */
 	@FXML
-	public void registrarPersona() {
+	private void agregar() {
 		if (!cmpApellido.getText().isEmpty() && !cmpCedula.getText().isEmpty() && !cmpClave.getText().isEmpty() && !cmpCorreo.getText().isEmpty() && !cmpNombre.getText().isEmpty()) {
 			persona.setId(cmpCedula.getText());
 			persona.setNombre(cmpNombre.getText());
@@ -120,6 +139,7 @@ public class EdicionPersonaControlador {
 				Utilidades.mostrarMensaje("Registro", "Error en registro!!");
 			}
 		}
+		limpiarCampos();
 	}
 
 	/**
@@ -127,8 +147,38 @@ public class EdicionPersonaControlador {
 	 */
 	@FXML
 	private void modificar() {
-		// TODO terminar modificar empleado
-		escenarioEditar.close();
+		if (!cmpApellido.getText().isEmpty() && !cmpCedula.getText().isEmpty() && !cmpClave.getText().isEmpty() && !cmpCorreo.getText().isEmpty() && !cmpNombre.getText().isEmpty()) {
+			persona.setId(cmpCedula.getText());
+			persona.setNombre(cmpNombre.getText());
+			persona.setApellido(cmpApellido.getText());
+			persona.setClave(cmpClave.getText());
+			persona.setCorreo(cmpCorreo.getText());
+			persona.setEstado(EstadoActividad.ACTIVO);
+			persona.setPeticiones(new ArrayList<>());
+
+			AdministradorDelegado delegado = controlador.getAdministradorDelegado();
+
+			if (persona instanceof Empleado) {
+				if (delegado.modificarEmpleado((Empleado) persona)) {
+					controlador.agregarPersonaALista((Empleado) persona);
+					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
+					escenarioEditar.close();
+				} else {
+					Utilidades.mostrarMensaje("Registro", "Error en registro!!");
+				}
+			} else if (persona instanceof Recolector) {
+				if (delegado.modificarRecolector((Recolector) persona)) {
+					controlador.agregarPersonaALista((Recolector) persona);
+					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
+					escenarioEditar.close();
+				} else {
+					Utilidades.mostrarMensaje("Registro", "Error en registro!!");
+				}
+			} else {
+				Utilidades.mostrarMensaje("Registro", "Error en registro!!");
+			}
+		}
+		limpiarCampos();
 	}
 
 	/**
@@ -136,7 +186,16 @@ public class EdicionPersonaControlador {
 	 */
 	@FXML
 	private void cancelar() {
+		limpiarCampos();
 		escenarioEditar.close();
+	}
+	
+	private void limpiarCampos() {
+		cmpApellido.clear();
+		cmpCedula.clear();
+		cmpClave.clear();
+		cmpCorreo.clear();
+		cmpNombre.clear();
 	}
 
 	/**

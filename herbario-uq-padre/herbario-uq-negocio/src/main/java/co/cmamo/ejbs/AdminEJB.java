@@ -14,6 +14,7 @@ import co.cmamo.Empleado;
 import co.cmamo.EstadoActividad;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
+import co.cmamo.Peticion;
 import co.cmamo.Planta;
 import co.cmamo.Recolector;
 import co.cmamo.excepciones.ElementoInexistenteExcepcion;
@@ -209,6 +210,88 @@ public class AdminEJB implements AdminEJBRemote {
 	 * @see co.cmamo.ejb.AdminEJBRemote#invalidarRecolector(co.cmamo.Recolector)
 	 */
 	public boolean invalidarRecolector(String id) {
+		try {
+			Recolector recolector = entityManager.find(Recolector.class, id);
+
+			if (recolector == null) {
+				throw new ElementoInexistenteExcepcion("El recolector que se quiere eliminar no existe");
+			} else if (recolector.getEstado() == EstadoActividad.INACTIVO) {
+				throw new ElementoInexistenteExcepcion("El recolector que se quiere eliminar ya esta inactivo");
+			}
+
+			recolector.setEstado(EstadoActividad.INACTIVO);
+			entityManager.merge(recolector);
+
+			if (entityManager.find(Recolector.class, recolector.getId()).getEstado() == EstadoActividad.ACTIVO) {
+				throw new Exception("No se pudo invalidar el recolector");
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see co.cmamo.ejb.AdminEJBRemote#crearRecolector(co.cmamo.Recolector)
+	 */
+	public boolean crearPeticion(Peticion peticion) {
+		try {
+			if (entityManager.find(Recolector.class, peticion.getId()) != null) {
+				throw new ElementoRepetidoExcepcion("El recolector con esta cedula ya esta registrado");
+			}
+
+			entityManager.persist(peticion);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean modificarPeticion(Peticion mod) {
+		try {
+			Peticion p = entityManager.find(Peticion.class, mod.getId());
+			
+			if (p == null) {
+				throw new ElementoInexistenteExcepcion("El recolector que se busca modificar no existe");
+			}
+
+			entityManager.merge(mod);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public Peticion buscarPeticion(long id) {
+		try {
+			Peticion peticion = entityManager.find(Peticion.class, id);
+
+			if (peticion == null) {
+				throw new ElementoInexistenteExcepcion("El empleado que se busca no existe");
+			}
+
+			return peticion;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public List<Peticion> listarPeticiones() {
+		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR_TODOS, Peticion.class);
+
+		List<Peticion> listado = query.getResultList();
+
+		return listado;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see co.cmamo.ejb.AdminEJBRemote#invalidarRecolector(co.cmamo.Recolector)
+	 */
+	public boolean eliminarPeticion(long id) {
 		try {
 			Recolector recolector = entityManager.find(Recolector.class, id);
 
