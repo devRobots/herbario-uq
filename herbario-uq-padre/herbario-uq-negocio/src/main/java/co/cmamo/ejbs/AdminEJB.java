@@ -300,7 +300,7 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean eliminarFamilia(String id) {
+	public boolean eliminarFamilia(long id) {
 		try {
 			Familia familia = entityManager.find(Familia.class, id);
 
@@ -373,7 +373,18 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean eliminarGenero(String id) {
+	public List<Genero> listarGeneros(Familia familia) {
+		TypedQuery<Genero> query = entityManager.createNamedQuery(Genero.LISTAR_TODOS_POR_FAMILIA, Genero.class);
+
+		query.setParameter("familia", familia.getId());
+		
+		List<Genero> listado = query.getResultList();
+
+		return listado;
+	}
+
+	@Override
+	public boolean eliminarGenero(long id) {
 		try {
 			Genero genero = entityManager.find(Genero.class, id);
 
@@ -429,4 +440,27 @@ public class AdminEJB implements AdminEJBRemote {
 
 		return listado;
 	}
+
+	@Override
+	public List<Planta> listarPlantas(Familia familia) {
+		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_FAMILIA, Planta.class);
+		
+		query.setParameter("familia", familia.getId());
+
+		List<Planta> listado = query.getResultList();
+
+		return listado;
+	}
+
+	@Override
+	public List<Planta> listarPlantas(Genero genero) {
+		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_GENERO, Planta.class);
+		
+		query.setParameter("genero", genero.getId());
+
+		List<Planta> listado = query.getResultList();
+
+		return listado;
+	}
+
 }

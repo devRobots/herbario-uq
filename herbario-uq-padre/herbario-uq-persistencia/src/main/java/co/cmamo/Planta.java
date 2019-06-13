@@ -13,8 +13,7 @@ import javax.persistence.*;
 	@NamedQuery(name = Planta.BUSCAR_POR_ID, query = "select planta from Planta planta where planta.id = :id"),
 	@NamedQuery(name = Planta.LISTAR_TODOS, query = "select planta from Planta planta"),
 	@NamedQuery(name = Planta.LISTAR_POR_GENERO, query = "select planta from Planta planta where planta.genero.id =:genero"),
-	@NamedQuery(name = Planta.LISTAR_POR_FAMILIA, query = "select planta from Planta planta where planta.genero.familia =:familia"),
-	
+	@NamedQuery(name = Planta.LISTAR_POR_FAMILIA, query = "select planta from Planta planta where planta.genero.familia.id =:familia"),
 	@NamedQuery(name = Planta.OBTENER_FAMILIA, query = "select planta.genero.familia from Planta planta where planta.id =:id")
 })
 public class Planta implements Serializable {
@@ -34,8 +33,8 @@ public class Planta implements Serializable {
 	 * Id de la Planta
 	 */
 	@Id
-	@Column(unique = true, nullable = false)
-	private String id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	/**
 	 * especie de la Planta
 	 */
@@ -58,14 +57,14 @@ public class Planta implements Serializable {
 	 *  Get de Id
 	 * @return la Id
 	 */
-	public String getId() {
+	public long getId() {
 		return this.id;
 	}
 	/**
 	 * Set de la Id
 	 * @param id
 	 */
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	/**

@@ -15,6 +15,7 @@ import javax.persistence.*;
 @NamedQueries({
 	@NamedQuery(name = Genero.BUSCAR_POR_ID, query = "select genero from Genero genero where genero.id = :id"),
 	@NamedQuery(name = Genero.LISTAR_TODOS, query = "select genero from Genero genero"),
+	@NamedQuery(name = Genero.LISTAR_TODOS_POR_FAMILIA, query = "select genero from Genero genero where genero.familia.id=:familia"),
 	@NamedQuery(name = Genero.OBTENER_TODAS_LAS_PLANTAS, query ="select planta from Genero genero, IN(genero.especies) planta where genero.id = :id")
 	})
 public class Genero implements Serializable {
@@ -23,14 +24,15 @@ public class Genero implements Serializable {
 	
 	public static final String BUSCAR_POR_ID = "Genero_findById";
 	public static final String LISTAR_TODOS = "Genero_getAll";
+	public static final String LISTAR_TODOS_POR_FAMILIA = "Genero_getAllPerFamilia";
 	public static final String OBTENER_TODAS_LAS_PLANTAS = "Genero_getAllPlantas";
 	
 	/**
 	 * Id del Genero
 	 */
 	@Id
-	@Column(unique = true, nullable = false)
-	private String id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	/**
 	 * nombre del Genero
 	 */
@@ -58,14 +60,14 @@ public class Genero implements Serializable {
 	 * Get id
 	 * @return id
 	 */
-	public String getId() {
+	public long getId() {
 		return this.id;
 	}
 	/**
 	 * Set Id
 	 * @param id
 	 */
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	/**

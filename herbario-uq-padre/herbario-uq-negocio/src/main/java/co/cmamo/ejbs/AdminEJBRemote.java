@@ -111,7 +111,7 @@ public interface AdminEJBRemote {
 	 * @param id ID de la familia que se quiere invalidar
 	 * @return boolean Si se elimino o no
 	 */
-	public boolean eliminarFamilia(String id);
+	public boolean eliminarFamilia(long id);
 
 	/**
 	 * Registra un genero en la BD si es posible
@@ -139,13 +139,19 @@ public interface AdminEJBRemote {
 	 * @return List<Genero> Generos que se encontraron
 	 */
 	public List<Genero> listarGeneros();
+	
+	/**
+	 * Lista todos los generos en la BD
+	 * @return List<Genero> Generos que se encontraron
+	 */
+	public List<Genero> listarGeneros(Familia familia);
 
 	/**
 	 * Invalida un genero en la BD si es posible
 	 * @param id ID del genero que se quiere invalidar
 	 * @return boolean Si se elimino o no
 	 */
-	public boolean eliminarGenero(String id);
+	public boolean eliminarGenero(long id);
 
 	/**
 	 * Registra una planta en la BD si es posible
@@ -166,5 +172,17 @@ public interface AdminEJBRemote {
 	 * @return List<Planta> Plantas que se encontraron
 	 */
 	public List<Planta> listarPlantas();
+
+	/**
+	 * Lista todos las plantas en la BD
+	 * @return List<Planta> Plantas que se encontraron
+	 */
+	public List<Planta> listarPlantas(Familia familia);
+
+	/**
+	 * Lista todos las plantas en la BD
+	 * @return List<Planta> Plantas que se encontraron
+	 */
+	public List<Planta> listarPlantas(Genero genero);
 
 }

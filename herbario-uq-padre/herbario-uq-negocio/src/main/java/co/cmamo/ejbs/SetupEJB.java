@@ -44,10 +44,10 @@ public class SetupEJB {
     	if (contarAdmins == 0) {
 			Administrador a = new Administrador();
 			a.setApellido("Rosas Toro");
-			a.setClave("12345");
+			a.setClave("root");
 			a.setCorreo("ysrosast_1@uqvirtual.edu.co");
 			a.setEstado(EstadoActividad.ACTIVO);
-			a.setId("1");
+			a.setId("0");
 			a.setNombre("Yesid");
 			a.setPeticiones(new ArrayList<Peticion>());
 			

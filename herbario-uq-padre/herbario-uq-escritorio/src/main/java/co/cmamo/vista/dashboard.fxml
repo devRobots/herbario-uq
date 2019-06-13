@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.DashboardControlador">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.DashboardControlador">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -109,10 +109,10 @@
                                     </GridPane>
                                  </children>
                               </AnchorPane>
-                              <TableView fx:id="tablaEmpleados" prefHeight="200.0" prefWidth="200.0">
+                              <TableView fx:id="tablaEmpleados" minHeight="190.0" minWidth="190.0" prefHeight="200.0" prefWidth="200.0">
                                 <columns>
                                   <TableColumn fx:id="cedulaEmpleadoColumna" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Cedula" />
-                                  <TableColumn fx:id="nombreEmpleadoColumna" maxWidth="1.7976931348623157E308" minWidth="110.0" prefWidth="110.0" text="Nombre" />
+                                  <TableColumn fx:id="nombreEmpleadoColumna" maxWidth="1.7976931348623157E308" minWidth="109.0" prefWidth="109.0" text="Nombre" />
                                 </columns>
                               </TableView>
                            </children>
@@ -134,10 +134,10 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TableView fx:id="tablaRecolectores" prefHeight="200.0" prefWidth="200.0">
+                              <TableView fx:id="tablaRecolectores" minHeight="190.0" minWidth="190.0" prefHeight="200.0" prefWidth="200.0">
                                  <columns>
                                     <TableColumn fx:id="cedulaRecolectorColumna" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Cedula" />
-                                    <TableColumn fx:id="cedulaRecolectorColumna" maxWidth="1.7976931348623157E308" minWidth="110.0" prefWidth="110.0" text="Nombre" />
+                                    <TableColumn fx:id="nombreRecolectorColumna" maxWidth="1.7976931348623157E308" minWidth="109.0" prefWidth="109.0" text="Nombre" />
                                  </columns>
                               </TableView>
                               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -330,19 +330,147 @@
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Familias">
+            <Tab text="Taxonomia Vegetal">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Generos">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Especies">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="254.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="110.0" minHeight="110.0" prefHeight="110.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tablaFamilias" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="idFamiliaColumna" maxWidth="60.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+                                          <TableColumn fx:id="nombreFamiliaColumna" maxWidth="1.7976931348623157E308" minWidth="130.0" prefWidth="139.0" text="Familia" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <TableView fx:id="tablaGeneros" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="idGeneroColumna" maxWidth="60.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+                                          <TableColumn fx:id="nombreGeneroColumna" maxWidth="1.7976931348623157E308" minWidth="130.0" prefWidth="139.0" text="Genero" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane GridPane.columnIndex="2">
+                                 <children>
+                                    <TableView fx:id="tablaEspecies" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="idEspecieColumna" maxWidth="60.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+                                          <TableColumn fx:id="nombreEspecieColumna" maxWidth="1.7976931348623157E308" minWidth="130.0" prefWidth="139.0" text="Especie" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#agregarFamilia" text="Agregar Familia" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane GridPane.rowIndex="1">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#editarFamilia" text="Editar Familia" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane GridPane.rowIndex="2">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#eliminarFamilia" text="Eliminar Familia" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <AnchorPane>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#agregarGenero" text="Agregar Genero" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane GridPane.rowIndex="1">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#editarGenero" text="Editar Genero" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane GridPane.rowIndex="2">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#eliminarGenero" text="Eliminar Genero" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#agregarEspecie" text="Agregar Especie" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane GridPane.rowIndex="1">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#editarEspecie" text="Editar Especie" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane GridPane.rowIndex="2">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#eliminarEspecie" text="Eliminar Especie" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
               </content>
             </Tab>
         </tabs>
