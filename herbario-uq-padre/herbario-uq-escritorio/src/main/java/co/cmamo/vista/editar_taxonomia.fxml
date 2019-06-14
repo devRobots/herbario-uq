@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="180.0" maxWidth="380.0" minHeight="180.0" minWidth="380.0" prefHeight="180.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.EdicionTaxonomiaControlador">
+<AnchorPane maxHeight="180.0" maxWidth="380.0" minHeight="180.0" minWidth="380.0" prefHeight="180.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.cmamo.controlador.EdicionTaxonomiaControlador">
 	<children>
       <GridPane layoutX="5.0" layoutY="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <columnConstraints>
@@ -59,7 +59,8 @@
                <children>
                   <AnchorPane>
                      <children>
-                  		<Button mnemonicParsing="false" onAction="#aceptar" text="Aceptar" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  		<Button fx:id="btnAceptar" mnemonicParsing="false" onAction="#aceptar" text="Aceptar" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <Button fx:id="btnModificar" mnemonicParsing="false" text="Modificar" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane GridPane.columnIndex="1">

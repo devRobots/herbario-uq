@@ -79,7 +79,7 @@ public class EdicionPersonaControlador {
 	}
 	
 	public void setModo(boolean edicion) {
-		cmpCedula.setEditable(!edicion);
+		cmpCedula.setDisable(edicion);
 		btnAgregar.setVisible(!edicion);
 		btnModificar.setVisible(edicion);
 	}
@@ -160,7 +160,6 @@ public class EdicionPersonaControlador {
 
 			if (persona instanceof Empleado) {
 				if (delegado.modificarEmpleado((Empleado) persona)) {
-					controlador.agregarPersonaALista((Empleado) persona);
 					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
 					escenarioEditar.close();
 				} else {
@@ -168,7 +167,6 @@ public class EdicionPersonaControlador {
 				}
 			} else if (persona instanceof Recolector) {
 				if (delegado.modificarRecolector((Recolector) persona)) {
-					controlador.agregarPersonaALista((Recolector) persona);
 					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
 					escenarioEditar.close();
 				} else {

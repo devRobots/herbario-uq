@@ -15,7 +15,6 @@ import co.cmamo.modelo.AdministradorDelegado;
 import co.cmamo.modelo.TaxonomiaObservable;
 import co.cmamo.modelo.PersonaObservable;
 import co.cmamo.modelo.PeticionObservable;
-import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -298,6 +297,7 @@ public class DashboardControlador {
 		}
 
 		controladorCrearTaxonomia.setAntecesor(null);
+		controladorCrearTaxonomia.setModo(false);
 		ventanaCrearTaxonomia.showAndWait();
 	}
 
@@ -307,9 +307,13 @@ public class DashboardControlador {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
-		controladorCrearTaxonomia.setAntecesor(null);
-		controladorCrearTaxonomia.cargarCampos(tablaFamilias.getSelectionModel().getSelectedItem());
-		ventanaCrearTaxonomia.showAndWait();
+		TaxonomiaObservable taxonomia = tablaFamilias.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {
+			controladorCrearTaxonomia.setAntecesor(null);
+			controladorCrearTaxonomia.cargarCampos(taxonomia);
+			controladorCrearTaxonomia.setModo(true);
+			ventanaCrearTaxonomia.showAndWait();
+		}
 	}
 
 	@FXML
@@ -327,8 +331,12 @@ public class DashboardControlador {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
-		controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
-		ventanaCrearTaxonomia.showAndWait();
+		TaxonomiaObservable taxonomia = tablaFamilias.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {			
+			controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
+			controladorCrearTaxonomia.setModo(false);
+			ventanaCrearTaxonomia.showAndWait();
+		}
 	}
 
 	@FXML
@@ -337,9 +345,13 @@ public class DashboardControlador {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
-		controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
-		controladorCrearTaxonomia.cargarCampos(tablaGeneros.getSelectionModel().getSelectedItem());
-		ventanaCrearTaxonomia.showAndWait();
+		TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {			
+			controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
+			controladorCrearTaxonomia.cargarCampos(taxonomia);
+			controladorCrearTaxonomia.setModo(true);
+			ventanaCrearTaxonomia.showAndWait();
+		}
 	}
 
 	@FXML
@@ -357,8 +369,12 @@ public class DashboardControlador {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
-		controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
-		ventanaCrearTaxonomia.showAndWait();
+		TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {			
+			controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
+			controladorCrearTaxonomia.setModo(false);
+			ventanaCrearTaxonomia.showAndWait();
+		}
 	}
 
 	@FXML
@@ -367,9 +383,13 @@ public class DashboardControlador {
 			inicializarEscenarioCrearTaxonomia();
 		}
 
-		controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
-		controladorCrearTaxonomia.cargarCampos(tablaEspecies.getSelectionModel().getSelectedItem());
-		ventanaCrearTaxonomia.showAndWait();
+		TaxonomiaObservable taxonomia = tablaEspecies.getSelectionModel().getSelectedItem();
+		if (taxonomia != null) {
+			controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
+			controladorCrearTaxonomia.cargarCampos(taxonomia);
+			controladorCrearTaxonomia.setModo(true);
+			ventanaCrearTaxonomia.showAndWait();			
+		}
 	}
 
 	@FXML
