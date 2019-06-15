@@ -11,6 +11,8 @@ public interface AdminEJBRemote {
 	
 	String JNDI = "java:global/herbario-uq-ear/herbario-uq-negocio/AdminEJB!co.cmamo.ejbs.AdminEJBRemote";
 
+	public boolean iniciarSesion(String correo, String clave);
+	
 	/**
 	 * Registra un empleado en la BD si es posible
 	 * @param empleado Empleado que se quiere registrar

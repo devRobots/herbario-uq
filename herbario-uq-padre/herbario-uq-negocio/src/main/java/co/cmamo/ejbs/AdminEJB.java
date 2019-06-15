@@ -10,10 +10,12 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import co.cmamo.Administrador;
 import co.cmamo.Empleado;
 import co.cmamo.EstadoActividad;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
+import co.cmamo.Persona;
 import co.cmamo.Peticion;
 import co.cmamo.Planta;
 import co.cmamo.Recolector;
@@ -38,6 +40,19 @@ public class AdminEJB implements AdminEJBRemote {
 	public AdminEJB() {
 		
 	}
+	
+	public boolean iniciarSesion(String correo, String clave) {
+		try {
+			Administrador admin = buscarAdministradorPorCorreo(correo);
+			if (admin == null) {
+				throw new ElementoInexistenteExcepcion("El correo no existe");
+			}
+			
+			return admin.getClave().equals(clave);
+		} catch (Exception e) {
+			return false;
+		}
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -48,7 +63,7 @@ public class AdminEJB implements AdminEJBRemote {
 		try {
 			if (entityManager.find(Empleado.class, empleado.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El empleado con esta cedula ya esta registrado");
-			} else if (buscarPorCorreo(empleado.getCorreo()) != null) {
+			} else if (buscarEmpleadoPorCorreo(empleado.getCorreo()) != null) {
 				throw new ElementoRepetidoExcepcion("El empleado con este correo ya esta registrado");
 			}
 
@@ -69,7 +84,7 @@ public class AdminEJB implements AdminEJBRemote {
 				throw new ElementoInexistenteExcepcion("El empleado que se busca modificar no existe");
 			}
 			if (!e.getCorreo().equals(mod.getCorreo())) {
-				if (buscarPorCorreo(mod.getCorreo()) != null) {
+				if (buscarEmpleadoPorCorreo(mod.getCorreo()) != null) {
 					throw new ElementoRepetidoExcepcion("El correo que se quiere actualizar no esta disponible");
 				}
 			}
@@ -149,7 +164,7 @@ public class AdminEJB implements AdminEJBRemote {
 		try {
 			if (entityManager.find(Recolector.class, recolector.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El recolector con esta cedula ya esta registrado");
-			} else if (buscarPorCorreo(recolector.getCorreo()) != null) {
+			} else if (buscarEmpleadoPorCorreo(recolector.getCorreo()) != null) {
 				throw new ElementoRepetidoExcepcion("El recolector con este correo ya esta registrado");
 			}
 
@@ -168,7 +183,7 @@ public class AdminEJB implements AdminEJBRemote {
 				throw new ElementoInexistenteExcepcion("El recolector que se busca modificar no existe");
 			}
 			if (!r.getCorreo().equals(mod.getCorreo())) {
-				if (buscarPorCorreo(mod.getCorreo()) != null) {
+				if (buscarEmpleadoPorCorreo(mod.getCorreo()) != null) {
 					throw new ElementoRepetidoExcepcion("El correo que se quiere actualizar no esta disponible");
 				}
 			}
@@ -319,10 +334,27 @@ public class AdminEJB implements AdminEJBRemote {
 	 * @param correo Correo del empleado
 	 * @return Empleado correspondiente al correo o Null
 	 */
-	private Empleado buscarPorCorreo(String correo) {
+	private Empleado buscarEmpleadoPorCorreo(String correo) {
 		try {
 			TypedQuery<Empleado> query = entityManager.createNamedQuery(Empleado.EMPLEADO_POR_EMAIL, Empleado.class);
 			query.setParameter("correo", correo);
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
+	/**
+	 * Permite buscar un administrador por correo
+	 * 
+	 * @param correo Correo del administrador
+	 * @return Administrador correspondiente al correo o Null
+	 */
+	private Administrador buscarAdministradorPorCorreo(String correo) {
+		try {
+			TypedQuery<Administrador> query = entityManager.createNamedQuery(Administrador.ADMIN_POR_CORREO, Administrador.class);
+			query.setParameter("correo", correo);
+			
 			return query.getSingleResult();
 		} catch (NoResultException e) {
 			return null;

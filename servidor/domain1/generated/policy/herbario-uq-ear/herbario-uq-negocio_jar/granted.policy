@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Thu Jun 13 19:05:30 COT 2019*/
+/* AUTOMATICALLY GENERATED ON Sat Jun 15 11:21:13 COT 2019*/
 /* DO NOT EDIT */
 
 grant {
@@ -34,6 +34,7 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearGenero,Local,co.cmamo.Genero";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearRecolector,Local,co.cmamo.Recolector";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "iniciarSesion,Remote,java.lang.String,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarEmpleado,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarRecolector,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearEmpleado,Remote,co.cmamo.Empleado";
@@ -49,6 +50,7 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarRecolector,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "invalidarRecolector,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Remote,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "iniciarSesion,Local,java.lang.String,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarGenero,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Remote,co.cmamo.Familia";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPeticion,Remote,co.cmamo.Peticion";

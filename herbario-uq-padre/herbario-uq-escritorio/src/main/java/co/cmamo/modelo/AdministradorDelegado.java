@@ -61,6 +61,10 @@ public class AdministradorDelegado {
 		}
 		return administradorDelegado;
 	}
+	
+	public boolean iniciarSesion(String correo, String clave) {
+		return adminEJB.iniciarSesion(correo, clave);
+	}
 
 	/**
 	 * pemite registar un nuevo empleado

@@ -1,5 +1,6 @@
 package co.cmamo;
 
+import co.cmamo.controlador.LoginControlador;
 import co.cmamo.controlador.ManejadorEscenarios;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -30,7 +31,8 @@ public class Main extends Application {
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		new ManejadorEscenarios(primaryStage);
+		LoginControlador login = new LoginControlador(primaryStage);
+		login.setEscenarioInicial(primaryStage);
 	}
 
 }
