@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Sat Jun 15 11:21:13 COT 2019*/
+/* AUTOMATICALLY GENERATED ON Tue Jun 18 01:46:26 EST 2019*/
 /* DO NOT EDIT */
 
 grant {
@@ -58,10 +58,12 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearRecolector,Remote,co.cmamo.Recolector";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarEmpleado,Remote,co.cmamo.Empleado";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPeticion,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPersonaPorCorreo,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPeticion,Local,co.cmamo.Peticion";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPlanta,Local,co.cmamo.Planta";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarGenero,Local,co.cmamo.Genero";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Local,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPersonaPorCorreo,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarRecolectores,Remote,";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPlanta,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPeticion,Remote,co.cmamo.Peticion";

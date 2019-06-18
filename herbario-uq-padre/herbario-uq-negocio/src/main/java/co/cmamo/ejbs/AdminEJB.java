@@ -578,4 +578,15 @@ public class AdminEJB implements AdminEJBRemote {
 		return listado;
 	}
 
+	@Override
+	public Persona buscarPersonaPorCorreo(String correo) {
+		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.BUSCAR_POR_CORREO, Persona.class);
+		
+		query.setParameter("correo", correo);
+		
+		Persona p = query.getSingleResult();
+		
+		return p;
+	}
+
 }

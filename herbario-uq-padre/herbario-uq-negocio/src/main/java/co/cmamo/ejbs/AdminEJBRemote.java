@@ -221,4 +221,6 @@ public interface AdminEJBRemote {
 	 */
 	public List<Planta> listarPlantas(Genero genero);
 
+	public Persona buscarPersonaPorCorreo(String correo);
+
 }
