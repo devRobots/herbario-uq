@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.lang.String;
 import javax.persistence.*;
 
+import javafx.scene.image.Image;
+
 /**
  * Entity implementation class for Entity: Planta
  *
@@ -45,6 +47,9 @@ public class Planta implements Serializable {
 	 */
 	@ManyToOne
 	private Genero genero;
+	
+	@Lob
+	private Image imagen;
 	
 	/**
 	 * Constructor de la planta

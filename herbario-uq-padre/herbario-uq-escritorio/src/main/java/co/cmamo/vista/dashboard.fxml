@@ -239,7 +239,7 @@
                                  <columns>
                                     <TableColumn fx:id="idPeticionColumna" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="ID" />
                                     <TableColumn fx:id="estadoPeticionColumna" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="90.0" text="Estado" />
-                                    <TableColumn fx:id="nombrePeticionColumna" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" text="Nombre" />
+                                    <TableColumn fx:id="nombrePeticionColumna" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" text="Especie" />
                                  </columns>
                               </TableView>
                               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">

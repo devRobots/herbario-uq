@@ -1,6 +1,7 @@
 package co.cmamo.controlador;
 
 import java.io.IOException;
+import java.net.URL;
 
 import org.hibernate.validator.internal.util.privilegedactions.GetClassLoader;
 
@@ -56,17 +57,29 @@ public class LoginControlador {
 
 	@FXML
 	void reminder(ActionEvent event) {
-		Persona p = delegado.buscarPersonaPorCorreo(txtCorreo.getText().trim());
+		String correo = txtCorreo.getText().trim();
+		if (!correo.isEmpty()) {
+			Persona p = delegado.buscarPersonaPorCorreo(correo);
 
-		JavaMailSession javaMail = new JavaMailSession();
-		javaMail.enviarMensaje("Recuperacion de contraseña",
-				"Correo electronico: " + p.getCorreo() + "\nClave: " + p.getClave(), 
-				p.getCorreo());
+			JavaMailSession javaMail = new JavaMailSession();
+			
+			if (javaMail.enviarMensaje("Recuperacion de contraseña",
+					"Correo electronico: " + p.getCorreo() + "\nClave: " + p.getClave(), 
+					p.getCorreo())) {				
+				Utilidades.mostrarMensaje("Informacion", "Se envio su clave al correo: " + correo, 0);
+			}
+			else {
+				Utilidades.mostrarMensaje("Error", "No se pudo enviar el mensaje", -2);
+			}
+		}
+		else {
+			Utilidades.mostrarMensaje("Advertencia", "Ingrese el correo electronico", -1);
+		}
 	}
 
 	@FXML
 	void initialize() {
-//    	logo.setImage(new Image(getClass().getResource("/images/logo.png").toString()));
+//    	logo.setImage(new Image(getClass().getResource("/images/logo.png").getFile()));
 	}
 
 	public LoginControlador() {
