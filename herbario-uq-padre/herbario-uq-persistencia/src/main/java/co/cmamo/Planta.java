@@ -48,9 +48,6 @@ public class Planta implements Serializable {
 	@ManyToOne
 	private Genero genero;
 	
-	@Lob
-	private Image imagen;
-	
 	/**
 	 * Constructor de la planta
 	 */

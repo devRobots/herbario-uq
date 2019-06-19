@@ -53,7 +53,6 @@ public class Persona implements Serializable {
 	 * id de la persona
 	 */
 	@Id
-	@Column(nullable = false, unique = true)
 	private String id;
 	/**
 	 * Nombre de la persona

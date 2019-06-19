@@ -257,7 +257,7 @@ public class AdministradorDelegado {
 	 * @return empleado si fue eliminado
 	 */
 	public boolean eliminarPlanta(Planta planta) {
-		return false; // adminEJB.eliminarPlanta(planta.getId());
+		return adminEJB.eliminarPlanta(planta.getId());
 	}
 
 	/**

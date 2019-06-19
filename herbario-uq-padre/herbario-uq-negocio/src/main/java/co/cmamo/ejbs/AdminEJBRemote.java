@@ -223,4 +223,6 @@ public interface AdminEJBRemote {
 
 	public Persona buscarPersonaPorCorreo(String correo);
 
+	public boolean eliminarPlanta(long id);
+
 }

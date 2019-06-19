@@ -425,7 +425,7 @@ public class AdminEJB implements AdminEJBRemote {
 
 			entityManager.remove(familia);
 
-			if (entityManager.find(Familia.class, familia.getId()) == null) {
+			if (entityManager.find(Familia.class, familia.getId()) != null) {
 				throw new Exception("No se pudo eliminar la familia");
 			}
 			return true;
@@ -501,15 +501,18 @@ public class AdminEJB implements AdminEJBRemote {
 	@Override
 	public boolean eliminarGenero(long id) {
 		try {
+			System.out.println(0);
 			Genero genero = entityManager.find(Genero.class, id);
 
 			if (genero == null) {
 				throw new ElementoInexistenteExcepcion("El genero que se quiere eliminar no existe");
 			}
 
+			System.out.println(1);
 			entityManager.remove(genero);
-
-			if (entityManager.find(Genero.class, genero.getId()) == null) {
+			System.out.println(2);
+			
+			if (entityManager.find(Genero.class, genero.getId()) != null) {
 				throw new Exception("No se pudo eliminar el genero");
 			}
 			return true;
@@ -587,6 +590,25 @@ public class AdminEJB implements AdminEJBRemote {
 		Persona p = query.getSingleResult();
 		
 		return p;
+	}
+
+	public boolean eliminarPlanta(long id) {
+		try {
+			Planta planta = entityManager.find(Planta.class, id);
+
+			if (planta == null) {
+				throw new ElementoInexistenteExcepcion("La familia que se quiere eliminar no existe");
+			}
+
+			entityManager.remove(planta);
+
+			if (entityManager.find(Planta.class, planta.getId()) != null) {
+				throw new Exception("No se pudo eliminar la familia");
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }

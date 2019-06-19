@@ -13,6 +13,7 @@ import co.cmamo.Planta;
 import co.cmamo.Recolector;
 import co.cmamo.modelo.AdministradorDelegado;
 import co.cmamo.modelo.TaxonomiaObservable;
+import co.cmamo.util.Utilidades;
 import co.cmamo.modelo.PersonaObservable;
 import co.cmamo.modelo.PeticionObservable;
 import javafx.collections.FXCollections;
@@ -313,6 +314,10 @@ public class DashboardControlador {
 			controladorCrearTaxonomia.cargarCampos(taxonomia);
 			controladorCrearTaxonomia.setModo(true);
 			ventanaCrearTaxonomia.showAndWait();
+			
+			familiasObservables = delegado.listarFamiliasObservables();
+			tablaFamilias.setItems(familiasObservables);
+			tablaFamilias.refresh();
 		}
 	}
 
@@ -322,6 +327,10 @@ public class DashboardControlador {
 		if (taxonomia != null) {
 			Familia familia = (Familia) taxonomia.getTaxonomia();
 			delegado.eliminarFamilia(familia);
+			
+			familiasObservables = delegado.listarFamiliasObservables();
+			tablaFamilias.setItems(familiasObservables);
+			tablaFamilias.refresh();
 		}
 	}
 
@@ -351,6 +360,7 @@ public class DashboardControlador {
 			controladorCrearTaxonomia.cargarCampos(taxonomia);
 			controladorCrearTaxonomia.setModo(true);
 			ventanaCrearTaxonomia.showAndWait();
+			listarDeFamilias(tablaFamilias.getSelectionModel().getSelectedItem());
 		}
 	}
 
@@ -358,8 +368,13 @@ public class DashboardControlador {
 	void eliminarGenero(ActionEvent event) {
 		TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
 		if (taxonomia != null) {
-			Genero genero = (Genero) taxonomia.getTaxonomia();
-			delegado.eliminarGenero(genero);
+			try {
+				Genero genero = (Genero) taxonomia.getTaxonomia();
+				delegado.eliminarGenero(genero);
+				listarDeFamilias(tablaFamilias.getSelectionModel().getSelectedItem());
+			} catch (Exception e) {
+				Utilidades.mostrarMensaje("Advertencia", "Debe eliminar todas las especies", -1);
+			}
 		}
 	}
 
@@ -388,7 +403,8 @@ public class DashboardControlador {
 			controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
 			controladorCrearTaxonomia.cargarCampos(taxonomia);
 			controladorCrearTaxonomia.setModo(true);
-			ventanaCrearTaxonomia.showAndWait();			
+			ventanaCrearTaxonomia.showAndWait();
+			listarDeGeneros(tablaGeneros.getSelectionModel().getSelectedItem());
 		}
 	}
 
