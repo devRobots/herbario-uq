@@ -25,68 +25,9 @@ public class EdicionTaxonomiaControlador {
 
 	private Object antecesor;
 	
-    @FXML
-    private TextField txtNombre;
+	@FXML
+	private TextField txtNombre;
 	
-    @FXML
-    private Button btnAceptar;
-	
-    @FXML
-    private Button btnModificar;
- 
-    
-    public void setModo(boolean edicion) {
-    	btnAceptar.setVisible(!edicion);
-    	btnModificar.setVisible(edicion);
-    }
-
-    @FXML
-    void aceptar(ActionEvent event) {
-    	if (!txtNombre.getText().isEmpty()) {
-    		AdministradorDelegado delegado = controlador.getAdministradorDelegado();
-        	
-        	if (antecesor == null) {
-    			Familia familia = new Familia();
-    			familia.setNombre(txtNombre.getText());
-    			
-    			if (delegado.registrarFamilia(familia)) {
-    				controlador.agregarTaxonomiaALista((Familia) familia);
-    				Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
-    				escenarioEditar.close();
-    			}
-    			else {
-    				Utilidades.mostrarMensaje("Registro", "Error en registro!!", -2);
-    			}
-    		}	
-        	else	 if (antecesor instanceof Familia) {
-        		Genero genero = new Genero();
-    			genero.setNombre(txtNombre.getText());
-    			genero.setFamilia((Familia)antecesor);
-    			
-    			if (delegado.registrarGenero(genero)) {
-    				controlador.agregarTaxonomiaALista((Genero) genero);
-    				Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
-    				escenarioEditar.close();
-    			}
-    			else {
-    				Utilidades.mostrarMensaje("Registro", "Error en registro!!", -2);
-    			}
-    		}
-        	else {
-        		Planta planta = new Planta();
-    			planta.setEspecie(txtNombre.getText());
-    			planta.setGenero((Genero)antecesor);
-    			
-    			if (delegado.registrarPlanta(planta)) {
-    				controlador.agregarTaxonomiaALista((Planta) planta);
-    				Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
-    				escenarioEditar.close();
-    			}
-    			else {
-    				Utilidades.mostrarMensaje("Registro", "Error en registro!!", -2);
-    			}
-        	}
-
 	@FXML
 	private Button btnAceptar;
 
@@ -167,9 +108,8 @@ public class EdicionTaxonomiaControlador {
 					Utilidades.mostrarMensaje("Registro", "Error en registro!!", -2);
 				}
 			} else if (antecesor instanceof Familia) {
-				Genero genero = new Genero();
+				Genero genero = (Genero)taxonomia.getTaxonomia();
 				genero.setNombre(txtNombre.getText());
-				genero.setFamilia((Familia) antecesor);
 
 				if (delegado.modificarGenero(genero)) {
 					controlador.agregarTaxonomiaALista((Genero) genero);
@@ -179,13 +119,12 @@ public class EdicionTaxonomiaControlador {
 					Utilidades.mostrarMensaje("Registro", "Error en registro!!", -2);
 				}
 			} else {
-				Planta planta = new Planta();
+				Planta planta = (Planta) taxonomia.getTaxonomia();
 				planta.setEspecie(txtNombre.getText());
-				planta.setGenero((Genero) antecesor);
 				//Agregar imagen
 				planta.setImagen(imagen);
 
-				if (delegado.modificarEspecie(planta)) {
+				if (delegado.modificarPlanta(planta)) {
 					controlador.agregarTaxonomiaALista((Planta) planta);
 					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
 					escenarioEditar.close();
@@ -235,7 +174,7 @@ public class EdicionTaxonomiaControlador {
 			is.close();
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		
 		return bytes;

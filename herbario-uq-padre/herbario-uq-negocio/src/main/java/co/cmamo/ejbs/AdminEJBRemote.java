@@ -225,4 +225,6 @@ public interface AdminEJBRemote {
 
 	public boolean eliminarPlanta(long id);
 
+	public boolean modificarPlanta(Planta mod);
+
 }

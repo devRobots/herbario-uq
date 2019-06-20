@@ -46,7 +46,7 @@ public class Genero implements Serializable {
 	/**
 	 * Especies de la Planta
 	 */
-	@OneToMany(mappedBy="genero")
+	@OneToMany(mappedBy="genero", cascade = CascadeType.REMOVE)
 	private List<Planta> especies;
 
 	/**

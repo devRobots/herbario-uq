@@ -423,8 +423,6 @@ public class AdminEJB implements AdminEJBRemote {
 				throw new ElementoInexistenteExcepcion("La familia que se quiere eliminar no existe");
 			}
 			
-			familia.setGeneros(null);
-
 			entityManager.remove(familia);
 
 			if (entityManager.find(Familia.class, familia.getId()) != null) {
@@ -503,14 +501,11 @@ public class AdminEJB implements AdminEJBRemote {
 	@Override
 	public boolean eliminarGenero(long id) {
 		try {
-			System.out.println(0);
 			Genero genero = entityManager.find(Genero.class, id);
 
 			if (genero == null) {
 				throw new ElementoInexistenteExcepcion("El genero que se quiere eliminar no existe");
 			}
-			
-			genero.setEspecies(null);
 			
 			entityManager.remove(genero);
 			
@@ -607,6 +602,21 @@ public class AdminEJB implements AdminEJBRemote {
 			if (entityManager.find(Planta.class, planta.getId()) != null) {
 				throw new Exception("No se pudo eliminar la familia");
 			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean modificarPlanta(Planta mod) {
+		try {
+			Planta p = entityManager.find(Planta.class, mod.getId());
+			if (p == null) {
+				throw new ElementoInexistenteExcepcion("El genero que se busca modificar no existe");
+			}
+
+			entityManager.merge(mod);
 			return true;
 		} catch (Exception e) {
 			return false;

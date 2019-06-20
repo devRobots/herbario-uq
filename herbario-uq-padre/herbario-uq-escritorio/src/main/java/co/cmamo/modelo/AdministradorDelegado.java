@@ -386,4 +386,14 @@ public class AdministradorDelegado {
 		return adminEJB.modificarRecolector(recolector);
 	}
 
+	public boolean modificarFamilia(Familia familia) {
+		return adminEJB.modificarFamilia(familia);
+	}
+	public boolean modificarGenero(Genero genero) {
+		return adminEJB.modificarGenero(genero);
+	}
+	public boolean modificarPlanta(Planta planta) {
+		return adminEJB.modificarPlanta(planta);
+	}
+
 }
