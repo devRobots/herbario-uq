@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Wed Jun 19 18:00:23 COT 2019*/
+/* AUTOMATICALLY GENERATED ON Thu Jun 20 16:15:34 EST 2019*/
 /* DO NOT EDIT */
 
 grant {
@@ -53,6 +53,7 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "iniciarSesion,Local,java.lang.String,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarGenero,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Remote,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarPlanta,Local,long";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPeticion,Remote,co.cmamo.Peticion";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearFamilia,Remote,co.cmamo.Familia";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearRecolector,Remote,co.cmamo.Recolector";
@@ -60,6 +61,7 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPeticion,Local,long";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPersonaPorCorreo,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPeticion,Local,co.cmamo.Peticion";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarPlanta,Remote,long";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPlanta,Local,co.cmamo.Planta";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarGenero,Local,co.cmamo.Genero";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Local,co.cmamo.Familia";

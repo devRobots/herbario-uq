@@ -422,6 +422,8 @@ public class AdminEJB implements AdminEJBRemote {
 			if (familia == null) {
 				throw new ElementoInexistenteExcepcion("La familia que se quiere eliminar no existe");
 			}
+			
+			familia.setGeneros(null);
 
 			entityManager.remove(familia);
 
@@ -507,10 +509,10 @@ public class AdminEJB implements AdminEJBRemote {
 			if (genero == null) {
 				throw new ElementoInexistenteExcepcion("El genero que se quiere eliminar no existe");
 			}
-
-			System.out.println(1);
+			
+			genero.setEspecies(null);
+			
 			entityManager.remove(genero);
-			System.out.println(2);
 			
 			if (entityManager.find(Genero.class, genero.getId()) != null) {
 				throw new Exception("No se pudo eliminar el genero");

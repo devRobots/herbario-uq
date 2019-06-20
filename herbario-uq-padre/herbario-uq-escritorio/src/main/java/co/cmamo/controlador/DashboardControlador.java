@@ -368,13 +368,10 @@ public class DashboardControlador {
 	void eliminarGenero(ActionEvent event) {
 		TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
 		if (taxonomia != null) {
-			try {
-				Genero genero = (Genero) taxonomia.getTaxonomia();
-				delegado.eliminarGenero(genero);
-				listarDeFamilias(tablaFamilias.getSelectionModel().getSelectedItem());
-			} catch (Exception e) {
-				Utilidades.mostrarMensaje("Advertencia", "Debe eliminar todas las especies", -1);
-			}
+			Genero genero = (Genero) taxonomia.getTaxonomia();
+			delegado.eliminarGenero(genero);
+			listarDeFamilias(tablaFamilias.getSelectionModel().getSelectedItem());
+			agregarTaxonomiaALista(taxonomia.getTaxonomia());
 		}
 	}
 
@@ -410,10 +407,20 @@ public class DashboardControlador {
 
 	@FXML
 	void eliminarEspecie(ActionEvent event) {
-		TaxonomiaObservable taxonomia = tablaEspecies.getSelectionModel().getSelectedItem();
-		if (taxonomia != null) {
-			Planta especie = (Planta) taxonomia.getTaxonomia();
-			delegado.eliminarPlanta(especie);
+		TaxonomiaObservable taxonomiaAntecesor = tablaGeneros.getSelectionModel().getSelectedItem();
+		if (taxonomiaAntecesor != null) {
+			TaxonomiaObservable taxonomia = tablaEspecies.getSelectionModel().getSelectedItem();
+			if (taxonomia != null) {
+				Planta especie = (Planta) taxonomia.getTaxonomia();
+				delegado.eliminarPlanta(especie);
+				agregarTaxonomiaALista(taxonomia.getTaxonomia());
+			}
+			else {
+				Utilidades.mostrarMensaje("Advertencia", "Seleccione una especie", -1);
+			}
+		}
+		else {
+			Utilidades.mostrarMensaje("Advertencia", "Seleccione un genero", -1);
 		}
 	}
 
@@ -495,6 +502,8 @@ public class DashboardControlador {
 			controladorCrearPersona.setModo(true);
 
 			ventanaCrearPersona.showAndWait();
+			
+			agregarPersonaALista(persona.getPersona());
 		}
 	}
 
@@ -541,10 +550,12 @@ public class DashboardControlador {
 
 	public void agregarPersonaALista(Persona persona) {
 		if (persona instanceof Empleado) {
-			empleadosObservables.add(new PersonaObservable(persona));
+			empleadosObservables = delegado.listarEmpleadosObservables();
+			tablaEmpleados.setItems(empleadosObservables);
 			tablaEmpleados.refresh();
 		} else if (persona instanceof Recolector) {
-			recolectoresObservables.add(new PersonaObservable(persona));
+			recolectoresObservables = delegado.listarRecolectoresObservables();
+			tablaRecolectores.setItems(recolectoresObservables);
 			tablaRecolectores.refresh();
 		}
 	}
