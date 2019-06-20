@@ -47,6 +47,11 @@ public class Planta implements Serializable {
 	 */
 	@ManyToOne
 	private Genero genero;
+	/**
+	 * imagen de la Planta
+	 */
+	@Lob
+	private byte[] imagen;
 	
 	/**
 	 * Constructor de la planta
@@ -96,5 +101,19 @@ public class Planta implements Serializable {
 	 */
 	public void setGenero(Genero genero) {
 		this.genero = genero;
+	}
+	/**
+	 * Get imagen
+	 * @return imagen
+	 */
+	public byte[] getImagen(){
+		return imagen;
+	}
+	/**
+	 * set imagen
+	 * @param imagen
+	 */
+	public void setImagen(byte[] imagen) {
+		this.imagen = imagen;
 	}
 }
