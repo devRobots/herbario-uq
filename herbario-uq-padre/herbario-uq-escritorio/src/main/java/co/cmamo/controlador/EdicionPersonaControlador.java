@@ -108,7 +108,8 @@ public class EdicionPersonaControlador {
 	 */
 	@FXML
 	private void agregar() {
-		if (!cmpApellido.getText().isEmpty() && !cmpCedula.getText().isEmpty() && !cmpClave.getText().isEmpty() && !cmpCorreo.getText().isEmpty() && !cmpNombre.getText().isEmpty()) {
+		if (!cmpApellido.getText().isEmpty() && !cmpCedula.getText().isEmpty() && !cmpClave.getText().isEmpty() && !cmpCorreo.getText().isEmpty() && !cmpNombre.getText().isEmpty()) 
+		{
 			persona.setId(cmpCedula.getText());
 			persona.setNombre(cmpNombre.getText());
 			persona.setApellido(cmpApellido.getText());
@@ -123,6 +124,7 @@ public class EdicionPersonaControlador {
 				if (delegado.registrarEmpleado((Empleado) persona)) {
 					controlador.agregarPersonaALista((Empleado) persona);
 					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
+					limpiarCampos();
 					escenarioEditar.close();
 				} else {
 					Utilidades.mostrarMensaje("Registro", "Error en registro!!");
@@ -131,6 +133,7 @@ public class EdicionPersonaControlador {
 				if (delegado.registrarRecolector((Recolector) persona)) {
 					controlador.agregarPersonaALista((Recolector) persona);
 					Utilidades.mostrarMensaje("Registro", "Registro exitoso!!");
+					limpiarCampos();
 					escenarioEditar.close();
 				} else {
 					Utilidades.mostrarMensaje("Registro", "Error en registro!!");
@@ -139,7 +142,10 @@ public class EdicionPersonaControlador {
 				Utilidades.mostrarMensaje("Registro", "Error en registro!!");
 			}
 		}
-		limpiarCampos();
+		else {
+			Utilidades.mostrarMensaje("Datos Incompletos", "Error en el ingreso de datos, porfavor verifica tus datos ingresados",-1);
+		}
+		
 	}
 
 	/**

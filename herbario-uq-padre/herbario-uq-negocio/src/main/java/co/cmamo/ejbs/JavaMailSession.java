@@ -28,8 +28,9 @@ public class JavaMailSession {
 			props.setProperty("mail.smtp.port","587");
 			props.setProperty("mail.smtp.user", "herbario.uq.mail@gmail.com");
 			props.setProperty("mail.smtp.auth", "true");
+			props.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
 			
-			Session session = Session.getDefaultInstance(props);
+			mailSession = Session.getDefaultInstance(props);
 			
 			mensaje = new MimeMessage(mailSession);
 			
@@ -39,7 +40,7 @@ public class JavaMailSession {
 			Address to = new InternetAddress(destinatario);
 			mensaje.addRecipient(RecipientType.TO, to);
 
-			mensaje.setSubject(header);	
+			mensaje.setSubject(header);
 
 			mensaje.setText(text);
 
@@ -57,7 +58,7 @@ public class JavaMailSession {
 			
 			return true;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();;
 			return false;
 		}
 	}

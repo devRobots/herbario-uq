@@ -1051,7 +1051,7 @@
       <property name="keepstate" value="true"></property>
       <property name="isComposite" value="true"></property>
       <property name="appLocation" value="${com.sun.aas.instanceRootURI}/eclipseApps/herbario-uq-ear/"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="102305767115915264"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="102305292477530112"></property>
       <property name="defaultAppName" value="herbario-uq-ear"></property>
       <module name="herbario-uq-negocio.jar">
         <engine sniffer="ejb"></engine>
