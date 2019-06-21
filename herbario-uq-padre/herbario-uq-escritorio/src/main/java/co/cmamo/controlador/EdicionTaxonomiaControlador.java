@@ -28,16 +28,11 @@ public class EdicionTaxonomiaControlador {
 	@FXML
 	private TextField txtNombre;
 	
-<<<<<<< HEAD
 	@FXML
 	private Button btnAceptar;
 
 	@FXML
 	private Button btnModificar;
-=======
-    @FXML
-    private Button btnModificar;
->>>>>>> entrega_2
 	
 	@FXML
 	private Button btnBuscar;
