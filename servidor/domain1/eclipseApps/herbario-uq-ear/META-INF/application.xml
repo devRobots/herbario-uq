@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" version="7">
+  <description>Proyecto Padre del Herbario UQ</description>
+  <display-name>herbario-uq-ear</display-name>
+  <module id="EJB_co.cmamo.herbario-uq-negocio">
+    <ejb>herbario-uq-negocio.jar</ejb>
+  </module>
+  <module id="WAR_co.cmamo.herbario-uq-web">
+    <web>
+      <web-uri>herbario-uq-web.war</web-uri>
+      <context-root>/herbario-uq-web</context-root>
+    </web>
+  </module>
+  <library-directory>lib</library-directory>
+</application>

@@ -1,0 +1,81 @@
+/* AUTOMATICALLY GENERATED ON Thu Jun 27 18:31:03 COT 2019*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPeticiones,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearFamilia,Local,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarGeneros,Remote,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarFamilia,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarRecolector,Local,co.cmamo.Recolector";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarFamilia,Remote,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarGenero,Remote,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPeticion,Remote,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarFamilias,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarFamilia,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarEmpleado,Local,co.cmamo.Empleado";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Local,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarEmpleados,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPeticiones,Remote,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Remote,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearGenero,Remote,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarGeneros,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarPeticion,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPeticion,Local,co.cmamo.Peticion";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarGeneros,Local,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarFamilia,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "invalidarEmpleado,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarEmpleado,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearEmpleado,Local,co.cmamo.Empleado";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPlanta,Remote,co.cmamo.Planta";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarGeneros,Remote,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarEmpleados,Remote,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarRecolector,Remote,co.cmamo.Recolector";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarGenero,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearGenero,Local,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPlanta,Local,co.cmamo.Planta";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearRecolector,Local,co.cmamo.Recolector";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "iniciarSesion,Remote,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarEmpleado,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarRecolector,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearEmpleado,Remote,co.cmamo.Empleado";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarFamilia,Local,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarFamilias,Remote,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarPeticion,Remote,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarFamilia,Remote,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "invalidarRecolector,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarGenero,Remote,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarGenero,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPlanta,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarRecolectores,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarRecolector,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "invalidarRecolector,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPlanta,Remote,co.cmamo.Planta";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Remote,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "iniciarSesion,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarGenero,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Remote,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarPlanta,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPeticion,Remote,co.cmamo.Peticion";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearFamilia,Remote,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearRecolector,Remote,co.cmamo.Recolector";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarEmpleado,Remote,co.cmamo.Empleado";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPeticion,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPersonaPorCorreo,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPeticion,Local,co.cmamo.Peticion";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarPlanta,Remote,long";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "crearPlanta,Local,co.cmamo.Planta";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarGenero,Local,co.cmamo.Genero";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarPlantas,Local,co.cmamo.Familia";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPersonaPorCorreo,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarRecolectores,Remote,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPlanta,Remote,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPeticion,Remote,co.cmamo.Peticion";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "invalidarEmpleado,Remote,java.lang.String";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "SetupEJB", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "AdminEJB", "**";
+};
+

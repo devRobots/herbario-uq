@@ -1,0 +1,84 @@
+{
+	"familia": [
+		{
+			"id": "1",
+			"nombre": "Amery"
+		},
+		{
+			"id": "2",
+			"nombre": "Acton"
+		},
+		{
+			"id": "3",
+			"nombre": "Michael"
+		},
+		{
+			"id": "4",
+			"nombre": "Garth"
+		},
+		{
+			"id": "5",
+			"nombre": "Josiah"
+		},
+		{
+			"id": "6",
+			"nombre": "Avram"
+		},
+		{
+			"id": "7",
+			"nombre": "Nehru"
+		},
+		{
+			"id": "8",
+			"nombre": "Sawyer"
+		},
+		{
+			"id": "9",
+			"nombre": "Oliver"
+		},
+		{
+			"id": "10",
+			"nombre": "Stuart"
+		},
+		{
+			"id": "11",
+			"nombre": "Byron"
+		},
+		{
+			"id": "12",
+			"nombre": "Harrison"
+		},
+		{
+			"id": "13",
+			"nombre": "Abel"
+		},
+		{
+			"id": "14",
+			"nombre": "Wang"
+		},
+		{
+			"id": "15",
+			"nombre": "Allistair"
+		},
+		{
+			"id": "16",
+			"nombre": "Ross"
+		},
+		{
+			"id": "17",
+			"nombre": "Damian"
+		},
+		{
+			"id": "18",
+			"nombre": "Lee"
+		},
+		{
+			"id": "19",
+			"nombre": "Kennedy"
+		},
+		{
+			"id": "20",
+			"nombre": "Mark"
+		}
+	]
+}

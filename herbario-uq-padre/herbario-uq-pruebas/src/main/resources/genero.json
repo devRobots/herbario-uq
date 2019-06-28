@@ -1,0 +1,204 @@
+{
+	"genero": [
+		{
+			"id": "1",
+			"nombre": "Briar-Mariam",
+			"familia_id": "13"
+		},
+		{
+			"id": "2",
+			"nombre": "Samuel-Kessie",
+			"familia_id": "19"
+		},
+		{
+			"id": "3",
+			"nombre": "Dexter-Ava",
+			"familia_id": "14"
+		},
+		{
+			"id": "4",
+			"nombre": "Keelie-Karen",
+			"familia_id": "2"
+		},
+		{
+			"id": "5",
+			"nombre": "Hiram-Melinda",
+			"familia_id": "13"
+		},
+		{
+			"id": "6",
+			"nombre": "Tasha-Kathleen",
+			"familia_id": "17"
+		},
+		{
+			"id": "7",
+			"nombre": "Keelie-Jayme",
+			"familia_id": "6"
+		},
+		{
+			"id": "8",
+			"nombre": "Plato-Doris",
+			"familia_id": "10"
+		},
+		{
+			"id": "9",
+			"nombre": "Maile-Emily",
+			"familia_id": "10"
+		},
+		{
+			"id": "10",
+			"nombre": "Connor-Minerva",
+			"familia_id": "10"
+		},
+		{
+			"id": "11",
+			"nombre": "Keane-Lael",
+			"familia_id": "7"
+		},
+		{
+			"id": "12",
+			"nombre": "Neil-Simone",
+			"familia_id": "13"
+		},
+		{
+			"id": "13",
+			"nombre": "Thor-Belle",
+			"familia_id": "6"
+		},
+		{
+			"id": "14",
+			"nombre": "Kay-Meghan",
+			"familia_id": "17"
+		},
+		{
+			"id": "15",
+			"nombre": "Evan-Regan",
+			"familia_id": "17"
+		},
+		{
+			"id": "16",
+			"nombre": "Zahir-Bethany",
+			"familia_id": "2"
+		},
+		{
+			"id": "17",
+			"nombre": "Walker-Rowan",
+			"familia_id": "10"
+		},
+		{
+			"id": "18",
+			"nombre": "Tyler-Venus",
+			"familia_id": "14"
+		},
+		{
+			"id": "19",
+			"nombre": "Desirae-Winter",
+			"familia_id": "2"
+		},
+		{
+			"id": "20",
+			"nombre": "Slade-Illiana",
+			"familia_id": "8"
+		},
+		{
+			"id": "21",
+			"nombre": "Travis-Fleur",
+			"familia_id": "13"
+		},
+		{
+			"id": "22",
+			"nombre": "Mary-Athena",
+			"familia_id": "1"
+		},
+		{
+			"id": "23",
+			"nombre": "Hamish-Nayda",
+			"familia_id": "4"
+		},
+		{
+			"id": "24",
+			"nombre": "Kirk-Tallulah",
+			"familia_id": "18"
+		},
+		{
+			"id": "25",
+			"nombre": "Octavia-Urielle",
+			"familia_id": "19"
+		},
+		{
+			"id": "26",
+			"nombre": "Hu-Blair",
+			"familia_id": "17"
+		},
+		{
+			"id": "27",
+			"nombre": "Isabelle-Evangeline",
+			"familia_id": "20"
+		},
+		{
+			"id": "28",
+			"nombre": "Samantha-Tanisha",
+			"familia_id": "4"
+		},
+		{
+			"id": "29",
+			"nombre": "Lila-Quon",
+			"familia_id": "17"
+		},
+		{
+			"id": "30",
+			"nombre": "Stephanie-Miranda",
+			"familia_id": "1"
+		},
+		{
+			"id": "31",
+			"nombre": "Abbot-Debra",
+			"familia_id": "15"
+		},
+		{
+			"id": "32",
+			"nombre": "Allegra-Aubrey",
+			"familia_id": "9"
+		},
+		{
+			"id": "33",
+			"nombre": "Mason-Leslie",
+			"familia_id": "16"
+		},
+		{
+			"id": "34",
+			"nombre": "Larissa-Karyn",
+			"familia_id": "6"
+		},
+		{
+			"id": "35",
+			"nombre": "Nolan-Gail",
+			"familia_id": "6"
+		},
+		{
+			"id": "36",
+			"nombre": "Ferris-Maisie",
+			"familia_id": "9"
+		},
+		{
+			"id": "37",
+			"nombre": "Kenyon-Lani",
+			"familia_id": "10"
+		},
+		{
+			"id": "38",
+			"nombre": "Inga-Clare",
+			"familia_id": "10"
+		},
+		{
+			"id": "39",
+			"nombre": "Patrick-Portia",
+			"familia_id": "4"
+		},
+		{
+			"id": "40",
+			"nombre": "Erica-Phyllis",
+			"familia_id": "15"
+		}
+	]
+}
