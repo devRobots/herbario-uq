@@ -20,7 +20,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Delegado que permite conectar la capa de negocio con la de presentación
+ * Delegado que permite conectar la capa de negocio con la de presentacion
  * 
  * @author EinerZG
  * @version 1.0

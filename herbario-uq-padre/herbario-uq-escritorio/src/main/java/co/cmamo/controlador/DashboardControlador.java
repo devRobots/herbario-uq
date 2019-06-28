@@ -28,10 +28,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+/**
+ *  DashBoard Encargado practicamente de la gestion de todos los campos 
+ *  (personas, peticion, planta, familia, genero)
+ * @author Cristian Quiceno & Yesid Rosas
+ *
+ */
 public class DashboardControlador {
 	private AdministradorDelegado delegado;
 
+	/**
+	 * Lista para poder visualizar las listas de sus respectivos campos (persona, peticion, familia, etc) TODO: creo que hace eso corregir despues
+	 */
 	private ObservableList<PersonaObservable> empleadosObservables;
 	private ObservableList<PersonaObservable> recolectoresObservables;
 	private ObservableList<TaxonomiaObservable> familiasObservables;
@@ -39,10 +47,10 @@ public class DashboardControlador {
 	private ObservableList<TaxonomiaObservable> especiesObservables;
 	private ObservableList<PeticionObservable> peticionesObservables;
 
-	private Stage ventanaCrearPersona;
-	private EdicionPersonaControlador controladorCrearPersona;
+	private Stage ventanaCrearPersona; // Ventana Donde se ingresara los datos de la persona
+	private EdicionPersonaControlador controladorCrearPersona; // TODO: Nose :c
 
-	private Stage ventanaCrearTaxonomia;
+	private Stage ventanaCrearTaxonomia;// Ventana Donde Crearemos los datos de una Taxonomia
 	private EdicionTaxonomiaControlador controladorCrearTaxonomia;
 
 	@FXML
@@ -147,13 +155,23 @@ public class DashboardControlador {
 	@FXML
 	private TextArea txtRespuestaPeticion;
 
+	/**
+	 * Constructor del DashBoard
+	 */
 	public DashboardControlador() {
 	}
 
+	/**
+	 * Get del Administrador Delegado encargado de TODO: Rellenar Despues
+	 * @return
+	 */
 	public AdministradorDelegado getAdministradorDelegado() {
 		return delegado;
 	}
 
+	/**
+	 * Se inicializa todos los Campos
+	 */
 	@FXML
 	private void initialize() {
 		delegado = AdministradorDelegado.administradorDelegado;
@@ -206,7 +224,20 @@ public class DashboardControlador {
 				.addListener((observable, oldValue, newValue) -> listarDeGeneros(newValue));
 		tablaGeneros.setItems(generosObservables);
 	}
+	
+	/**
+	 * Metodo para mostrar el mapa TODO: Por ahora no hace nada
+	 * @param event
+	 */
+	@FXML
+	void mostrarMapa(ActionEvent event) {
+		
+	}
 
+	/**
+	 * Metodo para agregar un empleado a la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void agregarEmpleado(ActionEvent event) {
 		if (ventanaCrearPersona == null) {
@@ -218,7 +249,11 @@ public class DashboardControlador {
 
 		ventanaCrearPersona.showAndWait();
 	}
-
+	
+	/**
+	 * Metodo para agregar un Recolector a la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void agregarRecolector(ActionEvent event) {
 		if (ventanaCrearPersona == null) {
@@ -237,12 +272,20 @@ public class DashboardControlador {
 		editarPersona(persona, new Empleado());
 	}
 
+	/**
+	 * Metodo para editar un Recolector a la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void editarRecolector(ActionEvent event) {
 		PersonaObservable persona = tablaRecolectores.getSelectionModel().getSelectedItem();
 		editarPersona(persona, new Recolector());
 	}
 
+	/**
+	 * Metodo para invalidar un Empleado a la Base de Datos TODO: arreglar
+	 * @param event
+	 */
 	@FXML
 	void invalidarEmpleado(ActionEvent event) {
 		PersonaObservable personaObservable = tablaEmpleados.getSelectionModel().getSelectedItem();
@@ -252,6 +295,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Invalidar un Recolector a la Base de Datos TODO: arreglar
+	 * @param event
+	 */
 	@FXML
 	void invalidarRecolector(ActionEvent event) {
 		PersonaObservable personaObservable = tablaRecolectores.getSelectionModel().getSelectedItem();
@@ -260,7 +307,11 @@ public class DashboardControlador {
 			delegado.eliminarRecolector(persona);
 		}
 	}
-
+	
+	/**
+	 * Metodo para aprobar una Peticion  TODO: no se ha probado
+	 * @param event
+	 */
 	@FXML
 	void aprobarPeticion(ActionEvent event) {
 		PeticionObservable peticionObservable = tablaPeticiones.getSelectionModel().getSelectedItem();
@@ -276,7 +327,11 @@ public class DashboardControlador {
 			delegado.modificarPeticion(peticion);
 		}
 	}
-
+	
+	/**
+	 * Metodo para Rechazar una Peticion TODO: Aun no se ha probado
+	 * @param event
+	 */
 	@FXML
 	void rechazarPeticion(ActionEvent event) {
 		PeticionObservable peticionObservable = tablaPeticiones.getSelectionModel().getSelectedItem();
@@ -291,6 +346,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Agregar una Familia a la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void agregarFamilia(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
@@ -299,9 +358,14 @@ public class DashboardControlador {
 
 		controladorCrearTaxonomia.setAntecesor(null);
 		controladorCrearTaxonomia.setModo(false);
+		controladorCrearTaxonomia.ocultarBusqueda();// No permite ingresar imagenes
 		ventanaCrearTaxonomia.showAndWait();
 	}
 
+	/**
+	 * Metodo para Editar una Familia en la Base de Datos TODO:No funciona
+	 * @param event
+	 */
 	@FXML
 	void editarFamilia(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
@@ -321,6 +385,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Eliminar una Familia en la Base de Datos TODO: no Funciona bien
+	 * @param event
+	 */
 	@FXML
 	void eliminarFamilia(ActionEvent event) {
 		TaxonomiaObservable taxonomia = tablaFamilias.getSelectionModel().getSelectedItem();
@@ -334,6 +402,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Agregar un Genero a la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void agregarGenero(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
@@ -344,10 +416,15 @@ public class DashboardControlador {
 		if (taxonomia != null) {			
 			controladorCrearTaxonomia.setAntecesor(tablaFamilias.getSelectionModel().getSelectedItem().getTaxonomia());
 			controladorCrearTaxonomia.setModo(false);
+			controladorCrearTaxonomia.ocultarBusqueda();// No permite ingresar imagenes
 			ventanaCrearTaxonomia.showAndWait();
 		}
 	}
 
+	/**
+	 * Metodo para Editar un Genero en la Base de Datos TODO: Aun no funciona
+	 * @param event
+	 */
 	@FXML
 	void editarGenero(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
@@ -364,6 +441,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Eliminar un Genero en la Base de Datos TODO: Aun sin funcionar
+	 * @param event
+	 */
 	@FXML
 	void eliminarGenero(ActionEvent event) {
 		TaxonomiaObservable taxonomia = tablaGeneros.getSelectionModel().getSelectedItem();
@@ -375,6 +456,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Agregar una Especie a la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void agregarEspecie(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
@@ -385,10 +470,15 @@ public class DashboardControlador {
 		if (taxonomia != null) {			
 			controladorCrearTaxonomia.setAntecesor(tablaGeneros.getSelectionModel().getSelectedItem().getTaxonomia());
 			controladorCrearTaxonomia.setModo(false);
+			controladorCrearTaxonomia.mostrarBusqueda();// Permite ingresar las imagenes
 			ventanaCrearTaxonomia.showAndWait();
 		}
 	}
 
+	/**
+	 * Metodo para Editar una Especie en la Base de Datos TODO: Aun sin Funcionar
+	 * @param event
+	 */
 	@FXML
 	void editarEspecie(ActionEvent event) {
 		if (ventanaCrearTaxonomia == null) {
@@ -405,6 +495,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Eliminar una Especie en la Base de Datos
+	 * @param event
+	 */
 	@FXML
 	void eliminarEspecie(ActionEvent event) {
 		TaxonomiaObservable taxonomiaAntecesor = tablaGeneros.getSelectionModel().getSelectedItem();
@@ -424,6 +518,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para listar las especies y generos por familia
+	 * @param taxonomia
+	 */
 	public void listarDeFamilias(TaxonomiaObservable taxonomia) {
 		if (taxonomia != null) {
 			Familia familia = (Familia) taxonomia.getTaxonomia();
@@ -435,7 +533,11 @@ public class DashboardControlador {
 			tablaEspecies.setItems(especiesObservables);
 		}
 	}
-
+	
+	/**
+	 * Metodo para listar las especies por genero
+	 * @param taxonomia
+	 */
 	public void listarDeGeneros(TaxonomiaObservable taxonomia) {
 		if (taxonomia != null) {
 			Genero genero = (Genero) taxonomia.getTaxonomia();
@@ -445,6 +547,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para mostrar Detalles del Empleado para que sea Visible
+	 * @param empleado
+	 */
 	public void mostrarDetalleEmpleado(PersonaObservable empleado) {
 		if (empleado != null) {
 			txtCedulaEmpleado.setText(empleado.getCedula().getValue());
@@ -460,7 +566,11 @@ public class DashboardControlador {
 			txtClaveEmpleado.setText("Empty");
 		}
 	}
-
+	
+	/**
+	 * Metodo para mostrar detalles del recolector
+	 * @param recolector
+	 */
 	public void mostrarDetalleRecolector(PersonaObservable recolector) {
 		if (recolector != null) {
 			txtCedulaRecolector.setText(recolector.getCedula().getValue());
@@ -477,6 +587,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para mostrar los detalles de una Peticion TODO: Aun sin probar
+	 * @param newValue
+	 */
 	public void mostrarDetallePeticion(PeticionObservable newValue) {
 		if (newValue != null) {
 			txtIdPeticion.setText(newValue.getId().get());
@@ -492,6 +606,11 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Editar la persona en la base de datos
+	 * @param persona
+	 * @param p
+	 */
 	public void editarPersona(PersonaObservable persona, Persona p) {
 		if (ventanaCrearPersona == null) {
 			inicializarEscenarioCrearPersona();
@@ -507,6 +626,9 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para Para abrir Ventana para crear la persona
+	 */
 	public void inicializarEscenarioCrearPersona() {
 		try {
 			// se carga la interfaz
@@ -529,6 +651,9 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 *  Metodo para Para abrir Ventana para crear la taxonomia
+	 */
 	public void inicializarEscenarioCrearTaxonomia() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -548,6 +673,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 *  Metodo para Agregar la persona a la lista
+	 * @param persona
+	 */
 	public void agregarPersonaALista(Persona persona) {
 		if (persona instanceof Empleado) {
 			empleadosObservables = delegado.listarEmpleadosObservables();
@@ -560,6 +689,10 @@ public class DashboardControlador {
 		}
 	}
 
+	/**
+	 * Metodo para agregar taxonomia a la lista
+	 * @param taxonomia
+	 */
 	public void agregarTaxonomiaALista(Object taxonomia) {
 		if (taxonomia instanceof Familia) {
 			familiasObservables = delegado.listarFamiliasObservables();

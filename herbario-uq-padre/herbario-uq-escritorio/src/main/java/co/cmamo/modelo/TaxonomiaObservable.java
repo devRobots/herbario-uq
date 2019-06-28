@@ -9,7 +9,7 @@ import javafx.beans.property.StringProperty;
 /**
  * Permite transformar una persona en formato observable
  *
- * @author EinerZG
+ * @author Yesid Rosas, Cristian Quiceno
  * @version 1.0
  */
 public class TaxonomiaObservable {
@@ -23,10 +23,13 @@ public class TaxonomiaObservable {
 	 */
 	private StringProperty nombre;
 
+	/**
+	 * Objeto que despues vendra siendo una planta, usada para instansof las personas
+	 */
 	private Object taxonomia;
 
 	/**
-	 *
+	 * Taxonomia Observable permite ponerlo en un formato visible
 	 * @param cedula
 	 * @param nombre
 	 */
@@ -84,11 +87,17 @@ public class TaxonomiaObservable {
 	public void setNombre(StringProperty nombre) {
 		this.nombre = nombre;
 	}
-
+	/**
+	 * Get Taxonomia
+	 * @return taxonomia
+	 */
 	public Object getTaxonomia() {
 		return taxonomia;
 	}
-
+	/**
+	 * Set Taxonomia
+	 * @param taxonomia
+	 */
 	public void setTaxonomia(Object taxonomia) {
 		this.taxonomia = taxonomia;
 	}

@@ -23,8 +23,8 @@ public class JavaMailSession {
 		try {
 			Properties props = new Properties();
 			
-			props.setProperty("mail.smtp.host", "smtp.gmail.com");
-			props.setProperty("mail.smtp.starttls.enable", "true");
+			props.setProperty("mail.smtp.host", "smtp.gmail.com");// Servidor SMTP de Google
+			props.setProperty("mail.smtp.starttls.enable", "true");//
 			props.setProperty("mail.smtp.port","587");
 			props.setProperty("mail.smtp.user", "herbario.uq.mail@gmail.com");
 			props.setProperty("mail.smtp.auth", "true");

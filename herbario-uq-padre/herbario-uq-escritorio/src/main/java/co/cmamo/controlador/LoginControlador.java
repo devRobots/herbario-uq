@@ -20,7 +20,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+/**
+ * Login Controlador Encargado de TODO: Agregar porque nose que hace xd
+ * @author Cristian Quiceno & Yesid Rosas
+ *
+ */
 public class LoginControlador {
 	private AdministradorDelegado delegado = AdministradorDelegado.administradorDelegado;
 
@@ -37,6 +41,10 @@ public class LoginControlador {
 	@FXML
 	private PasswordField txtClave;
 
+	/**
+	 * Metodo encargado de Poder Ingresar (loguearse) al inicio de la app
+	 * @param event
+	 */
 	@FXML
 	void login(ActionEvent event) {
 		String correo = txtCorreo.getText().trim();
@@ -55,6 +63,10 @@ public class LoginControlador {
 		}
 	}
 
+	/**
+	 * TODO: Nose lo que hace llenar despues xd
+	 * @param event
+	 */
 	@FXML
 	void reminder(ActionEvent event) {
 		String correo = txtCorreo.getText().trim();
@@ -77,15 +89,25 @@ public class LoginControlador {
 		}
 	}
 
+	/**
+	 * Inicializar TODO: llenar despues
+	 */
 	@FXML
 	void initialize() {
 //    	logo.setImage(new Image(getClass().getResource("/images/logo.png").getFile()));
 	}
 
+	/**
+	 * TODO: nose lo que hace
+	 */
 	public LoginControlador() {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Encargado de Inicializar todo el escenario
+	 * @param escenario
+	 */
 	public LoginControlador(Stage escenario) {
 		escenario.setMinWidth(400);
 		escenario.setMinHeight(400);
@@ -113,6 +135,10 @@ public class LoginControlador {
 		}
 	}
 
+	/**
+	 * Set del Escenario
+	 * @param escenarioInicial
+	 */
 	public void setEscenarioInicial(Stage escenarioInicial) {
 		this.escenarioInicial = escenarioInicial;
 	}

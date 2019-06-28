@@ -7,7 +7,7 @@ import javafx.beans.property.StringProperty;
 /**
  * Permite transformar una persona en formato observable
  *
- * @author EinerZG
+ * @author Cristian Quiceno, Yesid Rosas
  * @version 1.0
  */
 public class PersonaObservable {

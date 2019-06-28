@@ -18,7 +18,7 @@
             <Menu mnemonicParsing="false" text="Ver">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#irAlPanel" text="Mostrar Panel" />
-                  <MenuItem mnemonicParsing="false" onAction="#irAlHerbario" text="Mostrar Mapa" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarMapa" text="Mostrar Mapa" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Ayuda">

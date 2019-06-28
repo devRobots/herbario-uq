@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 /**
  * Permite controlar la vista editar_empleado
  *
- * @author EinerZG version 1.0
+ * @author Yesid Rosas & Cristian Quiceno 
  */
 public class EdicionPersonaControlador {
 
@@ -69,15 +69,18 @@ public class EdicionPersonaControlador {
 
 	private Persona persona;
 	
-	
 	/**
-	 *
+	 * Inicializar
 	 */
 	@FXML
 	private void initialize() {
 		
 	}
 	
+	/**
+	 * Cambia la ventana a modo modificar
+	 * @param edicion
+	 */
 	public void setModo(boolean edicion) {
 		cmpCedula.setDisable(edicion);
 		btnAgregar.setVisible(!edicion);
@@ -98,7 +101,10 @@ public class EdicionPersonaControlador {
 			cmpClave.setText(persona.getClave().getValue());
 		}
 	}
-	
+	/**
+	 * Set tipo persona
+	 * @param persona
+	 */
 	public void setTipo(Persona persona) {
 		this.persona = persona;
 	}

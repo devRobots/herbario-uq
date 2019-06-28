@@ -13,37 +13,71 @@ import co.cmamo.util.Utilidades;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+/**
+ * Edicion Taconomia Controlador Encargado de los comandos
+ * de la Ventana Agregar Familia, Genero, Especie
+ * @author Cristian Quiceno & yesid Rosas
+ *
+ */
 public class EdicionTaxonomiaControlador {
 
 	private DashboardControlador controlador;
 	private Stage escenarioEditar;
-	private byte[] imagen;
+	private byte[] imagen; // imagen de la Planta
 
 	private Object antecesor;
 	
 	@FXML
-	private TextField txtNombre;
+	private TextField txtNombre;// nombre de la planta a crear
 	
 	@FXML
-	private Button btnAceptar;
+	private Button btnAceptar;// boton para crear y agregar a la base de datos
 
 	@FXML
 	private Button btnModificar;
 	
 	@FXML
-	private Button btnBuscar;
+	private Button btnBuscar;// boton para adjuntar la imagen
+	
+	@FXML
+	private Label lblBuscar; // texto Adjuntar Imagen
 
 	private TaxonomiaObservable taxonomia;
 
+	/**
+	 * TODO: Nose que hace agreguelo usted wey
+	 * @param edicion
+	 */
 	public void setModo(boolean edicion) {
 		btnAceptar.setVisible(!edicion);
 		btnModificar.setVisible(edicion);
 	}
 
+	/**
+	 * Oculta el boton de adjuntar imagen
+	 */
+	public void ocultarBusqueda() {
+		btnBuscar.setVisible(false);
+		lblBuscar.setVisible(false);
+	}
+	
+	/**
+	 *  Muestra el boton de adjuntar imagen
+	 */
+	public void mostrarBusqueda() {
+		btnBuscar.setVisible(true);
+		lblBuscar.setVisible(true);
+	}
+	/**
+	 * Metodo para Aceptar e Ingreasar a la base de datos
+	 * la creacion de una Familia, Genero y/o especie (dependiendo de cual se esta creando)
+	 * con los valores ingresados
+	 * @param event
+	 */
 	@FXML
 	void aceptar(ActionEvent event) {
 		if (!txtNombre.getText().isEmpty()) {
@@ -76,7 +110,8 @@ public class EdicionTaxonomiaControlador {
 				Planta planta = new Planta();
 				planta.setEspecie(txtNombre.getText());
 				planta.setGenero((Genero) antecesor);
-				planta.setImagen(imagen);
+				planta.setImagen(imagen);// Imagen de la planta
+				btnBuscar.setText(lblBuscar.getText());// Vuelve a poner el texto al boton
 
 				if (delegado.registrarPlanta(planta)) {
 					controlador.agregarTaxonomiaALista((Planta) planta);
@@ -91,6 +126,10 @@ public class EdicionTaxonomiaControlador {
 		}
     }
 
+	/**
+	 * Metodo para modificar TODO: Revisar y aniadir
+	 * @param event
+	 */
 	@FXML
 	void modificar(ActionEvent event) {
 		if (!txtNombre.getText().isEmpty()) {
@@ -137,6 +176,9 @@ public class EdicionTaxonomiaControlador {
 		}
     }
 
+	/**
+	 * Metodo para buscar la imagen
+	 */
 	@FXML
 	void buscar(ActionEvent event) {
 		FileChooser fileChooser = new FileChooser();
@@ -154,10 +196,11 @@ public class EdicionTaxonomiaControlador {
 		if (imgFile != null) {
 			byte[] bytes = getBytesFromFile(imgFile);
 			imagen = bytes;
+			btnBuscar.setText(imgFile.getPath());
 		}
 	}
 	/**
-	 * 
+	 * Metodo que transforma un File a byte[]
 	 * @param imgFile
 	 * @return byte []
 	 */
@@ -180,21 +223,37 @@ public class EdicionTaxonomiaControlador {
 		return bytes;
 	}
 
+	/**
+	 * Metodo Cancelar Limpia los campos
+	 * @param event
+	 */
 	@FXML
 	void cancelar(ActionEvent event) {
+		btnBuscar.setText(lblBuscar.getText());
 		txtNombre.clear();
 		escenarioEditar.close();
 	}
 
+	/**
+	 * Inicializar
+	 */
     @FXML
     void initialize() {
-
+    	
     }
     
+    /**
+     * Cargar Campos del taxonomia
+     * @param taxonomiaObservable
+     */
     public void cargarCampos(TaxonomiaObservable taxonomiaObservable) {
     	txtNombre.setText(taxonomiaObservable.getNombre().get());
 	}
     
+    /**
+     * Set Antecesor
+     * @param antecesor
+     */
     public void setAntecesor(Object antecesor) {
     	this.antecesor = antecesor;
     }
