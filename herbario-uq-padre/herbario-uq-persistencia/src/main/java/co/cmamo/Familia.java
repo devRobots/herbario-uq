@@ -43,7 +43,7 @@ public class Familia implements Serializable {
 	/**
 	 * generos de la familia
 	 */
-	@OneToMany(mappedBy="familia", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy="familia", cascade = CascadeType.ALL)
 	private List<Genero> generos;
 	/**
 	 * constructor de la familia

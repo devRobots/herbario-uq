@@ -41,16 +41,16 @@ public class AdminEJB implements AdminEJBRemote {
 		
 	}
 	
-	public boolean iniciarSesion(String correo, String clave) {
+	public Persona iniciarSesion(String correo, String clave) {
 		try {
-			Administrador admin = buscarAdministradorPorCorreo(correo);
-			if (admin == null) {
+			Persona persona = buscarAdministradorPorCorreo(correo);
+			if (persona == null) {
 				throw new ElementoInexistenteExcepcion("El correo no existe");
 			}
 			
-			return admin.getClave().equals(clave);
+			return persona;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 
