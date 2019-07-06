@@ -40,7 +40,7 @@ public class FamiliaConverter implements Converter<Familia> {
 		if (familia != null) {
 			return familia.getId()+"";
 		}
-		return "";
+		return null;
 	}
 
 }

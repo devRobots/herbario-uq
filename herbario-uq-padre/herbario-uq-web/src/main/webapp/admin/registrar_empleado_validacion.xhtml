@@ -24,10 +24,6 @@
 			<h:inputText for="claveFamilia" value="#{empleadoBean.clave}" required="true" requiredMessage="true" validatorMessage="Debe tener mas caracteres">
 				<f:validateLength minimum="6" maximum="50" />		
 			</h:inputText>
-			<label for="fechaFamilia">Fecha:</label>
-			<h:inputText for="fechaFamilia" value="#{empleadoBean.fechaNacimiento}">
-				<f:convertDateTime pattern="yyyy-MM-dd"/>
-			</h:inputText>
 			<label for="salarioFamilia">Salario:</label>
 			<h:inputText for="salarioFamilia" value="#{empleadoBean.salario}"/>
 		</h:panelGrid>

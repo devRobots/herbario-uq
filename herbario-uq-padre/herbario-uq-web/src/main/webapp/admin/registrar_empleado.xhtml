@@ -22,10 +22,6 @@
 			<h:inputText for="emailFamilia" value="#{empleadoBean.email}"/>
 			<label for="claveFamilia">Clave:</label>
 			<h:inputText for="claveFamilia" value="#{empleadoBean.clave}"/>
-			<label for="fechaFamilia">Fecha:</label>
-			<h:inputText for="fechaFamilia" value="#{empleadoBean.fechaNacimiento}">
-				<f:convertDateTime pattern="yyyy-MM-dd"/>
-			</h:inputText>
 			<label for="salarioFamilia">Salario:</label>
 			<h:inputText for="salarioFamilia" value="#{empleadoBean.salario}"/>
 			<h:commandButton action="#{empleadoBean.agregarEmpleado}" value="Aceptar" />		

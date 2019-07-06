@@ -13,7 +13,7 @@ import javax.inject.Named;
 import co.cmamo.ejbs.AdminEJB;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
-import co.cmamo.util.Util;
+import co.cmamo.Planta;
 
 /**
  * Permite realizar una todas las operaciones para gestionar una genero
@@ -22,9 +22,9 @@ import co.cmamo.util.Util;
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
-@Named(value = "generoBean")
+@Named(value = "especieBean")
 @ApplicationScoped
-public class GeneroBean implements Serializable {
+public class EspecieBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -41,6 +41,10 @@ public class GeneroBean implements Serializable {
 	 */
 	private List<Genero> generos;
 	/**
+	 * lista de generos existentes
+	 */
+	private List<Planta> especies;
+	/**
 	 * familia asociada al genero
 	 */
 	private Familia familia;
@@ -48,6 +52,10 @@ public class GeneroBean implements Serializable {
 	 * Genero seleccionado en la lista
 	 */
 	private Genero genero;
+	/**
+	 * Genero seleccionado en la lista
+	 */
+	private Planta especie;
 
 	/**
 	 * Conexión con la capa de negocio
@@ -62,41 +70,8 @@ public class GeneroBean implements Serializable {
 	private void inicializar() {
 		familias = adminEJB.listarFamilias();
 		generos = adminEJB.listarGeneros();
-	}
-
-	/**
-	 * Registra un genero
-	 * 
-	 * @return navega a la lista de generos
-	 */
-	public String registrar() {
-		try {
-
-			Genero g = new Genero();
-			g.setNombre(nombre);
-			g.setFamilia(familia);
-			g = adminEJB.crearGenero(g);
-
-			return "/admin/genero/generos";
-			
-		} catch (Exception e) {
-			Util.mostrarMensaje(e.getMessage(), e.getMessage());
-			return null;
-		}
-	}
-
-	/**
-	 * permite obtener la familia que se desea eliminar
-	 */
-	public void eliminarGenero() {
-		try {
-			adminEJB.eliminarGenero(genero.getId());
-			generos = adminEJB.listarGeneros();
-			Util.mostrarMensaje("Eliminación exitosa!!!", "Eliminación exitosa!!!");
-		} catch (Exception e) {
-			Util.mostrarMensaje(e.getMessage(), e.getMessage());
-		}
-	}
+		especies = adminEJB.listarPlantas();
+	} 
 
 	/**
 	 * @return the nombre
@@ -131,7 +106,6 @@ public class GeneroBean implements Serializable {
 	 * @return the familia
 	 */
 	public Familia getFamilia() {
-		Util.mostrarMensaje("get", "get");
 		return familia;
 	}
 
@@ -139,7 +113,6 @@ public class GeneroBean implements Serializable {
 	 * @param familia the familia to set
 	 */
 	public void setFamilia(Familia familia) {
-		Util.mostrarMensaje("set", "set");
 		this.familia = familia;
 	}
 
@@ -159,6 +132,21 @@ public class GeneroBean implements Serializable {
 	}
 
 	/**
+	 * @return the generos
+	 */
+	public List<Planta> getEspecies() {
+		especies = adminEJB.listarPlantas();
+		return especies;
+	}
+
+	/**
+	 * @param generos the generos to set
+	 */
+	public void setEspecies(List<Planta> especies) {
+		this.especies = especies;
+	}
+
+	/**
 	 * @return the genero
 	 */
 	public Genero getGenero() {
@@ -170,6 +158,20 @@ public class GeneroBean implements Serializable {
 	 */
 	public void setGenero(Genero genero) {
 		this.genero = genero;
+	}
+	
+	/**
+	 * @return the especie
+	 */
+	public Planta getEspecie() {
+		return especie;
+	}
+
+	/**
+	 * @param especie the especie to set
+	 */
+	public void setEspecie(Planta especie) {
+		this.especie = especie;
 	}
 
 }

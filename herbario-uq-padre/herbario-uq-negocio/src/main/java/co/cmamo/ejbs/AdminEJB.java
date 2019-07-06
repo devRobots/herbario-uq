@@ -246,6 +246,31 @@ public class AdminEJB implements AdminEJBRemote {
 		}
 	}
 
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see co.cmamo.ejb.AdminEJBRemote#invalidarRecolector(co.cmamo.Recolector)
+	 */
+	public boolean eliminarRecolector(String id) {
+		try {
+			Recolector recolector = entityManager.find(Recolector.class, id);
+
+			if (recolector == null) {
+				throw new ElementoInexistenteExcepcion("El recolector que se quiere eliminar no existe");
+			} 
+
+			entityManager.remove(recolector);
+
+			if (entityManager.find(Recolector.class, recolector.getId()) != null) {
+				throw new Exception("No se pudo eliminar el recolector");
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 

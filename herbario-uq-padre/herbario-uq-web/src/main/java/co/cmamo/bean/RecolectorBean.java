@@ -1,16 +1,19 @@
 package co.cmamo.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.annotation.FacesConfig.Version;
 import javax.inject.Named;
 
-import co.cmamo.Empleado;
 import co.cmamo.EstadoActividad;
+import co.cmamo.Recolector;
 import co.cmamo.ejbs.AdminEJB;
+import co.cmamo.util.Util;
 
 /**
  * Permite manejar todas las operaciones empleados
@@ -19,11 +22,15 @@ import co.cmamo.ejbs.AdminEJB;
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
-@Named(value = "empleadoBean")
+@Named(value = "recolectorBean")
 @SessionScoped
-public class EmpleadoBean implements Serializable {
+public class RecolectorBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private Recolector recolector;
+	
+	private List<Recolector> recolectores;
 
 	/**
 	 * cedula del empleado
@@ -45,10 +52,6 @@ public class EmpleadoBean implements Serializable {
 	 * email del empleado
 	 */
 	private String email;
-	/**
-	 * salario del empleado
-	 */
-	private double salario;
 
 	/**
 	 * conexión con la capa de negocio
@@ -56,22 +59,70 @@ public class EmpleadoBean implements Serializable {
 	@EJB
 	private AdminEJB adminEJB;
 
-	public String agregarEmpleado() {
+	/**
+	 * carga la lista de familias
+	 */
+	@PostConstruct
+	private void init() {
+		recolectores = adminEJB.listarRecolectores();
+	}
 
-		Empleado empleado = new Empleado();
-		empleado.setId(cedula);
-		empleado.setApellido(apellido);
-		empleado.setNombre(nombre);
-		empleado.setClave(clave);
-		empleado.setCorreo(email);
-		empleado.setSalario(2400000);
-		empleado.setEstado(EstadoActividad.ACTIVO);
+	public String agregarRecolector() {
 
-		if (adminEJB.crearEmpleado(empleado)) {			
-			return "/index";
+		Recolector recolector = new Recolector();
+		recolector.setId(cedula);
+		recolector.setApellido(apellido);
+		recolector.setNombre(nombre);
+		recolector.setClave(clave);
+		recolector.setCorreo(email);
+		recolector.setEstado(EstadoActividad.ACTIVO);
+
+		if (adminEJB.crearRecolector(recolector)) {			
+			return "/empleado/recolector/recolectores";
 		}
 
 		return null;
+	}	
+
+	/**
+	 * permite obtener el recolector que se desea eliminar
+	 */
+	public void eliminarRecolector() {
+		try {
+			adminEJB.eliminarRecolector(recolector.getId());
+			recolectores = adminEJB.listarRecolectores();
+			Util.mostrarMensaje("Eliminación exitosa!!!", "Eliminación exitosa!!!");
+		} catch (Exception e) {
+			Util.mostrarMensaje(e.getMessage(), e.getMessage());
+		}
+	}
+	
+	/**
+	 * @return the recolector
+	 */
+	public Recolector getRecolector() {
+		return recolector;
+	}
+
+	/**
+	 * @param recolector the recolector to set
+	 */
+	public void setRecolector(Recolector recolector) {
+		this.recolector = recolector;
+	}
+
+	/**
+	 * @return the recolectores
+	 */
+	public List<Recolector> getRecolectores() {
+		return recolectores;
+	}
+
+	/**
+	 * @param recolectores the recolectores to set
+	 */
+	public void setRecolectores(List<Recolector> recolectores) {
+		this.recolectores = recolectores;
 	}
 
 	/**
@@ -142,20 +193,6 @@ public class EmpleadoBean implements Serializable {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	/**
-	 * @return the salario
-	 */
-	public double getSalario() {
-		return salario;
-	}
-
-	/**
-	 * @param salario the salario to set
-	 */
-	public void setSalario(double salario) {
-		this.salario = salario;
 	}
 
 }

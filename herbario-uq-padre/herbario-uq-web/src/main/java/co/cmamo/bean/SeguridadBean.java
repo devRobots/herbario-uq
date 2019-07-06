@@ -16,7 +16,8 @@ import co.cmamo.util.Util;
 /**
  * Permite manejar la sesión de la aplicacion
  * 
- * @author EinerZG
+ * @author Yesid Rosas
+ * @author Camilo Quiceno
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
@@ -80,7 +81,45 @@ public class SeguridadBean implements Serializable {
 	 * @param i 
 	 * @return
 	 */
-	public String navegacion(int i) {
+	public String navegacionEspecies(int i) {
+		switch (i) {
+		case 1:
+			return "/admin/familia/familias";
+		case 2:
+			return "/admin/familia/registrar_familia";
+		case 3:
+			return "/admin/genero/generos";
+		case 4:
+			return "/admin/genero/registrar_genero";
+		case 5:
+			return "/recolector/especies";
+		default:
+			return null;
+		}
+	}
+	
+	/**
+	 * navegación del menu principal
+	 * @param i 
+	 * @return
+	 */
+	public String navegacionRecolector(int i) {
+		switch (i) {
+		case 1:
+			return "/empleado/recolector/recolectores";
+		case 2:
+			return "/empleado/recolector/registrar_recolector";
+		default:
+			return null;
+		}
+	}
+	
+	/**
+	 * navegación del menu principal
+	 * @param i 
+	 * @return
+	 */
+	public String navegacionEmpleado(int i) {
 		switch (i) {
 		case 1:
 			return "/admin/familia/familias";
