@@ -63,7 +63,7 @@ public class AdministradorDelegado {
 	}
 	
 	public boolean iniciarSesion(String correo, String clave) {
-		return adminEJB.iniciarSesion(correo, clave);
+		return adminEJB.iniciarSesion(correo, clave) == null ? false : true;
 	}
 	
 	public Persona buscarPersonaPorCorreo(String correo) {
@@ -161,7 +161,7 @@ public class AdministradorDelegado {
 	 * @return devuelve true si el empleado fue eliminado
 	 */
 	public boolean registrarFamilia(Familia familia) {
-		return adminEJB.crearFamilia(familia);
+		return adminEJB.crearFamilia(familia) == null ? false : true;
 	}
 
 	public Familia obtenerFamilia(String nombre) {
@@ -193,7 +193,7 @@ public class AdministradorDelegado {
 	 * @return devuelve true si el empleado fue eliminado
 	 */
 	public boolean registrarGenero(Genero genero) {
-		return adminEJB.crearGenero(genero);
+		return adminEJB.crearGenero(genero) == null ? false : true;
 	}
 
 	/**

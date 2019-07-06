@@ -362,16 +362,16 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean crearFamilia(Familia familia) {
+	public Familia crearFamilia(Familia familia) {
 		try {
 			if (entityManager.find(Familia.class, familia.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("La familia con este id ya esta registrada");
 			}
 
 			entityManager.persist(familia);
-			return true;
+			return familia;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 
@@ -435,16 +435,16 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean crearGenero(Genero genero) {
+	public Genero crearGenero(Genero genero) {
 		try {
 			if (entityManager.find(Genero.class, genero.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El genero con este id ya esta registrado");
 			}
 
 			entityManager.persist(genero);
-			return true;
+			return genero;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 

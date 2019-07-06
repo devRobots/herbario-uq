@@ -166,7 +166,7 @@ public class TestAdminEJB {
 		f.setId(224);
 		f.setNombre("Asereje");
 		
-		assertTrue(adminEJB.crearFamilia(f));
+		assertTrue(adminEJB.crearFamilia(f) == null ? false : true);
 	}
 
 	@Test
@@ -217,7 +217,7 @@ public class TestAdminEJB {
 		g.setId(224);
 		g.setNombre("Asereje");
 		
-		assertTrue(adminEJB.crearGenero(g));
+		assertTrue(adminEJB.crearGenero(g) == null ? false : true);
 	}
 
 	@Test
