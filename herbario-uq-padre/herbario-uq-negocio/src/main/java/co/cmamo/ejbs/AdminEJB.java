@@ -41,16 +41,16 @@ public class AdminEJB implements AdminEJBRemote {
 		
 	}
 	
-	public boolean iniciarSesion(String correo, String clave) {
+	public Persona iniciarSesion(String correo, String clave) {
 		try {
-			Administrador admin = buscarAdministradorPorCorreo(correo);
-			if (admin == null) {
+			Persona persona = buscarAdministradorPorCorreo(correo);
+			if (persona == null) {
 				throw new ElementoInexistenteExcepcion("El correo no existe");
 			}
 			
-			return admin.getClave().equals(clave);
+			return persona;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 
@@ -246,6 +246,31 @@ public class AdminEJB implements AdminEJBRemote {
 		}
 	}
 
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see co.cmamo.ejb.AdminEJBRemote#invalidarRecolector(co.cmamo.Recolector)
+	 */
+	public boolean eliminarRecolector(String id) {
+		try {
+			Recolector recolector = entityManager.find(Recolector.class, id);
+
+			if (recolector == null) {
+				throw new ElementoInexistenteExcepcion("El recolector que se quiere eliminar no existe");
+			} 
+
+			entityManager.remove(recolector);
+
+			if (entityManager.find(Recolector.class, recolector.getId()) != null) {
+				throw new Exception("No se pudo eliminar el recolector");
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -362,16 +387,16 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean crearFamilia(Familia familia) {
+	public Familia crearFamilia(Familia familia) {
 		try {
 			if (entityManager.find(Familia.class, familia.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("La familia con este id ya esta registrada");
 			}
 
 			entityManager.persist(familia);
-			return true;
+			return familia;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 
@@ -435,16 +460,16 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean crearGenero(Genero genero) {
+	public Genero crearGenero(Genero genero) {
 		try {
 			if (entityManager.find(Genero.class, genero.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El genero con este id ya esta registrado");
 			}
 
 			entityManager.persist(genero);
-			return true;
+			return genero;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 

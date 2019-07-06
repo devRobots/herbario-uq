@@ -11,7 +11,7 @@ public interface AdminEJBRemote {
 	
 	String JNDI = "java:global/herbario-uq-ear/herbario-uq-negocio/AdminEJB!co.cmamo.ejbs.AdminEJBRemote";
 
-	public boolean iniciarSesion(String correo, String clave);
+	public Persona iniciarSesion(String correo, String clave);
 	
 	/**
 	 * Registra un empleado en la BD si es posible
@@ -120,7 +120,7 @@ public interface AdminEJBRemote {
 	 * @param familia Familia que se quiere registrar
 	 * @return boolean Si se registro o no
 	 */
-	public boolean crearFamilia(Familia familia);
+	public Familia crearFamilia(Familia familia);
 
 	/**
 	 * Modifica un familia en la BD si es posible
@@ -154,7 +154,7 @@ public interface AdminEJBRemote {
 	 * @param genero Genero que se quiere registrar
 	 * @return boolean Si se registro o no
 	 */
-	public boolean crearGenero(Genero genero);
+	public Genero crearGenero(Genero genero);
 	
 	/**
 	 * Modifica un genero en la BD si es posible

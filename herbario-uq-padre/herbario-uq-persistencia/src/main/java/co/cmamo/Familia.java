@@ -43,7 +43,7 @@ public class Familia implements Serializable {
 	/**
 	 * generos de la familia
 	 */
-	@OneToMany(mappedBy="familia", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy="familia", cascade = CascadeType.ALL)
 	private List<Genero> generos;
 	/**
 	 * constructor de la familia
@@ -114,5 +114,50 @@ public class Familia implements Serializable {
 	 */
 	public void obtenerGenero(int i) {
 		generos.get(i);
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((generos == null) ? 0 : generos.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Familia other = (Familia) obj;
+		if (generos == null) {
+			if (other.generos != null)
+				return false;
+		} else if (!generos.equals(other.generos))
+			return false;
+		if (id != other.id)
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		return true;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return nombre;
 	}
 }

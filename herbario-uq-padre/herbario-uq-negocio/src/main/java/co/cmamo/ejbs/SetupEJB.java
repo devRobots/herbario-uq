@@ -45,7 +45,7 @@ public class SetupEJB {
 			Administrador a = new Administrador();
 			a.setApellido("Rosas Toro");
 			a.setClave("root");
-			a.setCorreo("ysrosast_1@uqvirtual.edu.co");
+			a.setCorreo("root");
 			a.setEstado(EstadoActividad.ACTIVO);
 			a.setId("0");
 			a.setNombre("Yesid");

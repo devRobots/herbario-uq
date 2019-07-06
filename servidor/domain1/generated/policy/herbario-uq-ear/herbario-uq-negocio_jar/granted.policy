@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Thu Jun 27 18:31:03 COT 2019*/
+/* AUTOMATICALLY GENERATED ON Sat Jul 06 15:49:39 COT 2019*/
 /* DO NOT EDIT */
 
 grant {
@@ -48,6 +48,7 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarGenero,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarPlanta,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "listarRecolectores,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AdminEJB", "eliminarRecolector,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "buscarRecolector,Local,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "invalidarRecolector,Remote,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "AdminEJB", "modificarPlanta,Remote,co.cmamo.Planta";
