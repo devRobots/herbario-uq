@@ -59,7 +59,7 @@ public class AdminEJB implements AdminEJBRemote {
 	 * 
 	 * @see co.cmamo.ejb.AdminEJBRemote#crearEmpleado(co.cmamo.Empleado)
 	 */
-	public boolean crearEmpleado(Empleado empleado) {
+	public Boolean crearEmpleado(Empleado empleado) {
 		try {
 			if (entityManager.find(Empleado.class, empleado.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El empleado con esta cedula ya esta registrado");
@@ -544,16 +544,16 @@ public class AdminEJB implements AdminEJBRemote {
 	}
 
 	@Override
-	public boolean crearPlanta(Planta planta) {
+	public Planta crearPlanta(Planta planta) {
 		try {
 			if (entityManager.find(Planta.class, planta.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("La planta con este id ya esta registrada");
 			}
 
 			entityManager.persist(planta);
-			return true;
+			return planta;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 

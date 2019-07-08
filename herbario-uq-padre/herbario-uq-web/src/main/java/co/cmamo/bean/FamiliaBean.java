@@ -21,7 +21,7 @@ import co.cmamo.util.Util;
 /**
  * Permite manejar todas las operaciones con familia
  * 
- * @author EinerZG
+ * @author  yesid Rosas && Cristian Quiceno
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)

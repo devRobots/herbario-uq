@@ -18,7 +18,7 @@ import co.cmamo.util.Util;
 /**
  * Permite realizar una todas las operaciones para gestionar una genero
  * 
- * @author EinerZG
+ * @author  yesid Rosas && Cristian Quiceno
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
@@ -76,6 +76,10 @@ public class GeneroBean implements Serializable {
 			g.setNombre(nombre);
 			g.setFamilia(familia);
 			g = adminEJB.crearGenero(g);
+			
+			genero = g;
+			
+			generos = adminEJB.listarGeneros();
 
 			return "/admin/genero/generos";
 			

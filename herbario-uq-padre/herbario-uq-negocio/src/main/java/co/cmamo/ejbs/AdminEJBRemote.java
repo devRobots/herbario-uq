@@ -18,7 +18,7 @@ public interface AdminEJBRemote {
 	 * @param empleado Empleado que se quiere registrar
 	 * @return boolean Si se registro o no
 	 */
-	public boolean crearEmpleado(Empleado empleado);
+	public Boolean crearEmpleado(Empleado empleado);
 	
 	/**
 	 * Modifica un empleado en la BD si es posible
@@ -194,7 +194,7 @@ public interface AdminEJBRemote {
 	 * @param planta Planta que se quiere registrar
 	 * @return boolean Si se registro o no
 	 */
-	public boolean crearPlanta(Planta planta);
+	public Planta crearPlanta(Planta planta);
 	
 	/**
 	 * Buscar un planta en la BD si es posible

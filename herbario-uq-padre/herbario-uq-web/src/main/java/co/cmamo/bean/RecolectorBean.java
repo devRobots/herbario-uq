@@ -18,7 +18,7 @@ import co.cmamo.util.Util;
 /**
  * Permite manejar todas las operaciones empleados
  * 
- * @author EinerZG
+ * @author yesid Rosas && Cristian Quiceno
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
@@ -67,6 +67,10 @@ public class RecolectorBean implements Serializable {
 		recolectores = adminEJB.listarRecolectores();
 	}
 
+	/**
+	 * Metodo para agregar Recolector a la pase de datos
+	 * @return
+	 */
 	public String agregarRecolector() {
 
 		Recolector recolector = new Recolector();

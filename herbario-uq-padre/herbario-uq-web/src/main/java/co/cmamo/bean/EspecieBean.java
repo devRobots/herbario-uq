@@ -72,6 +72,29 @@ public class EspecieBean implements Serializable {
 		generos = adminEJB.listarGeneros();
 		especies = adminEJB.listarPlantas();
 	} 
+	
+	/**
+	 * permite invocar la capa de negocio para registrar una planta en
+	 * la base de datos
+	 * 
+	 * @return nombre de la página con información de las plantas
+	 */
+	public String agregarEspecie() {
+		Planta p = new Planta();
+		p.setGenero(genero);
+		p.setEspecie(nombre);
+		p = adminEJB.crearPlanta(p);
+		
+		especies = adminEJB.listarPlantas();
+
+		/**
+		 * TODO: esta mal, debe ser una peticion ya validada para registrar
+		 * NO SE PUEDE REGISTRAR INMEDIATAMENTE
+		 * 
+		 */
+		return "/admin/especie/especies";
+	}
+	
 
 	/**
 	 * @return the nombre
