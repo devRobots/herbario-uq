@@ -1,6 +1,7 @@
 package co.cmamo.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -11,8 +12,11 @@ import javax.faces.annotation.FacesConfig.Version;
 import javax.inject.Named;
 
 import co.cmamo.ejbs.AdminEJB;
+import co.cmamo.EstadoPeticion;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
+import co.cmamo.Persona;
+import co.cmamo.Peticion;
 import co.cmamo.Planta;
 
 /**
@@ -32,6 +36,10 @@ public class EspecieBean implements Serializable {
 	 * nombre del genero a registrar
 	 */
 	private String nombre;
+	/**
+	 * nombre del genero a registrar
+	 */
+	private String id_solicitante;
 	/**
 	 * lista de familias existentes
 	 */
@@ -79,19 +87,19 @@ public class EspecieBean implements Serializable {
 	 * 
 	 * @return nombre de la página con información de las plantas
 	 */
-	public String agregarEspecie() {
+	public String crearPeticion() {
+		Peticion peticion = new Peticion();
 		Planta p = new Planta();
 		p.setGenero(genero);
 		p.setEspecie(nombre);
-		p = adminEJB.crearPlanta(p);
 		
-		especies = adminEJB.listarPlantas();
-
-		/**
-		 * TODO: esta mal, debe ser una peticion ya validada para registrar
-		 * NO SE PUEDE REGISTRAR INMEDIATAMENTE
-		 * 
-		 */
+		peticion.setEspecie(p);
+		peticion.setEstado(EstadoPeticion.PENDIENTE);
+		peticion.setFecha(new Date());
+		
+		Persona solicitante = adminEJB.buscarEmpleado(id_solicitante);
+		peticion.setSolicitante(solicitante);
+		
 		return "/admin/especie/especies";
 	}
 	
@@ -195,6 +203,14 @@ public class EspecieBean implements Serializable {
 	 */
 	public void setEspecie(Planta especie) {
 		this.especie = especie;
+	}
+
+	public String getId_solicitante() {
+		return id_solicitante;
+	}
+
+	public void setId_solicitante(String id_solicitante) {
+		this.id_solicitante = id_solicitante;
 	}
 
 }

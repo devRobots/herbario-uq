@@ -221,7 +221,7 @@ public class AdministradorDelegado {
 	 * @return devuelve true si el empleado fue eliminado
 	 */
 	public boolean registrarPlanta(Planta planta) {
-		return adminEJB.crearPlanta(planta);
+		return adminEJB.crearPlanta(planta)!=null;
 	}
 
 	/**

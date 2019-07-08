@@ -269,7 +269,7 @@ public class TestAdminEJB {
 		p.setEspecie("Asereje");
 		p.setGenero(adminEJB.buscarGenero("12"));
 		
-		assertTrue(adminEJB.crearPlanta(p));
+		assertTrue(adminEJB.crearPlanta(p)!=null);
 	}
 
 	@Test

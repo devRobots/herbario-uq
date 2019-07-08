@@ -122,13 +122,31 @@ public class SeguridadBean implements Serializable {
 	public String navegacionEmpleado(int i) {
 		switch (i) {
 		case 1:
-			return "/admin/familia/familias";
+			return "/admin/empleado/empleados";
 		case 2:
-			return "/admin/familia/registrar_familia";
+			return "/admin/empleado/registrar_empleado";
+		default:
+			return null;
+		}
+	}
+	
+	/**
+	 * navegación del menu principal
+	 * @param i 
+	 * @return
+	 */
+	public String navegacionPeticion(int i) {
+		switch (i) {
+		case 1:
+			return "/recolector/peticion/registrar_especie";
+		case 2:
+			return "/recolector/peticion/peticiones_todas";
 		case 3:
-			return "/admin/genero/generos";
+			return "/recolector/peticion/peticiones_pendientes";
 		case 4:
-			return "/admin/genero/registrar_genero";
+			return "/recolector/peticion/peticiones_aceptadas";
+		case 5:
+			return "/recolector/peticion/peticiones_rechazadas";
 		default:
 			return null;
 		}

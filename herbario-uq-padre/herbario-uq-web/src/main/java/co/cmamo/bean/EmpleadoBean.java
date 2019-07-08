@@ -1,6 +1,7 @@
 package co.cmamo.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -11,6 +12,7 @@ import javax.inject.Named;
 import co.cmamo.Empleado;
 import co.cmamo.EstadoActividad;
 import co.cmamo.ejbs.AdminEJB;
+import co.cmamo.util.Util;
 
 /**
  * Permite manejar todas las operaciones empleados
@@ -24,6 +26,10 @@ import co.cmamo.ejbs.AdminEJB;
 public class EmpleadoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private Empleado empleado;
+	
+	private List<Empleado> empleados;
 
 	/**
 	 * cedula del empleado
@@ -72,6 +78,19 @@ public class EmpleadoBean implements Serializable {
 		}
 
 		return null;
+	}
+
+	/**
+	 * permite obtener el recolector que se desea eliminar
+	 */
+	public void eliminarEmpleado() {
+		try {
+			adminEJB.eliminarRecolector(empleado.getId());
+			empleados = adminEJB.listarEmpleados();
+			Util.mostrarMensaje("Eliminación exitosa!!!", "Eliminación exitosa!!!");
+		} catch (Exception e) {
+			Util.mostrarMensaje(e.getMessage(), e.getMessage());
+		}
 	}
 
 	/**
@@ -158,4 +177,20 @@ public class EmpleadoBean implements Serializable {
 		this.salario = salario;
 	}
 
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
+	}
+
+	public List<Empleado> getEmpleados() {
+		return empleados;
+	}
+
+	public void setEmpleados(List<Empleado> empleados) {
+		this.empleados = empleados;
+	}
+	
 }

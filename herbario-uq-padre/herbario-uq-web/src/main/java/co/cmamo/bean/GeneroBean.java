@@ -135,7 +135,6 @@ public class GeneroBean implements Serializable {
 	 * @return the familia
 	 */
 	public Familia getFamilia() {
-		Util.mostrarMensaje("get", "get");
 		return familia;
 	}
 
@@ -143,7 +142,6 @@ public class GeneroBean implements Serializable {
 	 * @param familia the familia to set
 	 */
 	public void setFamilia(Familia familia) {
-		Util.mostrarMensaje("set", "set");
 		this.familia = familia;
 	}
 
