@@ -9,26 +9,19 @@
 
 <ui:composition template="/WEB-INF/template.xhtml">
 		<ui:define name="contenido">
-	    <h:form id="generoForm">
+	    <h:form id="peticionForm">
 			
-			<p:fieldset id="generos" legend="Generos Registrados">
-				<p:dataTable id="listageneros" var="genero" value="#{generoBean.generos}">
+			<p:fieldset id="peticion" legend="Peticiones Registrados">
+				<p:dataTable id="listapeticiones" var="peticion" value="#{peticionBean.peticiones}">
 				
 					<p:column headerText="Id">
-						<h:outputText value="#{genero.id}" />
+						<h:outputText value="#{peticion.id}" />
 					</p:column>
 				
-					<p:column headerText="Nombre">
-						<h:outputText value="#{genero.nombre}" />
-					</p:column>
-					
-					<p:column headerText="Familia">
-						<h:outputText value="#{genero.familia.nombre}" />
-					</p:column>
 					
 					<p:column style="width:32px">
-	                    <p:commandButton update=":generoForm:display" oncomplete="PF('generoDialog').show()" icon="pi pi-search">
-	                        <f:setPropertyActionListener value="#{genero}" target="#{generoBean.genero}" />
+	                    <p:commandButton update=":peticionForm:display" oncomplete="PF('peticionDialog').show()" icon="pi pi-search">
+	                        <f:setPropertyActionListener value="#{peticion}" target="#{peticionBean.peticion}" />
 	                    </p:commandButton>
                 	</p:column>
 					
@@ -36,22 +29,17 @@
 			</p:fieldset>
 			
 			
-			<p:dialog header="Detalle de genero" widgetVar="generoDialog" resizable="false" draggable="false"
+			<p:dialog header="Detalle de Peticion" widgetVar="peticionDialog" resizable="false" draggable="false"
               showEffect="fade" hideEffect="fade" modal="true">
 		        <p:outputPanel id="display">
-		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty generoBean.genero}">
+		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty peticionBean.peticion}">
 		                
 		                <h:outputText value="Id" />
-		                <h:outputText value="#{generoBean.genero.id}" style="font-weight:bold"/>
+		                <h:outputText value="#{peticionBean.peticion.id}" style="font-weight:bold"/>
 		 
-		                <h:outputText value="Nombre:" />
-		                <h:outputText value="#{generoBean.genero.nombre}" style="font-weight:bold"/>
-
-		                <h:outputText value="Familia" />
-		                <h:outputText value="#{generoBean.genero.familia.nombre}" style="font-weight:bold"/>
 		 		                
 		                <f:facet name="footer">
-							<p:commandButton value="Eliminar" ajax="false" action="#{generoBean.eliminarGenero}" />
+							<p:commandButton value="Eliminar" ajax="false" action="#{peticionBean.eliminarPeticion}" />
 							<p:commandButton value="Actualizar" ajax="false" action="#" />							
 						</f:facet>
 		                

@@ -43,7 +43,7 @@
 							<p:commandButton value="Mapa" action="/extra/mapa" ajax="false" />
 							<p:commandButton value="Cerrar Sesión" action="#{seguridadBean.cerrarSesion}" ajax="false" />
 						</f:facet>
-						<p:submenu rendered="#{!seguridadBean.recolector}" label="Empleado">
+						<p:submenu rendered="#{seguridadBean.admin}" label="Empleado">
 							<p:menuitem value="Empleados" action="#{seguridadBean.navegacionEmpleado(1)}" ajax="false"/>
 							<p:menuitem value="Registrar empleado" action="#{seguridadBean.navegacionEmpleado(2)}" ajax="false"/>
 						</p:submenu>

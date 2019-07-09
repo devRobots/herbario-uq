@@ -8,28 +8,20 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <ui:composition template="/WEB-INF/template.xhtml">
-	<ui:define name="contenido">
-	    <h:form id="empleadoForm">
+		<ui:define name="contenido">
+	    <h:form id="peticionForm">
 			
-			
-			<p:fieldset id="empleadoes" legend="Peticiones Aceptadas">
-				<p:dataTable id="listaempleadoes" var="empleado" value="#{empleadoBean.empleados}">
+			<p:fieldset id="peticion" legend="Peticiones Registrados">
+				<p:dataTable id="listapeticiones" var="peticion" value="#{peticionBean.peticiones}">
 				
-					<p:column headerText="Cedula">
-						<h:outputText value="#{empleado.id}" />
+					<p:column headerText="Id">
+						<h:outputText value="#{peticion.id}" />
 					</p:column>
 				
-					<p:column headerText="Correo">
-						<h:outputText value="#{empleado.correo}" />
-					</p:column>
-					
-					<p:column headerText="Nombre">
-						<h:outputText value="#{empleado.nombre}" />
-					</p:column>
 					
 					<p:column style="width:32px">
-	                    <p:commandButton update=":empleadoForm:display" oncomplete="PF('empleadoDialog').show()" icon="pi pi-search">
-	                        <f:setPropertyActionListener value="#{empleado}" target="#{empleadoBean.empleado}" />
+	                    <p:commandButton update=":peticionForm:display" oncomplete="PF('peticionDialog').show()" icon="pi pi-search">
+	                        <f:setPropertyActionListener value="#{peticion}" target="#{peticionBean.peticion}" />
 	                    </p:commandButton>
                 	</p:column>
 					
@@ -37,31 +29,17 @@
 			</p:fieldset>
 			
 			
-			<p:dialog header="Detalle de empleado" widgetVar="empleadoDialog" resizable="false" draggable="false"
+			<p:dialog header="Detalle de Peticion" widgetVar="peticionDialog" resizable="false" draggable="false"
               showEffect="fade" hideEffect="fade" modal="true">
 		        <p:outputPanel id="display">
-		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty empleadoBean.empleado}">
+		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty peticionBean.peticion}">
 		                
-		                <h:outputText value="Cedula" />
-		                <h:outputText value="#{empleadoBean.empleado.id}" style="font-weight:bold"/>
+		                <h:outputText value="Id" />
+		                <h:outputText value="#{peticionBean.peticion.id}" style="font-weight:bold"/>
 		 
-		                <h:outputText value="Nombre:" />
-		                <h:outputText value="#{empleadoBean.empleado.nombre}" style="font-weight:bold"/>
-		 
-		                <h:outputText value="Apellido:" />
-		                <h:outputText value="#{empleadoBean.empleado.apellido}" style="font-weight:bold"/>
-		 
-		                <h:outputText value="Correo:" />
-		                <h:outputText value="#{empleadoBean.empleado.correo}" style="font-weight:bold"/>
-		 
-		                <h:outputText value="Salario:" />
-		                <h:outputText value="#{empleadoBean.empleado.salario}" style="font-weight:bold"/>
-		 
-		                <h:outputText value="Clave:" />
-		                <h:outputText value="#{empleadoBean.empleado.clave}" style="font-weight:bold"/>
 		 		                
 		                <f:facet name="footer">
-							<p:commandButton value="Eliminar" ajax="false" action="#{empleadoBean.eliminarEmpleado}" />
+							<p:commandButton value="Eliminar" ajax="false" action="#{peticionBean.eliminarPeticion}" />
 							<p:commandButton value="Actualizar" ajax="false" action="#" />							
 						</f:facet>
 		                
@@ -69,8 +47,8 @@
 		        </p:outputPanel>
     		</p:dialog>
 			
+			
 		</h:form>
-		<p:growl />
 	</ui:define>
 </ui:composition>
 </html>

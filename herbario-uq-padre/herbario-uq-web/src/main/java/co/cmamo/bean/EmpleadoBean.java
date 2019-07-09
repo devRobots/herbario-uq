@@ -3,6 +3,7 @@ package co.cmamo.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
@@ -61,6 +62,14 @@ public class EmpleadoBean implements Serializable {
 	 */
 	@EJB
 	private AdminEJB adminEJB;
+	
+	/**
+	 * carga la lista de familias
+	 */
+	@PostConstruct
+	private void init() {
+		empleados = adminEJB.listarEmpleados();
+	}
 
 	public String agregarEmpleado() {
 

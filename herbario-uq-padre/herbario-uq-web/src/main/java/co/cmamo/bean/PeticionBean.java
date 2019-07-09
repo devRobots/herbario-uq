@@ -15,6 +15,7 @@ import javax.faces.annotation.FacesConfig.Version;
 import javax.inject.Named;
 
 import co.cmamo.ejbs.AdminEJB;
+import co.cmamo.util.Util;
 import co.cmamo.EstadoPeticion;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
@@ -75,6 +76,13 @@ public class PeticionBean implements Serializable {
 	 * Genero seleccionado en la lista
 	 */
 	private Planta especie;
+	/**
+	 * Peticion
+	 */
+	private Peticion peticion;
+	/**
+	 * @return the peticion
+	 */
 
 	/**
 	 * Conexión con la capa de negocio
@@ -115,11 +123,25 @@ public class PeticionBean implements Serializable {
 		peticion.setSolicitante(solicitante);
 		
 		peticion = adminEJB.crearPeticion(peticion);
+		this.peticion = peticion;
 		peticiones = adminEJB.listarPeticiones();
 		
 		return "/admin/especie/especies";
 	}
 	
+	
+	/**
+	 * permite obtener la familia que se desea eliminar
+	 */
+	public void eliminarPeticion() {
+		try {
+			adminEJB.eliminarPeticion(peticion.getId());
+			peticiones = adminEJB.listarPeticiones();
+			Util.mostrarMensaje("Eliminación exitosa!!!", "Eliminación exitosa!!!");
+		} catch (Exception e) {
+			Util.mostrarMensaje(e.getMessage(), e.getMessage());
+		}
+	}
 
 	/**
 	 * @return the nombre
@@ -266,6 +288,17 @@ public class PeticionBean implements Serializable {
 
 	public void setPeticiones(List<Peticion> peticiones) {
 		this.peticiones = peticiones;
+	}
+	
+	public Peticion getPeticion() {
+		return peticion;
+	}
+
+	/**
+	 * @param peticion the peticion to set
+	 */
+	public void setPeticion(Peticion peticion) {
+		this.peticion = peticion;
 	}
 
 }
