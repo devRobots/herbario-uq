@@ -1,5 +1,8 @@
 package co.cmamo;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.lang.String;
 import javax.persistence.*;
@@ -128,4 +131,29 @@ public class Planta implements Serializable {
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
+	
+	/**
+	 * Set imagen con File
+	 * @param file
+	 */
+	private void setImagenConFile(File file) {
+		//Obtiene el tamanio
+		long tamanio = file.length();
+		
+		byte[] bytes = new byte[(int)tamanio];
+		
+		try {
+			InputStream is = new FileInputStream(file);
+			int numRead = 0;
+			numRead = is.read(bytes);
+			is.close();
+			
+		} catch (Exception e) {
+			
+		}
+		
+		this.imagen = bytes;
+	}
+	
+	
 }
