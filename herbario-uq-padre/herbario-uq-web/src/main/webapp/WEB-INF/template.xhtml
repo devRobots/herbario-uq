@@ -40,6 +40,8 @@
 					<p:menubar>
 						<f:facet name="options">
 							<p:commandButton value="Inicio" action="/index" ajax="false" />
+							<p:commandButton value="Mapa" action="/extra/mapa" ajax="false" />
+							<p:commandButton value="Cerrar Sesión" action="#{seguridadBean.cerrarSesion}" ajax="false" />
 						</f:facet>
 						<p:submenu label="Empleado">
 							<p:menuitem value="Empleados" action="#{seguridadBean.navegacionEmpleado(1)}" ajax="false"/>
@@ -63,8 +65,6 @@
 							<p:menuitem value="Registrar generos" action="#{seguridadBean.navegacionEspecies(4)}" ajax="false"/>
 							<p:menuitem value="Especies" action="#{seguridadBean.navegacionEspecies(5)}" ajax="false"/>
 						</p:submenu>
-						<p:menuitem value="Cerrar sesión" ajax="false"
-							action="#{seguridadBean.cerrarSesion}" />
 					</p:menubar>
 				</h:form>
 			</ui:insert>

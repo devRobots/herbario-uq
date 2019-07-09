@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 	@NamedQuery(name = Planta.LISTAR_TODOS, query = "select planta from Planta planta"),
 	@NamedQuery(name = Planta.LISTAR_POR_GENERO, query = "select planta from Planta planta where planta.genero.id =:genero"),
 	@NamedQuery(name = Planta.LISTAR_POR_FAMILIA, query = "select planta from Planta planta where planta.genero.familia.id =:familia"),
+	@NamedQuery(name = Planta.LISTAR_POR_DEPARTAMENTO, query = "select planta from Planta planta where planta.departamento =:departamento"),
 	@NamedQuery(name = Planta.OBTENER_FAMILIA, query = "select planta.genero.familia from Planta planta where planta.id =:id")
 })
 public class Planta implements Serializable {
@@ -28,6 +29,7 @@ public class Planta implements Serializable {
 	public static final String LISTAR_TODOS = "Planta_getAll";
 	public static final String LISTAR_POR_GENERO = "Planta_getGenero";
 	public static final String LISTAR_POR_FAMILIA = "Planta_getFamilia";
+	public static final String LISTAR_POR_DEPARTAMENTO = "Planta_getDepto";
 	
 	public static final String OBTENER_FAMILIA = "Platna_getFamiliaRelacionada";
 	
@@ -52,6 +54,8 @@ public class Planta implements Serializable {
 	 */
 	@Lob
 	private byte[] imagen;
+	
+	private Departamento departamento;
 	
 	/**
 	 * Constructor de la planta
@@ -115,5 +119,13 @@ public class Planta implements Serializable {
 	 */
 	public void setImagen(byte[] imagen) {
 		this.imagen = imagen;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 }

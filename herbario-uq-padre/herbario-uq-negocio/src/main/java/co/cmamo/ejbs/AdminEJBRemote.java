@@ -227,4 +227,6 @@ public interface AdminEJBRemote {
 
 	public boolean modificarPlanta(Planta mod);
 
+	List<Planta> listarPlantas(Departamento departamento);
+
 }

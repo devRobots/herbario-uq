@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import co.cmamo.Administrador;
+import co.cmamo.Departamento;
 import co.cmamo.Empleado;
 import co.cmamo.EstadoActividad;
 import co.cmamo.Familia;
@@ -597,6 +598,17 @@ public class AdminEJB implements AdminEJBRemote {
 		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_GENERO, Planta.class);
 		
 		query.setParameter("genero", genero.getId());
+
+		List<Planta> listado = query.getResultList();
+
+		return listado;
+	}
+
+	@Override
+	public List<Planta> listarPlantas(Departamento departamento) {
+		TypedQuery<Planta> query = entityManager.createNamedQuery(Planta.LISTAR_POR_DEPARTAMENTO, Planta.class);
+		
+		query.setParameter("departamento", departamento);
 
 		List<Planta> listado = query.getResultList();
 
