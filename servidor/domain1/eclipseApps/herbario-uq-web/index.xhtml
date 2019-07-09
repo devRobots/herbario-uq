@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>Herbario UQ</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css" />
+    <link rel="stylesheet" href="css/index_styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-300">
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col"></div>
+          <div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <div style="margin: 25px" class="center">
+            	<img src="img/logo.png" height="200"/>
+              <center> 
+                <p class="mdl-cell mdl-cell--8-col">Según el Registro Nacional de Colecciones - RNC para Colombia se reporta a 2014
+                  un total de 4.659.491 ejemplares depositados en las colecciones del país. Estos
+                  ejemplares hacen parte fundamental de nuestra herencia natural, histórica y científica.
+                </p>
+              </center>
+              <form action="dashboard.xhtml">            
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--8-col">
+                  <input class="mdl-textfield__input" type="text" id="sample3" />
+                  <label class="mdl-textfield__label" for="sample3">Correo electronico</label>
+                </div>
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--8-col">
+                  <input class="mdl-textfield__input" type="password" id="sample3" />
+                  <label class="mdl-textfield__label" for="sample3">Contraseña</label>
+                </div>
+
+                <br />
+
+                <button class="mdl-button mdl-js-button mdl-button--raised btn-primary mdl-cell mdl-cell--8-col" type="submit">Iniciar Sesion</button>
+              
+                <br/>
+              
+                <button class="mdl-button mdl-js-button color-tinted mdl-cell mdl-cell--4-col">Registrarse</button>
+                <button class="mdl-button mdl-js-button color-tinted mdl-cell mdl-cell--4-col">Recuperar contraseña</button>
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer" style="background-color: #003300">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list color-tinted-light">
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Privacidad y Terminos</a></li>
+              <li><a href="#">Acuerdo de Usuario</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
