@@ -1,5 +1,8 @@
 package co.cmamo.bean;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +25,7 @@ import co.cmamo.Planta;
 /**
  * Permite realizar una todas las operaciones para gestionar una genero
  * 
- * @author EinerZG
+ * @author Yesid Rosas && Cristian Quiceno
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
@@ -36,6 +39,10 @@ public class EspecieBean implements Serializable {
 	 * nombre del genero a registrar
 	 */
 	private String nombre;
+	/**
+	 * Imagen de la especie a registrar
+	 */
+	private byte[] imagen;
 	/**
 	 * nombre del genero a registrar
 	 */
@@ -74,6 +81,7 @@ public class EspecieBean implements Serializable {
 	/**
 	 * inicializa la lista de familias
 	 */
+	
 	@PostConstruct
 	private void inicializar() {
 		familias = adminEJB.listarFamilias();
@@ -92,6 +100,7 @@ public class EspecieBean implements Serializable {
 		Planta p = new Planta();
 		p.setGenero(genero);
 		p.setEspecie(nombre);
+		p.setImagen(imagen);
 		
 		peticion.setEspecie(p);
 		peticion.setEstado(EstadoPeticion.PENDIENTE);
@@ -204,13 +213,43 @@ public class EspecieBean implements Serializable {
 	public void setEspecie(Planta especie) {
 		this.especie = especie;
 	}
-
+	
+	/**
+	 * Get Id del solicitante
+	 * @return
+	 */
 	public String getId_solicitante() {
 		return id_solicitante;
 	}
 
+	/**
+	 * Set Id del solicitante
+	 * @param id_solicitante
+	 */
 	public void setId_solicitante(String id_solicitante) {
 		this.id_solicitante = id_solicitante;
+	}
+
+	public byte[] getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(File imagen) {
+		//Obtiene el tamanio
+		long tamanio = imagen.length();
+		
+		byte[] bytes = new byte[(int)tamanio];
+			
+		try {
+			InputStream is = new FileInputStream(imagen);
+			int numRead = 0;
+			numRead = is.read(bytes);
+			is.close();
+		} 
+		catch (Exception e) {
+			
+		}
+		this.imagen = bytes;
 	}
 
 }
