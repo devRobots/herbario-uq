@@ -29,9 +29,9 @@ import co.cmamo.Planta;
  * @version 1.0
  */
 @FacesConfig(version = Version.JSF_2_3)
-@Named(value = "especieBean")
+@Named(value = "peticionBean")
 @ApplicationScoped
-public class EspecieBean implements Serializable {
+public class PeticionBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -60,6 +60,10 @@ public class EspecieBean implements Serializable {
 	 */
 	private List<Planta> especies;
 	/**
+	 * Lista de Peticiones
+	 */
+	private List<Peticion> peticiones;
+	/**
 	 * familia asociada al genero
 	 */
 	private Familia familia;
@@ -84,6 +88,7 @@ public class EspecieBean implements Serializable {
 	
 	@PostConstruct
 	private void inicializar() {
+		peticiones = adminEJB.listarPeticiones();
 		familias = adminEJB.listarFamilias();
 		generos = adminEJB.listarGeneros();
 		especies = adminEJB.listarPlantas();
@@ -110,6 +115,7 @@ public class EspecieBean implements Serializable {
 		peticion.setSolicitante(solicitante);
 		
 		peticion = adminEJB.crearPeticion(peticion);
+		peticiones = adminEJB.listarPeticiones();
 		
 		return "/admin/especie/especies";
 	}
@@ -252,6 +258,14 @@ public class EspecieBean implements Serializable {
 			
 		}
 		this.imagen = bytes;
+	}
+
+	public List<Peticion> getPeticiones() {
+		return peticiones;
+	}
+
+	public void setPeticiones(List<Peticion> peticiones) {
+		this.peticiones = peticiones;
 	}
 
 }

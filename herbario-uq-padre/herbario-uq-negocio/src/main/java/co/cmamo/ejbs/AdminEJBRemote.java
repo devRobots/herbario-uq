@@ -86,7 +86,7 @@ public interface AdminEJBRemote {
 	 * @param empleado Recolector que se quiere registrar
 	 * @return boolean Si se registro o no
 	 */
-	public boolean crearPeticion(Peticion peticion);
+	public Peticion crearPeticion(Peticion peticion);
 	
 	/**
 	 * Modifica un recolector en la BD si es posible

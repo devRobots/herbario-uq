@@ -84,15 +84,15 @@ public class SeguridadBean implements Serializable {
 	public String navegacionEspecies(int i) {
 		switch (i) {
 		case 1:
-			return "/admin/familia/familias";
+			return "/admin/familia/familias"; // Lugar Donde se ven las familias
 		case 2:
-			return "/admin/familia/registrar_familia";
+			return "/admin/familia/registrar_familia"; // Lugar donde se registra las familias
 		case 3:
-			return "/admin/genero/generos";
+			return "/admin/genero/generos"; // Lugar donde se miran los generos
 		case 4:
-			return "/admin/genero/registrar_genero";
+			return "/admin/genero/registrar_genero"; // Lugar donde se registran los generos
 		case 5:
-			return "/recolector/especies";
+			return "/recolector/especies"; // Lugar donde se miran las especies
 		default:
 			return null;
 		}
@@ -106,9 +106,10 @@ public class SeguridadBean implements Serializable {
 	public String navegacionRecolector(int i) {
 		switch (i) {
 		case 1:
-			return "/empleado/recolector/recolectores";
+			return "/empleado/recolector/recolectores";// Lugar donde se miran los recolectores
 		case 2:
-			return "/empleado/recolector/registrar_recolector";
+			return "/empleado/recolector/registrar_recolector";// Lugar donde se registran los recolectores
+			//TODO: falta validar
 		default:
 			return null;
 		}
@@ -122,9 +123,9 @@ public class SeguridadBean implements Serializable {
 	public String navegacionEmpleado(int i) {
 		switch (i) {
 		case 1:
-			return "/admin/empleado/empleados";
+			return "/admin/empleado/empleados";//Donde se miran los empleados 
 		case 2:
-			return "/admin/empleado/registrar_empleado";
+			return "/admin/empleado/registrar_empleado";//Donde se registran los empleados 
 		default:
 			return null;
 		}
@@ -138,15 +139,15 @@ public class SeguridadBean implements Serializable {
 	public String navegacionPeticion(int i) {
 		switch (i) {
 		case 1:
-			return "/recolector/peticion/registrar_especie";
+			return "/recolector/peticion/registrar_especie";//
 		case 2:
-			return "/recolector/peticion/peticiones_todas";
+			return "/recolector/peticion/peticiones_todas";//
 		case 3:
-			return "/recolector/peticion/peticiones_pendientes";
+			return "/recolector/peticion/peticiones_pendientes";//
 		case 4:
-			return "/recolector/peticion/peticiones_aceptadas";
+			return "/recolector/peticion/peticiones_aceptadas";//
 		case 5:
-			return "/recolector/peticion/peticiones_rechazadas";
+			return "/recolector/peticion/peticiones_rechazadas";//
 		default:
 			return null;
 		}

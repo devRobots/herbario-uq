@@ -73,7 +73,8 @@ public class EmpleadoBean implements Serializable {
 		empleado.setSalario(2400000);
 		empleado.setEstado(EstadoActividad.ACTIVO);
 
-		if (adminEJB.crearEmpleado(empleado)) {			
+		if (adminEJB.crearEmpleado(empleado)) {		
+			empleados = adminEJB.listarEmpleados();
 			return "/index";
 		}
 

@@ -1,32 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<head>
-<meta charset="UTF-8" />
-<title>Insert title here</title>
-</head>
-<body>
-	<h:form>
-		<h:panelGrid columns="2" border="1">
-			<label for="cedulaFamilia">Cedula:</label>
-			<h:inputText for="cedulaFamilia" value="#{empleadoBean.cedula}"/>
-			<label for="nombreFamilia">Nombre:</label>
-			<h:inputText for="nombreFamilia" value="#{empleadoBean.nombre}"/>
-			<label for="apellidoFamilia">Apellido:</label>
-			<h:inputText for="apellidoFamilia" value="#{empleadoBean.apellido}"/>
-			<label for="emailFamilia">Email:</label>
-			<h:inputText for="emailFamilia" value="#{empleadoBean.email}"/>
-			<label for="claveFamilia">Clave:</label>
-			<h:inputText for="claveFamilia" value="#{empleadoBean.clave}"/>
-			<label for="salarioFamilia">Salario:</label>
-			<h:inputText for="salarioFamilia" value="#{empleadoBean.salario}"/>
-			<h:commandButton action="#{empleadoBean.agregarEmpleado}" value="Aceptar" />		
-		</h:panelGrid>
-	</h:form>
-	<h:messages />
-</body>
+
+<ui:composition template="/WEB-INF/template.xhtml">
+	<ui:define name="contenido">
+		<h:form>
+			<p:panelGrid columns="2">
+				<f:facet name="header">Registrar rec</f:facet>
+				<p:outputLabel value="Id" />
+				<p:inputText value="#{empleadoBean.cedula}" />
+				<p:outputLabel value="Nombre" />
+				<p:inputText value="#{empleadoBean.nombre}" />
+				<p:outputLabel value="Apellido" />
+				<p:inputText value="#{empleadoBean.apellido}" />
+				<p:outputLabel value="Correo" />
+				<p:inputText value="#{empleadoBean.email}" />
+				<p:outputLabel value="clave" />
+				<p:password value="#{empleadoBean.clave}" />
+				<f:facet name="footer">
+					<p:commandButton action="#{empleadoBean.agregarEmpleado}" value="Aceptar" ajax="false" />		
+				</f:facet>
+			</p:panelGrid>		
+		</h:form>
+		<p:growl />
+	</ui:define>
+</ui:composition>
 </html>

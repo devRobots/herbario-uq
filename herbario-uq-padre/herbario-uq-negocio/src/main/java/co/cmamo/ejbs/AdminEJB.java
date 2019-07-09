@@ -277,16 +277,16 @@ public class AdminEJB implements AdminEJBRemote {
 	 * 
 	 * @see co.cmamo.ejb.AdminEJBRemote#crearRecolector(co.cmamo.Recolector)
 	 */
-	public boolean crearPeticion(Peticion peticion) {
+	public Peticion crearPeticion(Peticion peticion) {
 		try {
 			if (entityManager.find(Recolector.class, peticion.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El recolector con esta cedula ya esta registrado");
 			}
 
 			entityManager.persist(peticion);
-			return true;
+			return peticion;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 

@@ -81,7 +81,8 @@ public class RecolectorBean implements Serializable {
 		recolector.setCorreo(email);
 		recolector.setEstado(EstadoActividad.ACTIVO);
 
-		if (adminEJB.crearRecolector(recolector)) {			
+		if (adminEJB.crearRecolector(recolector)) {		
+			recolectores = adminEJB.listarRecolectores();
 			return "/empleado/recolector/recolectores";
 		}
 
