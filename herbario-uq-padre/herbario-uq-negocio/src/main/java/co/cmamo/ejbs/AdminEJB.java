@@ -44,7 +44,8 @@ public class AdminEJB implements AdminEJBRemote {
 	
 	public Persona iniciarSesion(String correo, String clave) {
 		try {
-			Persona persona = buscarAdministradorPorCorreo(correo);
+			Persona persona = buscarPorCorreo(correo);
+			
 			if (persona == null) {
 				throw new ElementoInexistenteExcepcion("El correo no existe");
 			}
@@ -376,9 +377,9 @@ public class AdminEJB implements AdminEJBRemote {
 	 * @param correo Correo del administrador
 	 * @return Administrador correspondiente al correo o Null
 	 */
-	private Administrador buscarAdministradorPorCorreo(String correo) {
+	private Persona buscarPorCorreo(String correo) {
 		try {
-			TypedQuery<Administrador> query = entityManager.createNamedQuery(Administrador.ADMIN_POR_CORREO, Administrador.class);
+			TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.BUSCAR_POR_CORREO, Persona.class);
 			query.setParameter("correo", correo);
 			
 			return query.getSingleResult();

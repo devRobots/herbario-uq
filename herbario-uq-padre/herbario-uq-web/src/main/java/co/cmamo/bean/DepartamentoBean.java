@@ -3,6 +3,7 @@ package co.cmamo.bean;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -12,6 +13,7 @@ import javax.faces.annotation.FacesConfig.Version;
 import javax.inject.Named;
 
 import co.cmamo.ejbs.AdminEJB;
+import co.cmamo.util.Util;
 import co.cmamo.Departamento;
 import co.cmamo.EstadoPeticion;
 import co.cmamo.Familia;
@@ -53,9 +55,11 @@ public class DepartamentoBean implements Serializable {
 	 * inicializa la lista de familias
 	 */
 	@PostConstruct
-	private void inicializar(Departamento departamento) {
-		this.departamento = departamento;
+	private void inicializar() {
+		this.departamento = Departamento.AMAZONAS;
 		especies = adminEJB.listarPlantas(departamento);
+		
+		Util.mostrarMensaje("Especies", especies.toString());
 	} 
 
 	/**
@@ -93,5 +97,12 @@ public class DepartamentoBean implements Serializable {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
+	}
+
+	public void setDepartamento(int i) {
+		Random rand = new Random();
+		int dept = rand.nextInt(40);
+		
+		this.departamento = Departamento.values()[dept];
 	}
 }

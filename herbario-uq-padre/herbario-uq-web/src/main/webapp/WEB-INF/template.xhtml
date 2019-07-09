@@ -43,26 +43,26 @@
 							<p:commandButton value="Mapa" action="/extra/mapa" ajax="false" />
 							<p:commandButton value="Cerrar Sesión" action="#{seguridadBean.cerrarSesion}" ajax="false" />
 						</f:facet>
-						<p:submenu label="Empleado">
+						<p:submenu rendered="#{!seguridadBean.recolector}" label="Empleado">
 							<p:menuitem value="Empleados" action="#{seguridadBean.navegacionEmpleado(1)}" ajax="false"/>
 							<p:menuitem value="Registrar empleado" action="#{seguridadBean.navegacionEmpleado(2)}" ajax="false"/>
 						</p:submenu>
-						<p:submenu label="Recolector">
+						<p:submenu rendered="#{!seguridadBean.recolector}" label="Recolector">
 							<p:menuitem value="Recolectores" action="#{seguridadBean.navegacionRecolector(1)}" ajax="false"/>
 							<p:menuitem value="Registrar recolector" action="#{seguridadBean.navegacionRecolector(2)}" ajax="false"/>
 						</p:submenu>
 						<p:submenu label="Peticiones">
 							<p:menuitem value="Nueva peticion" action="#{seguridadBean.navegacionPeticion(1)}" ajax="false"/>
-							<p:menuitem value="Todas" action="#{seguridadBean.navegacionPeticion(2)}" ajax="false"/>
+							<p:menuitem rendered="#{seguridadBean.admin}" value="Todas" action="#{seguridadBean.navegacionPeticion(2)}" ajax="false"/>
 							<p:menuitem value="Pendientes" action="#{seguridadBean.navegacionPeticion(3)}" ajax="false"/>
 							<p:menuitem value="Aceptadas" action="#{seguridadBean.navegacionPeticion(4)}" ajax="false"/>
 							<p:menuitem value="Rechazadas" action="#{seguridadBean.navegacionPeticion(5)}" ajax="false"/>
 						</p:submenu>
 						<p:submenu label="Especies">
 							<p:menuitem value="Familias" action="#{seguridadBean.navegacionEspecies(1)}" ajax="false"/>
-							<p:menuitem value="Registrar familia" action="#{seguridadBean.navegacionEspecies(2)}" ajax="false"/>
+							<p:menuitem rendered="#{seguridadBean.admin}" value="Registrar familia" action="#{seguridadBean.navegacionEspecies(2)}" ajax="false"/>
 							<p:menuitem value="Generos" action="#{seguridadBean.navegacionEspecies(3)}" ajax="false"/>
-							<p:menuitem value="Registrar generos" action="#{seguridadBean.navegacionEspecies(4)}" ajax="false"/>
+							<p:menuitem rendered="#{seguridadBean.admin}" value="Registrar generos" action="#{seguridadBean.navegacionEspecies(4)}" ajax="false"/>
 							<p:menuitem value="Especies" action="#{seguridadBean.navegacionEspecies(5)}" ajax="false"/>
 						</p:submenu>
 					</p:menubar>
