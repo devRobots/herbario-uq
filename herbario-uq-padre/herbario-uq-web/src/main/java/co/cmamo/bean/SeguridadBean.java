@@ -10,7 +10,10 @@ import javax.faces.annotation.FacesConfig.Version;
 import javax.inject.Named;
 
 import co.cmamo.ejbs.AdminEJB;
+import co.cmamo.Administrador;
+import co.cmamo.Empleado;
 import co.cmamo.Persona;
+import co.cmamo.Recolector;
 import co.cmamo.util.Util;
 
 /**
@@ -36,6 +39,18 @@ public class SeguridadBean implements Serializable {
 	 */
 	private boolean autenticado;
 	/**
+	 * determina si esta autenticado o no
+	 */
+	private boolean admin;
+	/**
+	 * determina si esta autenticado o no
+	 */
+	private boolean empleado;
+	/**
+	 * determina si esta autenticado o no
+	 */
+	private boolean recolector;
+	/**
 	 * permite consultar la capa de negocio
 	 */
 	@EJB
@@ -60,6 +75,16 @@ public class SeguridadBean implements Serializable {
 			Util.mostrarMensaje("No se pudo iniciar sesion verifique sus credenciales",
 					"No se pudo iniciar sesion verifique sus credenciales");
 		} else {
+			if (u instanceof Administrador) {
+				admin = true;
+			}
+			else if (u instanceof Empleado) {
+				empleado = true;
+			}
+			else if (u instanceof Recolector) {
+				recolector = true;
+			}
+			
 			usuario = u;
 			autenticado = true;
 		}
@@ -72,6 +97,9 @@ public class SeguridadBean implements Serializable {
 		if (usuario != null) {
 			usuario = null;
 			autenticado = false;
+			admin = false;
+			empleado = false;
+			recolector = false;
 			init();
 		}
 	}
@@ -181,4 +209,45 @@ public class SeguridadBean implements Serializable {
 		this.autenticado = autenticado;
 	}
 
+	/**
+	 * @return the admin
+	 */
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	/**
+	 * @param admin the admin to set
+	 */
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	/**
+	 * @return the empleado
+	 */
+	public boolean isEmpleado() {
+		return empleado;
+	}
+
+	/**
+	 * @param empleado the empleado to set
+	 */
+	public void setEmpleado(boolean empleado) {
+		this.empleado = empleado;
+	}
+
+	/**
+	 * @return the recolector
+	 */
+	public boolean isRecolector() {
+		return recolector;
+	}
+
+	/**
+	 * @param recolector the recolector to set
+	 */
+	public void setRecolector(boolean recolector) {
+		this.recolector = recolector;
+	}
 }

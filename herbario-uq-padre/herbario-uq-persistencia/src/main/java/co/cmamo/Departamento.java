@@ -1,6 +1,7 @@
 package co.cmamo;
 
 public enum Departamento {
+	
 	AMAZONAS,
 	ANTIOQUIA,
 	ARAUCA,
@@ -32,5 +33,7 @@ public enum Departamento {
 	TOLIMA,
 	VALLE,
 	VAUPES,
-	VICHADA
+	VICHADA;
+	
+	
 }
