@@ -12,10 +12,14 @@
 	    <h:form id="peticionForm">
 			
 			<p:fieldset id="peticion" legend="Peticiones Registrados">
-				<p:dataTable id="listapeticiones" var="peticion" value="#{peticionBean.peticiones}">
+				<p:dataTable id="listatodas" var="peticion" value="#{peticionBean.todas}">
 				
 					<p:column headerText="Id">
 						<h:outputText value="#{peticion.id}" />
+					</p:column>
+					
+					<p:column headerText="Fecha">
+						<h:outputText value="#{peticion.fecha}" />
 					</p:column>
 				
 					
@@ -36,11 +40,13 @@
 		                
 		                <h:outputText value="Id" />
 		                <h:outputText value="#{peticionBean.peticion.id}" style="font-weight:bold"/>
-		 
+		          
+		                <h:outputText value="Fecha" />
+		                <h:outputText value="#{peticionBean.peticion.fecha}" style="font-weight:bold"/>
 		 		                
 		                <f:facet name="footer">
-							<p:commandButton value="Eliminar" ajax="false" action="#{peticionBean.eliminarPeticion}" />
-							<p:commandButton value="Actualizar" ajax="false" action="#" />							
+							<p:commandButton value="Aceptar" ajax="false" action="#" rendered="#{seguridadBean.admin}" />
+							<p:commandButton value="Rechazar" ajax="false" action="#" rendered="#{seguridadBean.admin}" />							
 						</f:facet>
 		                
 		            </h:panelGrid>

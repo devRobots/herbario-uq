@@ -16,6 +16,8 @@ import javax.persistence.*;
 @NamedQueries({
 		@NamedQuery(name = Peticion.BUSCAR_POR_ID, query = "select peticion from Peticion peticion where peticion.id = :id"),
 		@NamedQuery(name = Peticion.LISTAR_TODOS, query = "select peticion from Peticion peticion"),
+		@NamedQuery(name = Peticion.LISTAR__POR_ESTADO, query = "select peticion from Peticion peticion where peticion.estado = :estado"),
+		@NamedQuery(name = Peticion.LISTAR__POR_ESTADO_Y_PERSONA, query = "select peticion from Peticion peticion where peticion.estado = :estado and TYPE(peticion) IN :clase"),
 		@NamedQuery(name = Peticion.CONTAR_PERSONAS_ACEPTADAS, query = "select count(p) from Peticion p where p.estado = :estado group by p.fecha"),
 		@NamedQuery(name = Peticion.OBTENER_LISTADO_RECOLECTORES, query = "select DISTINCT peticion.persona from Peticion peticion" ),
 		@NamedQuery(name = Peticion.OBTENER_POR_FECHA, query = "select peticion.id, peticion.especie.genero, peticion.especie, peticion.persona.id, peticion.persona.correo from Peticion peticion where peticion.fecha = :fecha"),
@@ -27,6 +29,9 @@ public class Peticion implements Serializable {
 
 	public static final String BUSCAR_POR_ID = "Peticion_findById";
 	public static final String LISTAR_TODOS = "Peticion_getAll";
+	public static final String LISTAR__POR_ESTADO = "Peticion_getByState";
+	public static final String LISTAR__POR_ESTADO_Y_PERSONA = "Peticion_getByState&Persona";
+	
 	public static final String CONTAR_PERSONAS_ACEPTADAS = "Peticion_countPersonaAceptadas";
 	
 	public static final String OBTENER_LISTADO_RECOLECTORES = "Peticion_getRecolectores";

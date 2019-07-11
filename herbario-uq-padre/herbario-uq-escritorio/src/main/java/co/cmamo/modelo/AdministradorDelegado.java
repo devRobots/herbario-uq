@@ -132,7 +132,7 @@ public class AdministradorDelegado {
 	 * @param recolector empleado a agregar
 	 * @return devuelve true si el empleado fue eliminado
 	 */
-	public boolean registrarPeticion(Peticion peticion) {
+	public Peticion registrarPeticion(Peticion peticion) {
 		return adminEJB.crearPeticion(peticion);
 	}
 

@@ -63,7 +63,19 @@ public class PeticionBean implements Serializable {
 	/**
 	 * Lista de Peticiones
 	 */
-	private List<Peticion> peticiones;
+	private List<Peticion> todas;
+	/**
+	 * Lista de Peticiones
+	 */
+	private List<Peticion> aceptadas;
+	/**
+	 * Lista de Peticiones
+	 */
+	private List<Peticion> rechazadas;
+	/**
+	 * Lista de Peticiones
+	 */
+	private List<Peticion> pendientes;
 	/**
 	 * familia asociada al genero
 	 */
@@ -81,11 +93,23 @@ public class PeticionBean implements Serializable {
 	 */
 	private Peticion peticion;
 	/**
+	 * Peticion
+	 */
+	private Peticion aceptada;
+	/**
+	 * Peticion
+	 */
+	private Peticion rechazada;
+	/**
+	 * Peticion
+	 */
+	private Peticion pendiente;
+	/**
 	 * @return the peticion
 	 */
 
 	/**
-	 * Conexión con la capa de negocio
+	 * Conexión con la capa de negocio 
 	 */
 	@EJB
 	private AdminEJB adminEJB;
@@ -96,7 +120,10 @@ public class PeticionBean implements Serializable {
 	
 	@PostConstruct
 	private void inicializar() {
-		peticiones = adminEJB.listarPeticiones();
+		todas = adminEJB.listarPeticiones();
+		aceptadas = adminEJB.listarPeticiones(EstadoPeticion.APROBADO);
+		rechazadas = adminEJB.listarPeticiones(EstadoPeticion.RECHAZADO);
+		pendientes = adminEJB.listarPeticiones(EstadoPeticion.PENDIENTE);
 		familias = adminEJB.listarFamilias();
 		generos = adminEJB.listarGeneros();
 		especies = adminEJB.listarPlantas();
@@ -124,7 +151,7 @@ public class PeticionBean implements Serializable {
 		
 		peticion = adminEJB.crearPeticion(peticion);
 		this.peticion = peticion;
-		peticiones = adminEJB.listarPeticiones();
+		todas = adminEJB.listarPeticiones();
 		
 		return "/admin/especie/especies";
 	}
@@ -136,7 +163,7 @@ public class PeticionBean implements Serializable {
 	public void eliminarPeticion() {
 		try {
 			adminEJB.eliminarPeticion(peticion.getId());
-			peticiones = adminEJB.listarPeticiones();
+			todas = adminEJB.listarPeticiones();
 			Util.mostrarMensaje("Eliminación exitosa!!!", "Eliminación exitosa!!!");
 		} catch (Exception e) {
 			Util.mostrarMensaje(e.getMessage(), e.getMessage());
@@ -281,15 +308,6 @@ public class PeticionBean implements Serializable {
 		}
 		this.imagen = bytes;
 	}
-
-	public List<Peticion> getPeticiones() {
-		return peticiones;
-	}
-
-	public void setPeticiones(List<Peticion> peticiones) {
-		this.peticiones = peticiones;
-	}
-	
 	public Peticion getPeticion() {
 		return peticion;
 	}
@@ -300,5 +318,84 @@ public class PeticionBean implements Serializable {
 	public void setPeticion(Peticion peticion) {
 		this.peticion = peticion;
 	}
+
+	public List<Peticion> getTodas() {
+		todas = adminEJB.listarPeticiones();
+		return todas;
+	}
+
+	public void setTodas(List<Peticion> todas) {
+		this.todas = todas;
+	}
+
+	public List<Peticion> getRechazadas() {
+		pendientes = adminEJB.listarPeticiones(EstadoPeticion.RECHAZADO);
+		return rechazadas;
+	}
+
+	public void setRechazadas(List<Peticion> rechazadas) {
+		this.rechazadas = rechazadas;
+	}
+
+	public List<Peticion> getPendientes() {
+		pendientes = adminEJB.listarPeticiones(EstadoPeticion.PENDIENTE);
+		return pendientes;
+	}
+
+	public void setPendientes(List<Peticion> pendientes) {
+		this.pendientes = pendientes;
+	}
+
+	public List<Peticion> getAceptadas() {
+		aceptadas = adminEJB.listarPeticiones(EstadoPeticion.APROBADO);
+		return aceptadas;
+	}
+
+	public void setAceptadas(List<Peticion> aceptadas) {
+		this.aceptadas = aceptadas;
+	}
+
+	/**
+	 * @return the aceptada
+	 */
+	public Peticion getAceptada() {
+		return aceptada;
+	}
+
+	/**
+	 * @param aceptada the aceptada to set
+	 */
+	public void setAceptada(Peticion aceptada) {
+		this.aceptada = aceptada;
+	}
+
+	/**
+	 * @return the rechazada
+	 */
+	public Peticion getRechazada() {
+		return rechazada;
+	}
+
+	/**
+	 * @param rechazada the rechazada to set
+	 */
+	public void setRechazada(Peticion rechazada) {
+		this.rechazada = rechazada;
+	}
+
+	/**
+	 * @return the pendiente
+	 */
+	public Peticion getPendiente() {
+		return pendiente;
+	}
+
+	/**
+	 * @param pendiente the pendiente to set
+	 */
+	public void setPendiente(Peticion pendiente) {
+		this.pendiente = pendiente;
+	} 
+	
 
 }

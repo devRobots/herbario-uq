@@ -14,6 +14,7 @@ import co.cmamo.Administrador;
 import co.cmamo.Departamento;
 import co.cmamo.Empleado;
 import co.cmamo.EstadoActividad;
+import co.cmamo.EstadoPeticion;
 import co.cmamo.Familia;
 import co.cmamo.Genero;
 import co.cmamo.Persona;
@@ -322,6 +323,25 @@ public class AdminEJB implements AdminEJBRemote {
 
 	public List<Peticion> listarPeticiones() {
 		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR_TODOS, Peticion.class);
+
+		List<Peticion> listado = query.getResultList();
+
+		return listado;
+	}
+
+	public List<Peticion> listarPeticiones(EstadoPeticion estado) {
+		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR__POR_ESTADO, Peticion.class);
+		query.setParameter("estado", estado);
+
+		List<Peticion> listado = query.getResultList();
+
+		return listado;
+	}
+
+	public List<Peticion> listarPeticiones(EstadoPeticion estado, Class<Persona> tipo) {
+		TypedQuery<Peticion> query = entityManager.createNamedQuery(Peticion.LISTAR__POR_ESTADO_Y_PERSONA, Peticion.class);
+		query.setParameter("estado", estado);
+		query.setParameter("clase", tipo);
 
 		List<Peticion> listado = query.getResultList();
 

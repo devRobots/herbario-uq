@@ -11,17 +11,21 @@
 		<ui:define name="contenido">
 	    <h:form id="peticionForm">
 			
-			<p:fieldset id="peticion" legend="Peticiones Registrados">
-				<p:dataTable id="listapeticiones" var="peticion" value="#{peticionBean.peticiones}">
+			<p:fieldset id="peticion" legend="Peticiones Rechazadas">
+				<p:dataTable id="listarechazadas" var="rechazada" value="#{peticionBean.rechazada}">
 				
 					<p:column headerText="Id">
-						<h:outputText value="#{peticion.id}" />
+						<h:outputText value="#{rechazada.id}" />
+					</p:column>
+					
+					<p:column headerText="Fecha">
+						<h:outputText value="#{rechazada.fecha}" />
 					</p:column>
 				
 					
 					<p:column style="width:32px">
 	                    <p:commandButton update=":peticionForm:display" oncomplete="PF('peticionDialog').show()" icon="pi pi-search">
-	                        <f:setPropertyActionListener value="#{peticion}" target="#{peticionBean.peticion}" />
+	                        <f:setPropertyActionListener value="#{rechazada}" target="#{peticionBean.rechazada}" />
 	                    </p:commandButton>
                 	</p:column>
 					
@@ -32,16 +36,13 @@
 			<p:dialog header="Detalle de Peticion" widgetVar="peticionDialog" resizable="false" draggable="false"
               showEffect="fade" hideEffect="fade" modal="true">
 		        <p:outputPanel id="display">
-		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty peticionBean.peticion}">
+		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty peticionBean.rechazada}">
 		                
 		                <h:outputText value="Id" />
-		                <h:outputText value="#{peticionBean.peticion.id}" style="font-weight:bold"/>
+		                <h:outputText value="#{peticionBean.rechazada.id}" style="font-weight:bold"/>
 		 
-		 		                
-		                <f:facet name="footer">
-							<p:commandButton value="Eliminar" ajax="false" action="#{peticionBean.eliminarPeticion}" />
-							<p:commandButton value="Actualizar" ajax="false" action="#" />							
-						</f:facet>
+		                <h:outputText value="Fecha" />
+		                <h:outputText value="#{peticionBean.rechazada.fecha}" style="font-weight:bold"/>
 		                
 		            </h:panelGrid>
 		        </p:outputPanel>

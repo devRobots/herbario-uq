@@ -28,6 +28,8 @@ public class EmpleadoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	private boolean edicion;
+	
 	private Empleado empleado;
 	
 	private List<Empleado> empleados;
@@ -68,26 +70,41 @@ public class EmpleadoBean implements Serializable {
 	 */
 	@PostConstruct
 	private void init() {
+		edicion = false;
 		empleados = adminEJB.listarEmpleados();
 	}
 
 	public String agregarEmpleado() {
+		if (!edicion) {
+			Empleado empleado = new Empleado();
+			empleado.setId(cedula);
+			empleado.setApellido(apellido);
+			empleado.setNombre(nombre);
+			empleado.setClave(clave);
+			empleado.setCorreo(email);
+			empleado.setSalario(2400000);
+			empleado.setEstado(EstadoActividad.ACTIVO);
 
-		Empleado empleado = new Empleado();
-		empleado.setId(cedula);
+			if (adminEJB.crearEmpleado(empleado)) {		
+				empleados = adminEJB.listarEmpleados();
+				return "/index";
+			}
+
+			return null;
+		}
+		else {
+			return modificar();
+		}
+	}
+	
+	public String modificar() {
 		empleado.setApellido(apellido);
 		empleado.setNombre(nombre);
 		empleado.setClave(clave);
 		empleado.setCorreo(email);
-		empleado.setSalario(2400000);
-		empleado.setEstado(EstadoActividad.ACTIVO);
 
-		if (adminEJB.crearEmpleado(empleado)) {		
-			empleados = adminEJB.listarEmpleados();
-			return "/index";
-		}
-
-		return null;
+		adminEJB.modificarEmpleado(empleado);
+		return modoNormal();
 	}
 
 	/**
@@ -202,5 +219,30 @@ public class EmpleadoBean implements Serializable {
 	public void setEmpleados(List<Empleado> empleados) {
 		this.empleados = empleados;
 	}
+
+	/**
+	 * @return the edicion
+	 */
+	public boolean isEdicion() {
+		return edicion;
+	}
+
+	/**
+	 * @param edicion the edicion to set
+	 */
+	public void setEdicion(boolean edicion) {
+		this.edicion = edicion;
+	}
 	
+	public String modoEdicion() {
+		edicion = true;
+		
+		return "/admin/empleado/registrar_empleado";
+	}
+	
+	public String modoNormal() {
+		edicion = false;
+		
+		return "/admin/empleado/empleados";
+	}
 }

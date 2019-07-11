@@ -14,12 +14,7 @@ import javax.inject.Named;
 
 import co.cmamo.ejbs.AdminEJB;
 import co.cmamo.util.Util;
-import co.cmamo.Departamento;
-import co.cmamo.EstadoPeticion;
-import co.cmamo.Familia;
-import co.cmamo.Genero;
-import co.cmamo.Persona;
-import co.cmamo.Peticion;
+import co.cmamo.Departamento;          
 import co.cmamo.Planta;
 
 /**
@@ -35,7 +30,7 @@ public class DepartamentoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Departamento departamento;
+	private Departamento departamento;  
 	/**
 	 * lista de generos existentes
 	 */
@@ -100,9 +95,11 @@ public class DepartamentoBean implements Serializable {
 	}
 
 	public void setDepartamento(int i) {
-		Random rand = new Random();
-		int dept = rand.nextInt(40);
-		
-		this.departamento = Departamento.values()[dept];
+//		Random rand = new Random();
+//		int dept = rand.nextInt(40);
+//
+//		this.departamento = Departamento.values()[dept];
+		this.departamento = Departamento.values()[i];
+		especies = adminEJB.listarPlantas(departamento);
 	}
 }
