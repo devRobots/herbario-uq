@@ -98,7 +98,26 @@ public class AdminEJB implements AdminEJBRemote {
 			return false;
 		}
 	}
+	
+	/**
+	 * Recuperar Contraseña
+	 */
+	public String recuperarContrasenia(String correo) {
 
+		TypedQuery<Persona> query = entityManager.createNamedQuery(Persona.BUSCAR_POR_CORREO, Persona.class);
+
+		query.setParameter("email", correo);
+		try {
+			return query.getSingleResult().getClave();
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+
+	/**
+	 * Buscar empleado
+	 */
 	@Override
 	public Empleado buscarEmpleado(String id) {
 		try {
@@ -281,7 +300,7 @@ public class AdminEJB implements AdminEJBRemote {
 	 */
 	public Peticion crearPeticion(Peticion peticion) {
 		try {
-			if (entityManager.find(Recolector.class, peticion.getId()) != null) {
+			if (entityManager.find(Peticion.class, peticion.getId()) != null) {
 				throw new ElementoRepetidoExcepcion("El recolector con esta cedula ya esta registrado");
 			}
 

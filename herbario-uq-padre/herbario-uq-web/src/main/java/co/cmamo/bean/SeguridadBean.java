@@ -1,6 +1,7 @@
 package co.cmamo.bean;
 
 import java.io.Serializable;
+import java.util.Properties;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -8,6 +9,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.annotation.FacesConfig.Version;
 import javax.inject.Named;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import co.cmamo.ejbs.AdminEJB;
 import co.cmamo.Administrador;
@@ -180,7 +187,64 @@ public class SeguridadBean implements Serializable {
 			return null;
 		}
 	}
+	
+	/**
+	 * Permite hacer la conexion con gmail para poder enviar el correo
+	 * 
+	 * @param destinatario correo de recep
+	 * @param asunto       Asunto del msj
+	 * @param cuerpo       Cuerpo del msj
+	 */
+	private static void enviarConGMail(String destinatario, String asunto, String cuerpo) {
+		
+		// Esto es lo que va delante de @gmail.com en tu cuenta de correo. Es el
+		// remitente también.
+		String remitente = "pruebaHerbario@gmail.com"; // Para la dirección nombrecuenta@gmail.com
 
+		Properties props = System.getProperties();
+		props.put("mail.smtp.host", "smtp.gmail.com"); // El servidor SMTP de Google
+		props.put("mail.smtp.user", remitente);
+		props.put("mail.smtp.clave", "pruebaHerbario123"); // La clave de la cuenta
+		props.put("mail.smtp.auth", "true"); // Usar autenticación mediante usuario y clave
+		props.put("mail.smtp.starttls.enable", "true"); // Para conectar de manera segura al servidor SMTP
+		props.put("mail.smtp.port", "587"); // El puerto SMTP seguro de Google
+		props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+		Session session = Session.getDefaultInstance(props);
+		MimeMessage message = new MimeMessage(session);
+
+		try {
+			message.setFrom(new InternetAddress(remitente));
+			//Se podrían añadir varios de la misma manera
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario));
+			message.setSubject(asunto);
+			message.setText(cuerpo);
+			Transport transport = session.getTransport("smtp");
+			transport.connect("smtp.gmail.com", remitente, "pruebaHerbario123");
+			transport.sendMessage(message, message.getAllRecipients());
+			transport.close();
+		} catch (MessagingException me) {
+			me.printStackTrace(); // Si se produce un error
+		}
+	}
+
+	/**
+	 * Recuperar Clave
+	 */
+	public void recuperarClave() {
+
+		String destinatario = usuario.getCorreo();
+		try {
+
+			enviarConGMail(destinatario, "Contraseña",
+					"Hola, su clave es:" + adminEJB.recuperarContrasenia(usuario.getCorreo()));
+			Util.mostrarMensaje("Email enviado exitosamente", "Email enviado exitosamente");
+
+		} catch (NullPointerException e) {
+			Util.mostrarMensaje("Error", "El correo no existe");
+		}
+
+	}
 	/**
 	 * @return the usuario
 	 */

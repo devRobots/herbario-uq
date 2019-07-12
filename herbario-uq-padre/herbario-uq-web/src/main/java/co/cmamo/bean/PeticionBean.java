@@ -136,26 +136,30 @@ public class PeticionBean implements Serializable {
 	 * @return nombre de la página con información de las plantas
 	 */
 	public String crearPeticion() {
-		Peticion peticion = new Peticion();
-		Planta p = new Planta();
-		p.setGenero(genero);
-		p.setEspecie(nombre);
-		p.setImagen(imagen);
 		
-		peticion.setEspecie(p);
+		peticion = null;
+		peticion = new Peticion();
 		peticion.setEstado(EstadoPeticion.PENDIENTE);
 		peticion.setFecha(new Date());
 		
-		Persona solicitante = adminEJB.buscarEmpleado(id_solicitante);
+		//Se crea Planta
+		especie = new Planta();
+		especie.setEspecie(nombre);
+		especie = adminEJB.crearPlanta(especie);
+		peticion.setEspecie(especie);
+		
+		//Se crea Solicitante
+		Persona solicitante = new Persona();
+		solicitante = adminEJB.buscarEmpleado(id_solicitante);
 		peticion.setSolicitante(solicitante);
 		
+		//se crea la peticion
 		peticion = adminEJB.crearPeticion(peticion);
-		this.peticion = peticion;
-		todas = adminEJB.listarPeticiones();
 		
-		return "/admin/especie/especies";
+		return "/recolector/peticion/peticiones_todas";
 	}
 	
+
 	
 	/**
 	 * permite obtener la familia que se desea eliminar
